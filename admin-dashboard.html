@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stackly admin console for managing bookings, packages, and users." />
+  <title>Admin Dashboard — Stackly</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Base + Dashboard stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+
+<body class="dash-body">
+
+  <div class="dash-shell">
+
+    <!-- ============================================================
+         SIDEBAR
+    ============================================================ -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-top">
+        <a href="admin-dashboard.html" aria-label="Stackly Home">
+          <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+        </a>
+        <button class="dash-sidebar-close" id="dashSidebarClose" aria-label="Close menu"><i
+            class="ri-close-line"></i></button>
+      </div>
+
+      <div class="dash-user-card">
+        <div class="dash-user-avatar">A</div>
+        <div class="dash-user-info">
+          <p class="dash-user-role">Administrator</p>
+          <p class="dash-user-email">rohan.kapoor@stackly.com</p>
+        </div>
+      </div>
+
+      <nav class="dash-nav" aria-label="Dashboard navigation">
+        <p class="dash-nav-label">Menu</p>
+
+        <button class="dash-nav-item active" data-target="overviewPage" data-title="Overview"
+          data-subtitle="Business performance at a glance">
+          <i class="ri-dashboard-3-line"></i> Overview
+        </button>
+        <button class="dash-nav-item" data-target="bookingsPage" data-title="Bookings Management"
+          data-subtitle="Review and manage every booking">
+          <i class="ri-suitcase-3-line"></i> Bookings
+        </button>
+        <button class="dash-nav-item" data-target="packagesPage" data-title="Packages Management"
+          data-subtitle="Create and maintain holiday packages">
+          <i class="ri-map-2-line"></i> Packages
+        </button>
+        <button class="dash-nav-item" data-target="usersPage" data-title="Users Management"
+          data-subtitle="Traveller accounts and permissions">
+          <i class="ri-team-line"></i> Users
+        </button>
+      </nav>
+
+      <div class="dash-sidebar-bottom">
+        <a href="index.html" class="dash-nav-item">
+          <i class="ri-home-5-line"></i> Back to Home
+        </a>
+        <a href="login.html" class="dash-nav-item logout">
+          <i class="ri-logout-box-r-line"></i> Logout
+        </a>
+      </div>
+    </aside>
+
+    <div class="dash-overlay"></div>
+
+    <!-- ============================================================
+         MAIN
+    ============================================================ -->
+    <div class="dash-main">
+
+      <header class="dash-topbar">
+        <div class="dash-topbar-left">
+          <button class="dash-hamburger" id="dashHamburger" aria-label="Open menu"><i class="ri-menu-line"></i></button>
+          <div>
+            <h1 class="dash-page-title" id="dashPageTitle">Overview</h1>
+            <p class="dash-page-subtitle" id="dashPageSubtitle">Business performance at a glance</p>
+          </div>
+        </div>
+        <div class="dash-topbar-right">
+          <a href="404.html" class="dash-icon-btn" aria-label="Notifications"><i
+              class="ri-notification-3-line"></i><span class="dot"></span></a>
+          <a href="404.html" class="dash-icon-btn" aria-label="Settings"><i class="ri-settings-3-line"></i></a>
+          <span class="dash-topbar-email">rohan.kapoor@stackly.com</span>
+          <a href="404.html" class="dash-topbar-avatar" aria-label="My profile">A</a>
+        </div>
+      </header>
+
+      <main class="dash-content">
+
+        <!-- ============================================================
+             PAGE: OVERVIEW
+        ============================================================ -->
+        <section class="dash-page active" id="overviewPage">
+
+          <div class="dash-stats-grid">
+            <div class="dash-stat-card">
+              <div class="dash-stat-top">
+                <div class="dash-stat-icon gold"><i class="ri-suitcase-3-line"></i></div>
+                <span class="dash-stat-trend up"><i class="ri-arrow-up-line"></i> 12%</span>
+              </div>
+              <p class="dash-stat-value">1,284</p>
+              <p class="dash-stat-label">Total Bookings</p>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-top">
+                <div class="dash-stat-icon teal"><i class="ri-money-dollar-circle-line"></i></div>
+                <span class="dash-stat-trend up"><i class="ri-arrow-up-line"></i> 8%</span>
+              </div>
+              <p class="dash-stat-value">&#36;486K</p>
+              <p class="dash-stat-label">Revenue (This Year)</p>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-top">
+                <div class="dash-stat-icon navy"><i class="ri-team-line"></i></div>
+                <span class="dash-stat-trend up"><i class="ri-arrow-up-line"></i> 5%</span>
+              </div>
+              <p class="dash-stat-value">9,742</p>
+              <p class="dash-stat-label">Active Users</p>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-top">
+                <div class="dash-stat-icon rose"><i class="ri-user-add-line"></i></div>
+                <span class="dash-stat-trend down"><i class="ri-arrow-down-line"></i> 3%</span>
+              </div>
+              <p class="dash-stat-value">318</p>
+              <p class="dash-stat-label">New Signups (30d)</p>
+            </div>
+          </div>
+
+          <div class="dash-two-col">
+            <div class="dash-panel" style="margin-bottom:0;">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Bookings Overview<span>Monthly booking volume, last 6 months</span></p>
+                <a href="404.html" class="btn-dash btn-dash-outline">Export</a>
+              </div>
+              <div class="dash-panel-body">
+                <div style="display:flex; align-items:flex-end; gap:16px; height:200px; padding-top:10px;">
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+                    <div style="width:100%; height:96px; background:var(--gray-200); border-radius:8px 8px 0 0;"></div>
+                    <span style="font-size:.72rem; color:var(--gray-500); font-weight:600;">Apr</span>
+                  </div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+                    <div style="width:100%; height:120px; background:var(--gray-200); border-radius:8px 8px 0 0;"></div>
+                    <span style="font-size:.72rem; color:var(--gray-500); font-weight:600;">May</span>
+                  </div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+                    <div style="width:100%; height:80px; background:var(--gray-200); border-radius:8px 8px 0 0;"></div>
+                    <span style="font-size:.72rem; color:var(--gray-500); font-weight:600;">Jun</span>
+                  </div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+                    <div
+                      style="width:100%; height:150px; background:linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%); border-radius:8px 8px 0 0;">
+                    </div>
+                    <span style="font-size:.72rem; color:var(--navy); font-weight:700;">Jul</span>
+                  </div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+                    <div style="width:100%; height:132px; background:var(--gray-200); border-radius:8px 8px 0 0;"></div>
+                    <span style="font-size:.72rem; color:var(--gray-500); font-weight:600;">Aug</span>
+                  </div>
+                  <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;">
+                    <div style="width:100%; height:176px; background:var(--gray-200); border-radius:8px 8px 0 0;"></div>
+                    <span style="font-size:.72rem; color:var(--gray-500); font-weight:600;">Sep</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-panel" style="margin-bottom:0;">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Top Packages</p>
+              </div>
+              <div class="dash-panel-body" style="padding-top:6px;">
+                <div class="trip-item">
+                  <div class="trip-info">
+                    <h4>Maldives Overwater Escape</h4>
+                    <p>214 bookings this quarter</p>
+                  </div>
+                  <span class="status-badge status-active">#1</span>
+                </div>
+                <div class="trip-item">
+                  <div class="trip-info">
+                    <h4>Santorini Sunset Retreat</h4>
+                    <p>178 bookings this quarter</p>
+                  </div>
+                  <span class="status-badge status-active">#2</span>
+                </div>
+                <div class="trip-item">
+                  <div class="trip-info">
+                    <h4>Bali Rainforest Villa</h4>
+                    <p>146 bookings this quarter</p>
+                  </div>
+                  <span class="status-badge status-active">#3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <p class="dash-panel-title">Recent Bookings</p>
+              <a href="404.html" class="btn-dash btn-dash-outline">View All</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Traveller</th>
+                    <th>Package</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class="dash-table-title">Aisha Sharma</p>
+                    </td>
+                    <td>Maldives Overwater Escape</td>
+                    <td>14 Oct 2026</td>
+                    <td>&#36;2,480.00</td>
+                    <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="dash-table-title">Daniel Osei</p>
+                    </td>
+                    <td>Kenya Safari Adventure</td>
+                    <td>09 Oct 2026</td>
+                    <td>&#36;1,950.00</td>
+                    <td><span class="status-badge status-pending">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="dash-table-title">Mei Lin</p>
+                    </td>
+                    <td>Bali Rainforest Villa</td>
+                    <td>07 Oct 2026</td>
+                    <td>&#36;1,120.00</td>
+                    <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+             PAGE: BOOKINGS MANAGEMENT
+        ============================================================ -->
+        <section class="dash-page" id="bookingsPage">
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <p class="dash-panel-title">Bookings Management<span>1,284 total bookings</span></p>
+              <a href="404.html" class="btn-dash btn-dash-primary"><i class="ri-download-2-line"></i> Export CSV</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Booking ID</th>
+                    <th>Traveller</th>
+                    <th>Package</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="dash-table-title">WL-10234</td>
+                    <td>Aisha Sharma</td>
+                    <td>Maldives Overwater Escape</td>
+                    <td>14 Oct 2026</td>
+                    <td>&#36;2,480.00</td>
+                    <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="View booking"><i
+                            class="ri-eye-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit booking"><i
+                            class="ri-edit-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table-title">WL-10233</td>
+                    <td>Daniel Osei</td>
+                    <td>Kenya Safari Adventure</td>
+                    <td>09 Oct 2026</td>
+                    <td>&#36;1,950.00</td>
+                    <td><span class="status-badge status-pending">Pending</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="View booking"><i
+                            class="ri-eye-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Approve booking"><i
+                            class="ri-check-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table-title">WL-10229</td>
+                    <td>Mei Lin</td>
+                    <td>Bali Rainforest Villa</td>
+                    <td>07 Oct 2026</td>
+                    <td>&#36;1,120.00</td>
+                    <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="View booking"><i
+                            class="ri-eye-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit booking"><i
+                            class="ri-edit-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table-title">WL-10217</td>
+                    <td>Carlos Ramirez</td>
+                    <td>Swiss Alps Winter Lodge</td>
+                    <td>21 Dec 2026</td>
+                    <td>&#36;5,120.00</td>
+                    <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="View booking"><i
+                            class="ri-eye-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Delete booking"><i
+                            class="ri-delete-bin-6-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="dash-table-title">WL-10203</td>
+                    <td>Fatima Noor</td>
+                    <td>Aegean Blue Getaway</td>
+                    <td>02 Nov 2026</td>
+                    <td>&#36;1,780.00</td>
+                    <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="View booking"><i
+                            class="ri-eye-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit booking"><i
+                            class="ri-edit-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-two-col">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Booking Analytics<span>Trends over time</span></p>
+              </div>
+              <div class="dash-panel-body" style="height: 100%; min-height: 180px; padding: 16px;">
+                <div
+                  style="display: flex; justify-content: space-around; align-items: flex-end; height: 160px; padding-top: 20px;">
+                  <div style="text-align: center; width: 40px;">
+                    <div style="height: 80px; width: 100%; background: var(--teal); border-radius: 4px 4px 0 0;">
+                    </div>
+                    <span
+                      style="font-size: 0.75rem; color: var(--gray-500); margin-top: 8px; display: block;">Jan</span>
+                  </div>
+                  <div style="text-align: center; width: 40px;">
+                    <div style="height: 120px; width: 100%; background: var(--teal); border-radius: 4px 4px 0 0;">
+                    </div>
+                    <span
+                      style="font-size: 0.75rem; color: var(--gray-500); margin-top: 8px; display: block;">Feb</span>
+                  </div>
+                  <div style="text-align: center; width: 40px;">
+                    <div style="height: 90px; width: 100%; background: var(--teal); border-radius: 4px 4px 0 0;">
+                    </div>
+                    <span
+                      style="font-size: 0.75rem; color: var(--gray-500); margin-top: 8px; display: block;">Mar</span>
+                  </div>
+                  <div style="text-align: center; width: 40px;">
+                    <div
+                      style="height: 140px; width: 100%; background: var(--teal); opacity: 0.7; border-radius: 4px 4px 0 0;">
+                    </div>
+                    <span
+                      style="font-size: 0.75rem; color: var(--gray-500); margin-top: 8px; display: block;">Apr</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Recent Activity<span>Latest booking actions</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                  <li
+                    style="padding: 16px; border-bottom: 1px solid var(--gray-200); display: flex; align-items: flex-start; gap: 12px;">
+                    <div
+                      style="min-width: 8px; height: 8px; border-radius: 50%; background: var(--success); margin-top: 6px;">
+                    </div>
+                    <p style="margin: 0; font-size: 0.85rem; color: var(--gray-600);"><strong
+                        style="color: var(--gray-900);">Sarah Jenkins</strong> booked the Swiss Alps Winter Lodge
+                      package.</p>
+                  </li>
+                  <li
+                    style="padding: 16px; border-bottom: 1px solid var(--gray-200); display: flex; align-items: flex-start; gap: 12px;">
+                    <div style="min-width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; margin-top: 6px;">
+                    </div>
+                    <p style="margin: 0; font-size: 0.85rem; color: var(--gray-600);"><strong
+                        style="color: var(--gray-900);">Michael Chen</strong> modified their dates for Aegean Blue
+                      Getaway.</p>
+                  </li>
+                  <li style="padding: 16px; display: flex; align-items: flex-start; gap: 12px;">
+                    <div
+                      style="min-width: 8px; height: 8px; border-radius: 50%; background: var(--danger); margin-top: 6px;">
+                    </div>
+                    <p style="margin: 0; font-size: 0.85rem; color: var(--gray-600);"><strong
+                        style="color: var(--gray-900);">Emma Watson</strong> cancelled the Santorini Sunset Retreat
+                      trip.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+             PAGE: PACKAGES MANAGEMENT
+        ============================================================ -->
+        <section class="dash-page" id="packagesPage">
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <p class="dash-panel-title">Packages Management<span>24 active holiday packages</span></p>
+              <a href="404.html" class="btn-dash btn-dash-primary"><i class="ri-add-line"></i> Add Package</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Package</th>
+                    <th>Destination</th>
+                    <th>Price</th>
+                    <th>Bookings</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <img class="dash-table-thumb"
+                          src="assets/images/maldives.webp"
+                          alt="" />
+                        <p class="dash-table-title">Maldives Overwater Escape</p>
+                      </div>
+                    </td>
+                    <td>Malé, Maldives</td>
+                    <td>&#36;1,240 / person</td>
+                    <td>214</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit package"><i
+                            class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Delete package"><i
+                            class="ri-delete-bin-6-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <img class="dash-table-thumb"
+                          src="assets/images/greece.webp"
+                          alt="" />
+                        <p class="dash-table-title">Santorini Sunset Retreat</p>
+                      </div>
+                    </td>
+                    <td>Santorini, Greece</td>
+                    <td>&#36;930 / person</td>
+                    <td>178</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit package"><i
+                            class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Delete package"><i
+                            class="ri-delete-bin-6-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <img class="dash-table-thumb"
+                          src="assets/images/bali-image.webp"
+                          alt="" />
+                        <p class="dash-table-title">Bali Rainforest Villa</p>
+                      </div>
+                    </td>
+                    <td>Ubud, Bali</td>
+                    <td>&#36;560 / person</td>
+                    <td>146</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit package"><i
+                            class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Delete package"><i
+                            class="ri-delete-bin-6-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <img class="dash-table-thumb"
+                          src="assets/images/safari.webp"
+                          alt="" />
+                        <p class="dash-table-title">Kenya Safari Adventure</p>
+                      </div>
+                    </td>
+                    <td>Maasai Mara, Kenya</td>
+                    <td>&#36;1,950 / person</td>
+                    <td>92</td>
+                    <td><span class="status-badge status-inactive">Draft</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit package"><i
+                            class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Delete package"><i
+                            class="ri-delete-bin-6-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-two-col">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Package Performance<span>Most viewed and booked</span></p>
+              </div>
+              <div class="dash-panel-body" style="padding: 24px 16px;">
+                <div style="margin-bottom: 24px;">
+                  <div
+                    style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.85rem; font-weight: 500;">
+                    <span>Maldives Overwater Escape</span>
+                    <span>89% Booked</span>
+                  </div>
+                  <div style="width: 100%; background: var(--gray-200); border-radius: 4px; height: 6px;">
+                    <div style="width: 89%; background: var(--teal); height: 100%; border-radius: 4px;"></div>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    style="display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.85rem; font-weight: 500;">
+                    <span>Santorini Sunset Retreat</span>
+                    <span>74% Booked</span>
+                  </div>
+                  <div style="width: 100%; background: var(--gray-200); border-radius: 4px; height: 6px;">
+                    <div style="width: 74%; background: var(--teal); height: 100%; border-radius: 4px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Customer Feedback<span>Reviews on packages</span></p>
+              </div>
+              <div class="dash-panel-body" style="padding: 0;">
+                <div style="padding: 16px; border-bottom: 1px solid var(--gray-200);">
+                  <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 8px;">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                      class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                  </div>
+                  <p style="font-size: 0.85rem; line-height: 1.5; margin: 0 0 8px 0; color: var(--gray-600);">
+                    "Absolutely loved the Maldives trip! Everything was perfectly organized from start to finish."</p>
+                  <span style="color: var(--gray-400); font-size: 0.75rem;">- Jane Doe <span
+                      style="margin: 0 4px;">&bull;</span> 2 days ago</span>
+                </div>
+                <div style="padding: 16px;">
+                  <div style="color: #f59e0b; font-size: 1rem; margin-bottom: 8px;">
+                    <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
+                      class="ri-star-fill"></i><i class="ri-star-half-line"></i>
+                  </div>
+                  <p style="font-size: 0.85rem; line-height: 1.5; margin: 0 0 8px 0; color: var(--gray-600);">"Great
+                    experience in Santorini, though the transfer was slightly delayed. The hotel was fantastic."</p>
+                  <span style="color: var(--gray-400); font-size: 0.75rem;">- Mark Smith <span
+                      style="margin: 0 4px;">&bull;</span> 1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================
+             PAGE: USERS MANAGEMENT
+        ============================================================ -->
+        <section class="dash-page" id="usersPage">
+          <div class="dash-stats-grid" style="grid-template-columns:repeat(3,1fr); margin-bottom:24px;">
+            <div class="dash-stat-card">
+              <div class="dash-stat-top">
+                <div class="dash-stat-icon teal"><i class="ri-user-smile-line"></i></div>
+              </div>
+              <p class="dash-stat-value">9,742</p>
+              <p class="dash-stat-label">Traveller Accounts</p>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-top">
+                <div class="dash-stat-icon navy"><i class="ri-shield-user-line"></i></div>
+              </div>
+              <p class="dash-stat-value">12</p>
+              <p class="dash-stat-label">Admin Accounts</p>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-top">
+                <div class="dash-stat-icon rose"><i class="ri-user-forbid-line"></i></div>
+              </div>
+              <p class="dash-stat-value">37</p>
+              <p class="dash-stat-label">Suspended Accounts</p>
+            </div>
+          </div>
+
+          <div class="dash-panel">
+            <div class="dash-panel-header">
+              <p class="dash-panel-title">Users Management<span>Search and manage traveller accounts</span></p>
+              <a href="404.html" class="btn-dash btn-dash-primary"><i class="ri-user-add-line"></i> Add User</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Joined</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <div class="dash-user-avatar" style="width:36px;height:36px;font-size:.8rem;">AS</div>
+                        <p class="dash-table-title">Aisha Sharma</p>
+                      </div>
+                    </td>
+                    <td>aisha.sharma@example.com</td>
+                    <td>Traveller</td>
+                    <td>12 Jan 2025</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit user"><i class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Suspend user"><i
+                            class="ri-forbid-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <div class="dash-user-avatar" style="width:36px;height:36px;font-size:.8rem;">DO</div>
+                        <p class="dash-table-title">Daniel Osei</p>
+                      </div>
+                    </td>
+                    <td>daniel.osei@example.com</td>
+                    <td>Traveller</td>
+                    <td>03 Mar 2025</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit user"><i class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Suspend user"><i
+                            class="ri-forbid-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <div class="dash-user-avatar" style="width:36px;height:36px;font-size:.8rem;">ML</div>
+                        <p class="dash-table-title">Mei Lin</p>
+                      </div>
+                    </td>
+                    <td>mei.lin@example.com</td>
+                    <td>Traveller</td>
+                    <td>27 Jun 2025</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit user"><i class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Suspend user"><i
+                            class="ri-forbid-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <div class="dash-user-avatar" style="width:36px;height:36px;font-size:.8rem;">RK</div>
+                        <p class="dash-table-title">Rohan Kapoor</p>
+                      </div>
+                    </td>
+                    <td>rohan.kapoor@Stackly.com</td>
+                    <td>Admin</td>
+                    <td>05 Nov 2024</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit user"><i class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Suspend user"><i
+                            class="ri-forbid-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="dash-table-cell-main">
+                        <div class="dash-user-avatar" style="width:36px;height:36px;font-size:.8rem;">CR</div>
+                        <p class="dash-table-title">Carlos Ramirez</p>
+                      </div>
+                    </td>
+                    <td>carlos.ramirez@example.com</td>
+                    <td>Traveller</td>
+                    <td>14 Feb 2026</td>
+                    <td><span class="status-badge status-inactive">Suspended</span></td>
+                    <td>
+                      <div class="dash-actions-cell">
+                        <a href="404.html" class="btn-dash-icon" aria-label="Edit user"><i class="ri-edit-line"></i></a>
+                        <a href="404.html" class="btn-dash-icon" aria-label="Reactivate user"><i
+                            class="ri-check-line"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-two-col">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">User Growth<span>Registrations over time</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <div style="padding: 32px 24px; text-align: center;">
+                  <h3 style="font-size: 2.5rem; margin: 0; color: var(--teal);">+1,248</h3>
+                  <p style="color: var(--gray-500); margin: 8px 0 0 0; font-size: 0.9rem;">New registrations this
+                    month</p>
+                  <div
+                    style="margin-top: 16px; display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; background: rgba(16, 185, 129, 0.1); color: var(--success); border-radius: 20px; font-size: 0.85rem; font-weight: 500;">
+                    <i class="ri-arrow-up-line"></i> 12.5% increase vs last month
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Active Sessions<span>Currently online users</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <div style="padding: 16px;">
+                  <div
+                    style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--gray-200);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <div class="dash-user-avatar" style="width: 36px; height: 36px; font-size: .8rem;">DO</div>
+                      <span style="font-size: 0.9rem; font-weight: 500; color: var(--gray-900);">Daniel Osei</span>
+                    </div>
+                    <span class="status-badge status-active">Online</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                      <div class="dash-user-avatar" style="width: 36px; height: 36px; font-size: .8rem;">ML</div>
+                      <span style="font-size: 0.9rem; font-weight: 500; color: var(--gray-900);">Mei Lin</span>
+                    </div>
+                    <span class="status-badge status-active">Online</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

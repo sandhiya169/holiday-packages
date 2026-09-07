@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Stackly's full range of travel services — flight booking, hotel reservations, visa assistance, custom itineraries, transfers and insurance, all in one place." />
+  <title>Our Services — Stackly Holiday Packages</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/services.css" />
+</head>
+<body>
+  <!-- ============================================================
+       PRELOADER
+  ============================================================ -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="preloader-logo" />
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+  <script src="assets/js/preloader.js"></script>
+
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Stackly Home">
+        <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link">Packages</a></li>
+        <li><a href="blog.html"     class="nav-link">Blog</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn-gold">Sign Up</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <!-- <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="ri-close-line"></i></button> -->
+    <!-- <div class="mobile-logo">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+    </div>
+    <div class="mobile-divider"></div> -->
+    <ul role="list">
+      <li><a href="index.html"    class="mobile-link">Home</a></li>
+      <li><a href="about.html"    class="mobile-link">About</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="packages.html" class="mobile-link">Packages</a></li>
+      <li><a href="blog.html"     class="mobile-link">Blog</a></li>
+      <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a href="login.html" class="btn-outline-nav">Login</a>
+      <a href="signup.html" class="btn-gold">Sign Up</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — PAGE HEADER
+    ============================================================ -->
+    <section class="page-header" id="page-header" aria-label="Services page header">
+      <div class="page-header-bg">
+        <img
+          src="assets/images/bali-image.webp"
+          alt="Traveller planning a trip with a map and passport"
+          class="page-header-img"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="page-header-overlay"></div>
+      </div>
+
+      <div class="page-header-shape" aria-hidden="true"></div>
+
+      <div class="page-header-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb" data-aos="fade-down" data-aos-delay="100">
+          <a href="index.html">Home</a>
+          <i class="ri-arrow-right-s-line"></i>
+          <span>Services</span>
+        </nav>
+
+        <p class="page-header-eyebrow" data-aos="fade-up" data-aos-delay="150">What We Offer</p>
+        <h1 class="page-header-title" data-aos="fade-up" data-aos-delay="220">
+          Every Detail, <em>Handled</em><br />With Care
+        </h1>
+        <p class="page-header-subtitle" data-aos="fade-up" data-aos-delay="290">
+          From the first flight search to the last airport transfer — Stackly
+          manages every moving part of your holiday so you can simply enjoy it.
+        </p>
+
+        <div class="page-header-chips" data-aos="fade-up" data-aos-delay="360">
+          <span><i class="ri-flight-takeoff-line"></i> Flights</span>
+          <span><i class="ri-hotel-line"></i> Stays</span>
+          <span><i class="ri-passport-line"></i> Visas</span>
+          <span><i class="ri-map-2-line"></i> Itineraries</span>
+          <span><i class="ri-shield-check-line"></i> Insurance</span>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — SERVICES INTRO
+    ============================================================ -->
+    <section class="services-intro" id="services-intro" aria-label="Services overview">
+      <div class="container">
+        <div class="intro-inner">
+          <div class="intro-text" data-aos="fade-right">
+            <p class="section-eyebrow">Full-Service Travel Partner</p>
+            <h2 class="section-title">One Team, <span class="text-accent">Every</span> Travel Need</h2>
+            <p class="intro-desc">
+              Planning a holiday involves dozens of small decisions — flights, stays,
+              documents, transport, and cover for the unexpected. We built Stackly
+              so you'd never have to juggle them alone. Tell us where you're dreaming
+              of going, and our specialists take it from there.
+            </p>
+            <a href="404.html" class="btn-outline-primary">
+              <span>See All Services</span>
+              <i class="ri-arrow-down-line"></i>
+            </a>
+          </div>
+
+          <div class="intro-highlights">
+            <div class="highlight-item" data-aos="fade-up" data-aos-delay="0">
+              <div class="highlight-icon"><i class="ri-award-line"></i></div>
+              <h4>Expert Planning</h4>
+              <p>Destination specialists with first-hand travel experience.</p>
+            </div>
+            <div class="highlight-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="highlight-icon"><i class="ri-price-tag-3-line"></i></div>
+              <h4>Best Price Match</h4>
+              <p>Transparent pricing with no hidden booking fees, ever.</p>
+            </div>
+            <div class="highlight-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="highlight-icon"><i class="ri-customer-service-2-line"></i></div>
+              <h4>24/7 Support</h4>
+              <p>Real humans on call before, during, and after your trip.</p>
+            </div>
+            <div class="highlight-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="highlight-icon"><i class="ri-global-line"></i></div>
+              <h4>Global Network</h4>
+              <p>Trusted local partners across 120+ countries worldwide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — CORE SERVICES (journey route showcase)
+    ============================================================ -->
+    <section class="services-route" id="services-grid" aria-label="Our core services">
+      <div class="route-bg-line" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow" data-aos="fade-up">Core Services</p>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Every Stop On <span class="text-accent">Your Journey</span></h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="160">
+            Mix and match any of the services below, or let us bundle them into one seamless package.
+          </p>
+        </div>
+
+        <div class="route-wrap" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- Route rail — the "journey" -->
+          <div class="route-rail" id="routeRail" role="tablist" aria-label="Choose a service to view">
+            <span class="route-rail-track" aria-hidden="true">
+              <span class="route-rail-fill" id="routeRailFill"></span>
+              <!-- <span class="route-rail-plane" id="routeRailPlane"><i class="ri-flight-takeoff-line"></i></span> -->
+            </span>
+
+            <button class="route-stop active" id="routeTab-1" type="button" role="tab" data-svc="1" aria-selected="true" aria-controls="routeStage">
+              <span class="route-stop-dot"><i class="ri-flight-takeoff-line"></i></span>
+              <span class="route-stop-label">Flights</span>
+            </button>
+            <button class="route-stop" id="routeTab-2" type="button" role="tab" data-svc="2" aria-selected="false" tabindex="-1" aria-controls="routeStage">
+              <span class="route-stop-dot"><i class="ri-hotel-line"></i></span>
+              <span class="route-stop-label">Stays</span>
+            </button>
+            <button class="route-stop" id="routeTab-3" type="button" role="tab" data-svc="3" aria-selected="false" tabindex="-1" aria-controls="routeStage">
+              <span class="route-stop-dot"><i class="ri-passport-line"></i></span>
+              <span class="route-stop-label">Visas</span>
+            </button>
+            <button class="route-stop" id="routeTab-4" type="button" role="tab" data-svc="4" aria-selected="false" tabindex="-1" aria-controls="routeStage">
+              <span class="route-stop-dot"><i class="ri-map-2-line"></i></span>
+              <span class="route-stop-label">Itinerary</span>
+            </button>
+            <button class="route-stop" id="routeTab-5" type="button" role="tab" data-svc="5" aria-selected="false" tabindex="-1" aria-controls="routeStage">
+              <span class="route-stop-dot"><i class="ri-taxi-line"></i></span>
+              <span class="route-stop-label">Transport</span>
+            </button>
+            <button class="route-stop" id="routeTab-6" type="button" role="tab" data-svc="6" aria-selected="false" tabindex="-1" aria-controls="routeStage">
+              <span class="route-stop-dot"><i class="ri-shield-check-line"></i></span>
+              <span class="route-stop-label">Insurance</span>
+            </button>
+          </div>
+
+          <!-- Stage — detail for the selected stop -->
+          <div class="route-stage" id="routeStage" role="tabpanel" aria-labelledby="routeTab-1">
+
+            <div class="route-stage-visual">
+              <span class="route-stage-numeral" aria-hidden="true">01</span>
+              <div class="route-stage-shape">
+                <img id="routeStageImg"
+                     src="assets/images/plane.webp"
+                     alt="Airplane wing above the clouds at golden hour" loading="eager" />
+              </div>
+              <div class="route-stage-count"><span id="routeStageNum">01</span><i aria-hidden="true">—</i><span>06</span></div>
+            </div>
+
+            <div class="route-stage-body">
+              <span class="route-stage-tag" id="routeStageTag"><i class="ri-flight-takeoff-line"></i> Service 01</span>
+              <h3 class="route-stage-title" id="routeStageTitle">Flight Booking</h3>
+              <p class="route-stage-desc" id="routeStageDesc">
+                Best-fare flights across 500+ airlines, with flexible dates and seat preferences handled for you — economy to private charter.
+              </p>
+              <ul class="route-stage-features" id="routeStageFeatures">
+                <li>Multi-city &amp; round-trip routing</li>
+                <li>Fare-drop price alerts</li>
+                <li>Seat &amp; baggage add-ons</li>
+              </ul>
+              <a href="contact.html" class="btn-gold route-stage-cta">
+                <span>Get a Quote</span>
+                <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+
+          </div><!-- /.route-stage -->
+
+        </div><!-- /.route-wrap -->
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — PROCESS / HOW WE WORK
+    ============================================================ -->
+    <section class="process" id="process" aria-label="Our working process">
+      <div class="process-bg-shape" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow" data-aos="fade-up">Our Process</p>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">How We Craft Your Journey</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="160">
+            A simple, five-step path from first conversation to touchdown —
+            with a specialist by your side the whole way.
+          </p>
+        </div>
+
+        <div class="process-timeline" id="processTimeline">
+          <div class="process-line" id="processLine" aria-hidden="true"></div>
+
+          <div class="process-step" data-aos="fade-right" data-aos-delay="0">
+            <div class="process-icon"><i class="ri-chat-3-line"></i></div>
+            <div class="process-content">
+              <span class="process-num">01</span>
+              <h3>Free Consultation</h3>
+              <p>Share your dates, budget, and travel style — we listen before we plan.</p>
+            </div>
+          </div>
+
+          <div class="process-step" data-aos="fade-left" data-aos-delay="0">
+            <div class="process-icon"><i class="ri-route-line"></i></div>
+            <div class="process-content">
+              <span class="process-num">02</span>
+              <h3>Itinerary Design</h3>
+              <p>A tailored day-by-day plan lands in your inbox, ready to tweak.</p>
+            </div>
+          </div>
+
+          <div class="process-step" data-aos="fade-right" data-aos-delay="0">
+            <div class="process-icon"><i class="ri-file-list-3-line"></i></div>
+            <div class="process-content">
+              <span class="process-num">03</span>
+              <h3>Booking &amp; Documents</h3>
+              <p>Flights, stays, and visas are booked and confirmed on your behalf.</p>
+            </div>
+          </div>
+
+          <div class="process-step" data-aos="fade-left" data-aos-delay="0">
+            <div class="process-icon"><i class="ri-suitcase-3-line"></i></div>
+            <div class="process-content">
+              <span class="process-num">04</span>
+              <h3>Pre-Trip Prep</h3>
+              <p>Packing lists, local tips, and your full itinerary in one app.</p>
+            </div>
+          </div>
+
+          <div class="process-step" data-aos="fade-right" data-aos-delay="0">
+            <div class="process-icon"><i class="ri-plane-line"></i></div>
+            <div class="process-content">
+              <span class="process-num">05</span>
+              <h3>Departure &amp; Support</h3>
+              <p>You travel, we stay on call — 24/7 support until you're home.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — SERVICE PLANS / PRICING
+    ============================================================ -->
+    <section class="service-plans" id="service-plans" aria-label="Service plans and pricing">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow" data-aos="fade-up">Service Plans</p>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Choose Your Level of Support</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="160">
+            From light-touch bookings to a fully managed concierge experience —
+            pick the plan that matches how hands-on you want us to be.
+          </p>
+        </div>
+
+        <div class="plan-toggle" data-aos="zoom-in" data-aos-delay="200">
+          <span class="toggle-label active" id="toggleMonthlyLabel">Per Trip</span>
+          <button class="toggle-switch" id="planToggle" role="switch" aria-checked="false" aria-label="Switch between per trip and annual membership pricing">
+            <span class="toggle-thumb"></span>
+          </button>
+          <span class="toggle-label" id="toggleYearlyLabel">Annual Membership <em>Save 15%</em></span>
+        </div>
+
+        <div class="plans-grid">
+          <div class="plan-card" data-aos="fade-up" data-aos-delay="0">
+            <h3 class="plan-name">Essential</h3>
+            <p class="plan-desc">Great for independent travellers who just need the bookings sorted.</p>
+            <div class="plan-price">
+              <span class="price-currency">$</span>
+              <span class="price-value" data-monthly="49" data-yearly="499">49</span>
+              <span class="price-period" data-monthly="/ trip" data-yearly="/ year">/ trip</span>
+            </div>
+            <ul class="plan-features">
+              <li><i class="ri-check-line"></i> Flight &amp; hotel booking</li>
+              <li><i class="ri-check-line"></i> Email support</li>
+              <li><i class="ri-check-line"></i> Basic itinerary document</li>
+              <li class="unavailable"><i class="ri-close-line"></i> Visa assistance</li>
+              <li class="unavailable"><i class="ri-close-line"></i> 24/7 phone support</li>
+            </ul>
+            <a href="contact.html" class="btn-outline-primary plan-btn">
+              <span>Get Started</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+          <div class="plan-card featured" data-aos="fade-up" data-aos-delay="100">
+            <span class="plan-badge"><i class="ri-star-fill"></i> Most Popular</span>
+            <h3 class="plan-name">Premium</h3>
+            <p class="plan-desc">Our most-booked plan — full planning support from start to finish.</p>
+            <div class="plan-price">
+              <span class="price-currency">$</span>
+              <span class="price-value" data-monthly="129" data-yearly="1299">129</span>
+              <span class="price-period" data-monthly="/ trip" data-yearly="/ year">/ trip</span>
+            </div>
+            <ul class="plan-features">
+              <li><i class="ri-check-line"></i> Everything in Essential</li>
+              <li><i class="ri-check-line"></i> Custom itinerary planning</li>
+              <li><i class="ri-check-line"></i> Visa &amp; document support</li>
+              <li><i class="ri-check-line"></i> Priority 24/7 phone support</li>
+              <li class="unavailable"><i class="ri-close-line"></i> Dedicated travel concierge</li>
+            </ul>
+            <a href="contact.html" class="btn-gold plan-btn">
+              <span>Get Started</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+          <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="plan-name">Elite</h3>
+            <p class="plan-desc">A dedicated concierge managing every detail of luxury travel.</p>
+            <div class="plan-price">
+              <span class="price-currency">$</span>
+              <span class="price-value" data-monthly="299" data-yearly="2999">299</span>
+              <span class="price-period" data-monthly="/ trip" data-yearly="/ year">/ trip</span>
+            </div>
+            <ul class="plan-features">
+              <li><i class="ri-check-line"></i> Everything in Premium</li>
+              <li><i class="ri-check-line"></i> Dedicated travel concierge</li>
+              <li><i class="ri-check-line"></i> Private transfers included</li>
+              <li><i class="ri-check-line"></i> Premium travel insurance</li>
+              <li><i class="ri-check-line"></i> Trip-in-progress rebooking</li>
+            </ul>
+            <a href="contact.html" class="btn-outline-primary plan-btn">
+              <span>Get Started</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — FAQ
+    ============================================================ -->
+    <section class="services-faq" id="services-faq" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="faq-inner">
+          <div class="faq-intro" data-aos="fade-right">
+            <p class="section-eyebrow">FAQs</p>
+            <h2 class="section-title">Questions, Answered</h2>
+            <p class="section-subtitle" style="margin:0;">
+              Can't find what you're looking for? Our team is one message away.
+            </p>
+            <a href="contact.html" class="btn-outline-primary faq-cta">
+              <span>Contact Us</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+          <div class="faq-list" data-aos="fade-left">
+            <div class="faq-item active">
+              <button class="faq-question" aria-expanded="true">
+                <span>How far in advance should I book my holiday?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>We recommend 6–8 weeks for most international trips so we can secure the best fares and room availability. Peak season and multi-country itineraries are best planned 3+ months ahead.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can I customize an existing package?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Absolutely. Every listed package is a starting point — swap hotels, add destinations, or extend your stay, and your specialist will re-quote it for you at no extra planning fee.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What's included in the price?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Flights, accommodation, and the services listed on your chosen plan are always included. Optional extras like excursions or upgraded insurance are quoted separately, with nothing added without your approval.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do you offer travel insurance?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Yes — every plan can include medical, cancellation, and baggage cover through our insurance partners. Premium and Elite plans bundle it in automatically.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>What if I need to cancel or reschedule?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Cancellation terms depend on your airline and hotel partners, which we always disclose before you book. Where flexible-rate options exist, we point them out so you can decide with full information.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do you provide support during my trip?</span>
+                <i class="ri-add-line faq-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Every traveller gets a 24/7 support line for the length of their trip, so delays, changes, or emergencies are handled the moment they happen — wherever you are in the world.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — CTA
+    ============================================================ -->
+    <section class="services-cta" id="services-cta" aria-label="Call to action">
+      <div class="cta-bg">
+        <img src="assets/images/image.webp" alt="Suitcase and travel essentials packed for a holiday" loading="lazy" />
+        <div class="cta-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+          <div class="cta-icon"><i class="ri-plane-line"></i></div>
+          <h2>Ready to Turn Your <span class="text-accent">Dream Trip</span> Into Reality?</h2>
+          <p>Talk to a Stackly travel specialist today and get a free, no-obligation itinerary within 24 hours.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn-gold">
+              <span>Start Planning</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+            <a href="404.html" class="cta-phone">
+              <i class="ri-phone-fill"></i>
+              <span>+91 9876543210</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+   <!-- =================
+       FOOTER 
+  ====================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo" aria-label="Stackly Home">
+              <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+            </a>
+            <p>Crafting extraordinary holiday experiences since 2010. Your journey to the world's most breathtaking destinations starts here.</p>
+            <div class="footer-socials">
+              <a href="404.html" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="404.html" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="404.html" aria-label="Follow us on Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="Watch us on YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="404.html" aria-label="Follow us on Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Destinations -->
+          <div class="footer-col">
+            <h4>Popular Destinations</h4>
+            <ul role="list">
+              <li><a href="404.html">Maldives</a></li>
+              <li><a href="404.html">Santorini, Greece</a></li>
+              <li><a href="404.html">Bali, Indonesia</a></li>
+              <li><a href="404.html">Swiss Alps</a></li>
+              <li><a href="404.html">Kenya Safari</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul role="list">
+              <li><a href="404.html">Packages</a></li>
+              <li><a href="404.html">Booking</a></li>
+              <li><a href="404.html">FAQs</a></li>
+              <li><a href="404.html">Cancellation Policy</a></li>
+              <li><a href="404.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col footer-contact">
+            <h4>Contact Us</h4>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span>+91 9876543210</span>
+                <small>Mon–Fri 9am–6pm</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>info@thestackly.com </span>
+                <small>We reply within 24 hours</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span>Salem, Tamil Nadu</span>
+                <small>India</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Cookie Settings</a>
+        </div>
+        <div class="footer-payments" aria-label="Accepted payment methods">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/services.js"></script>
+</body>
+</html>

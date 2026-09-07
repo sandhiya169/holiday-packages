@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Stackly. Talk to a travel specialist, find our global offices, or send us a message about your dream holiday." />
+  <title>Contact Us — Stackly | Premium Holiday Packages</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+</head>
+<body>
+  <!-- ============================================================
+       PRELOADER
+  ============================================================ -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="preloader-logo" />
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+  <script src="assets/js/preloader.js"></script>
+
+
+  <!-- ============================================================
+       NAVIGATION (identical to site-wide header)
+  ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Stackly Home">
+        <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link">Packages</a></li>
+        <li><a href="blog.html"     class="nav-link">Blog</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn-gold">Sign Up</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <!-- <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button> -->
+    <!-- <div class="mobile-logo">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+    </div> -->
+    <!-- <div class="mobile-divider"></div> -->
+    <ul role="list">
+      <li><a href="index.html"    class="mobile-link">Home</a></li>
+      <li><a href="about.html"    class="mobile-link">About</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="packages.html" class="mobile-link">Packages</a></li>
+      <li><a href="blog.html"     class="mobile-link">Blog</a></li>
+      <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a href="login.html" class="btn-outline-nav">Login</a>
+      <a href="signup.html" class="btn-gold">Sign Up</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — CONTACT HERO
+    ============================================================ -->
+    <section class="contact-hero" id="contactHero" aria-label="Contact page hero">
+
+      <!-- Full-bleed background -->
+      <div class="contact-hero-bg">
+        <img
+          src="assets/images/image-9.webp"
+          alt="Traveller planning a trip with a map and passport"
+          class="contact-hero-img"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="contact-hero-overlay"></div>
+      </div>
+
+      <!-- Diagonal shape divider at the bottom -->
+      <div class="contact-hero-shape" aria-hidden="true"></div>
+
+      <div class="container contact-hero-inner">
+
+        <!-- LEFT — Text content -->
+        <div class="contact-hero-content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span aria-current="page">Contact</span>
+          </nav>
+
+          <span class="hero-eyebrow">We'd Love To Hear From You</span>
+
+          <h1 class="contact-hero-title" id="contactHeroTitle" data-aos="zoom-in">
+            Let's Start Planning<br /><em>Your Next Journey</em>
+          </h1>
+
+          <p class="contact-hero-subtitle" data-aos="fade-up">
+            Whether it's a honeymoon in Santorini or a family safari in Kenya, our travel
+            specialists are ready to design it with you — no obligation, ever.
+          </p>
+
+          <!-- Quick info row -->
+          <div class="contact-hero-meta">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-stopwatch"></i>
+              <span>Replies within <strong>2 hours</strong></span>
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-headset"></i>
+              <span>Available <strong>24 / 7</strong></span>
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span><strong>Zero</strong> obligation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT — Floating quick-contact card -->
+        <div class="contact-hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-avatar"><i class="fa-solid fa-headset"></i></div>
+            <div>
+              <strong>Talk to a Specialist</strong>
+              <span>Pick your preferred channel</span>
+            </div>
+          </div>
+
+          <div class="hero-card-channels">
+            <a href="tel:+18005555893" class="hero-channel">
+              <span class="channel-icon channel-phone"><i class="fa-solid fa-phone"></i></span>
+              <div class="channel-text">
+                <strong>Call Us</strong>
+                <small>+91 9876543210</small>
+              </div>
+              <i class="fa-solid fa-chevron-right channel-arrow"></i>
+            </a>
+
+            <a href="404.html" class="hero-channel">
+              <span class="channel-icon channel-email"><i class="fa-solid fa-envelope"></i></span>
+              <div class="channel-text">
+                <strong>Email Us</strong>
+                <small>info@thestackly.com</small>
+              </div>
+              <i class="fa-solid fa-chevron-right channel-arrow"></i>
+            </a>
+
+            <a href="404.html" class="hero-channel">
+              <span class="channel-icon channel-chat"><i class="fa-solid fa-comment"></i></span>
+              <div class="channel-text">
+                <strong>Send a Message</strong>
+                <small>Fill out our form below</small>
+              </div>
+              <i class="fa-solid fa-chevron-right channel-arrow"></i>
+            </a>
+
+            <a href="404.html" class="hero-channel">
+              <span class="channel-icon channel-map"><i class="fa-solid fa-location-dot"></i></span>
+              <div class="channel-text">
+                <strong>Visit Us</strong>
+                <small>Salem, Tamil Nadu, India.</small>
+              </div>
+              <i class="fa-solid fa-chevron-right channel-arrow"></i>
+            </a>
+          </div>
+
+          <a href="404.html" class="btn-gold hero-card-cta">
+            Start Planning Now <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <!-- Live indicator -->
+          <div class="hero-card-live">
+            <span class="live-dot"></span>
+            <span>Advisors online now</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+
+    <!-- ============================================================
+         SECTION 2b — STATS BAR (separate section)
+    ============================================================ -->
+    <section class="contact-stats-section" aria-label="Company statistics">
+      <div class="container">
+        <div class="contact-stats-grid">
+
+          <div class="contact-stat-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="contact-stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+            <div class="contact-stat-body">
+              <strong>98,000+</strong>
+              <span>Happy Travellers</span>
+            </div>
+          </div>
+
+          <div class="contact-stats-divider" aria-hidden="true"></div>
+
+          <div class="contact-stat-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-stat-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="contact-stat-body">
+              <strong>15 Years</strong>
+              <span>Industry Experience</span>
+            </div>
+          </div>
+
+          <div class="contact-stats-divider" aria-hidden="true"></div>
+
+          <div class="contact-stat-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="contact-stat-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="contact-stat-body">
+              <strong>4.9 / 5</strong>
+              <span>Average Rating</span>
+            </div>
+          </div>
+
+          <div class="contact-stats-divider" aria-hidden="true"></div>
+
+          <div class="contact-stat-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="contact-stat-icon"><i class="fa-solid fa-earth-americas"></i></div>
+            <div class="contact-stat-body">
+              <strong>120+ Countries</strong>
+              <span>Destinations Covered</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+<!-- ============================================================
+         SECTION 2 — SUPPORT FEATURES STRIP
+    ============================================================ -->
+    <section class="support-features" id="support-features" aria-label="Why contact Stackly">
+      <div class="support-features-bg" aria-hidden="true"></div>
+      <div class="container">
+
+        <div class="support-header" data-aos="fade-up">
+          <span class="section-eyebrow support-eyebrow">Why Choose Us</span>
+          <h2 class="support-title">Every Enquiry Gets <em>Expert</em> Attention</h2>
+          <p class="support-subtitle">From your first message to your last boarding call, we're with you every step of the way.</p>
+        </div>
+
+        <div class="support-grid">
+
+          <div class="support-item" data-aos="fade-up" data-aos-delay="0">
+            <div class="support-item-inner">
+              <div class="support-number">01</div>
+              <div class="support-icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <h3>2-Hour Response</h3>
+              <p>Every enquiry gets a reply from a real advisor within two hours, weekends included.</p>
+              <div class="support-tag"><i class="fa-solid fa-check"></i> Guaranteed</div>
+            </div>
+          </div>
+
+          <div class="support-item" data-aos="fade-up" data-aos-delay="120">
+            <div class="support-item-inner">
+              <div class="support-number">02</div>
+              <div class="support-icon">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <h3>Expert Advisors</h3>
+              <p>Speak with specialists who've personally travelled to the destinations they plan.</p>
+              <div class="support-tag"><i class="fa-solid fa-check"></i> Real experts</div>
+            </div>
+          </div>
+
+          <div class="support-item" data-aos="fade-up" data-aos-delay="240">
+            <div class="support-item-inner">
+              <div class="support-number">03</div>
+              <div class="support-icon">
+                <i class="fa-solid fa-headset"></i>
+              </div>
+              <h3>24/7 Availability</h3>
+              <p>Already travelling? Our support line stays open around the clock, every day.</p>
+              <div class="support-tag"><i class="fa-solid fa-check"></i> Always on</div>
+            </div>
+          </div>
+
+          <div class="support-item" data-aos="fade-up" data-aos-delay="360">
+            <div class="support-item-inner">
+              <div class="support-number">04</div>
+              <div class="support-icon">
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+              <h3>Zero Obligation</h3>
+              <p>Get a tailored itinerary and quote with absolutely no pressure to book.</p>
+              <div class="support-tag"><i class="fa-solid fa-check"></i> No pressure</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Stats moved to separate section below -->
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 3 — CONTACT FORM + INFO PANEL
+    ============================================================ -->
+    <section class="contact-main" id="contact-form" aria-label="Send us a message">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Form -->
+          <div class="contact-form-card" data-aos="zoom-in">
+            <span class="section-eyebrow">Send A Message</span>
+            <h2 class="section-title contact-form-title">Tell Us About Your Dream Trip</h2>
+            <p class="contact-form-sub">Fill out the form below and one of our travel specialists will get back to you shortly.</p>
+
+            <form id="contactForm" action="404.html" method="post" novalidate>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="cName">Full Name</label>
+                  <input type="text" id="cName" name="name" placeholder="Your full name" required />
+                  <span class="field-error">Please enter your name</span>
+                </div>
+                <div class="form-field">
+                  <label for="cEmail">Email Address</label>
+                  <input type="email" id="cEmail" name="email" placeholder="you@example.com" required />
+                  <span class="field-error">Please enter a valid email</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="cPhone">Phone Number</label>
+                  <input type="tel" id="cPhone" name="phone" placeholder="+1 (___) ___-____" />
+                </div>
+                <div class="form-field">
+                  <label for="cSubject">Interested In</label>
+                  <select id="cSubject" name="subject">
+                    <option value="">Select a package type</option>
+                    <option>Beach Getaway</option>
+                    <option>Mountain Adventure</option>
+                    <option>Honeymoon Package</option>
+                    <option>Family Vacation</option>
+                    <option>Custom Itinerary</option>
+                    <option>General Enquiry</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="cMessage">Your Message</label>
+                <textarea id="cMessage" name="message" rows="5" placeholder="Tell us where you'd like to go, when, and how many travellers..." required></textarea>
+                <span class="field-error">Please enter a message</span>
+              </div>
+
+              <div class="form-field checkbox-field">
+                <label class="checkbox-label" for="cConsent">
+                  <input type="checkbox" id="cConsent" name="consent" required />
+                  <span class="checkbox-box"><i class="fa-solid fa-check"></i></span>
+                  I agree to be contacted by Stackly about my travel enquiry.
+                </label>
+                <span class="field-error">Please accept to continue</span>
+              </div>
+
+              <button type="submit" class="btn-gold btn-submit" id="contactSubmitBtn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <div class="form-success" id="formSuccess" aria-live="polite">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <strong>Message sent successfully!</strong>
+                  <span>We'll get back to you within 2 hours.</span>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Info panel -->
+          <aside class="contact-info-panel" data-aos="zoom-in">
+            <div class="info-panel-glow" aria-hidden="true"></div>
+
+            <h3><i class="fa-regular fa-clock"></i> Business Hours</h3>
+            <ul class="hours-list">
+              <li><span>Monday – Friday</span><strong>9:00 AM – 6:00 PM</strong></li>
+              <li><span>Saturday</span><strong>10:00 AM – 4:00 PM</strong></li>
+              <li><span>Sunday</span><strong>Closed</strong></li>
+            </ul>
+
+            <div class="info-divider"></div>
+
+            <h3><i class="fa-solid fa-headset"></i> Prefer To Talk?</h3>
+            <a href="404.html" class="info-contact-link"><i class="fa-solid fa-phone"></i> +91 9876543210</a>
+            <a href="info@thestackly.com " class="info-contact-link"><i class="fa-solid fa-envelope"></i> info@thestackly.com </a>
+
+            <div class="info-divider"></div>
+
+            <h3><i class="fa-regular fa-heart"></i> Follow Our Journeys</h3>
+            <div class="footer-socials info-socials">
+              <a href="404.html" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="404.html" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="404.html" aria-label="Follow us on Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="Follow us on Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — MAP
+    ============================================================ -->
+    <section class="contact-map-section" id="contact-map" aria-label="Our location">
+      <div class="map-wrapper">
+
+        <!-- Static map image — no iframe, no cookie consent needed -->
+        <a
+          href="https://www.google.com/maps?q=Stackly,Salem,Tamil+Nadu,India"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-static-link"
+          aria-label="Open Stackly location in Google Maps"
+        >
+          <img
+            src="assets/images/map-static.webp"
+            alt="Map showing Stackly office location in Salem, Tamil Nadu, India"
+            class="map-static-img"
+            loading="lazy"
+          />
+
+          <!-- Hover prompt -->
+          <div class="map-hover-prompt" aria-hidden="true">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Open in Google Maps</span>
+          </div>
+        </a>
+
+        <!-- Info card -->
+        <div class="map-overlay-card" data-aos="fade-up">
+          <div class="map-pin-pulse" aria-hidden="true">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="map-overlay-text">
+            <h4>Stackly — Salem Office</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu, India</p>
+            <a
+              href="https://www.google.com/maps?q=Stackly,Salem,Tamil+Nadu,India"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline-primary map-directions-btn"
+            >
+              Get Directions <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — OUR GLOBAL OFFICES (CLEAN & SIMPLE)
+    ============================================================ -->
+    <section class="offices" id="offices" aria-label="Our global offices">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">Worldwide Presence</span>
+          <h2 class="section-title">Our Global Offices</h2>
+          <p class="section-subtitle">Visit our advisory lounges or contact your nearest local team directly.</p>
+        </div>
+
+        <!-- Clean City Tabs -->
+        <div class="city-tabs-wrap" data-aos="fade-up" data-aos-delay="100">
+          <div class="city-tabs" role="tablist" aria-label="Select an office">
+            <button class="city-tab-btn active" role="tab" aria-selected="true" aria-controls="city-ny" id="tab-city-ny">
+              New York
+            </button>
+            <button class="city-tab-btn" role="tab" aria-selected="false" aria-controls="city-london" id="tab-city-london">
+              London
+            </button>
+            <button class="city-tab-btn" role="tab" aria-selected="false" aria-controls="city-dubai" id="tab-city-dubai">
+              Dubai
+            </button>
+            <button class="city-tab-btn" role="tab" aria-selected="false" aria-controls="city-singapore" id="tab-city-singapore">
+              Singapore
+            </button>
+          </div>
+        </div>
+
+        <!-- Office Details Card -->
+        <div class="office-simple-card" data-aos="fade-up" data-aos-delay="150">
+
+          <!-- New York -->
+          <div class="office-city-panel active" id="city-ny" role="tabpanel" aria-labelledby="tab-city-ny">
+            <div class="city-panel-split">
+              <div class="city-photo-wrap">
+                <img src="assets/images/dubai.webp" alt="New York City office" loading="lazy" />
+              </div>
+              <div class="city-info-wrap">
+                <div class="city-info-top">
+                  <div class="city-heading">
+                    <h3 class="city-name">Salem</h3>
+                    <span class="city-badge">Global Headquarters</span>
+                  </div>
+                  <p class="city-summary">Our primary Tamil Nadu flagship team in central Salem.</p>
+                </div>
+
+                <div class="city-contact-list">
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="city-meta-text">
+                      <small>Address</small>
+                      <strong>Salem, Tamil Nadu, India.</strong>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div class="city-meta-text">
+                      <small>Phone</small>
+                      <a href="404.html" class="city-link">+91 9876543210</a>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="city-meta-text">
+                      <small>Email</small>
+                      <a href="404.html" class="city-link">info@thestackly.com </a>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-regular fa-clock"></i></div>
+                    <div class="city-meta-text">
+                      <small>Hours</small>
+                      <span>Monday – Friday: 9:00 AM – 6:00 PM EST</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="city-actions">
+                  <a href="https://maps.google.com/?q=123+Explore+Street+New+York" target="_blank" rel="noopener noreferrer" class="btn-gold btn-city-action">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                  </a>
+                  <a href="404.html" class="btn-outline-city">
+                    <i class="fa-solid fa-phone"></i> Call Office
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- London -->
+          <div class="office-city-panel" id="city-london" role="tabpanel" aria-labelledby="tab-city-london">
+            <div class="city-panel-split">
+              <div class="city-photo-wrap">
+                <img src="assets/images/greece.webp" alt="London office" loading="lazy" />
+              </div>
+              <div class="city-info-wrap">
+                <div class="city-info-top">
+                  <div class="city-heading">
+                    <h3 class="city-name">London</h3>
+                    <span class="city-badge">Europe Hub</span>
+                  </div>
+                  <p class="city-summary">Our European team handling UK, Mediterranean & Alpine journeys.</p>
+                </div>
+
+                <div class="city-contact-list">
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="city-meta-text">
+                      <small>Address</small>
+                      <strong>45 Compass Lane, Mayfair, London EC2 4AB</strong>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div class="city-meta-text">
+                      <small>Phone</small>
+                      <a href="404.html" class="city-link">+44 20 7946 0958</a>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="city-meta-text">
+                      <small>Email</small>
+                      <a href="404.html" class="city-link">london@Stackly.com</a>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-regular fa-clock"></i></div>
+                    <div class="city-meta-text">
+                      <small>Hours</small>
+                      <span>Monday – Friday: 9:00 AM – 6:00 PM GMT</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="city-actions">
+                  <a href="https://maps.google.com/?q=Mayfair+London" target="_blank" rel="noopener noreferrer" class="btn-gold btn-city-action">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                  </a>
+                  <a href="404.html" class="btn-outline-city">
+                    <i class="fa-solid fa-phone"></i> Call Office
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dubai -->
+          <div class="office-city-panel" id="city-dubai" role="tabpanel" aria-labelledby="tab-city-dubai">
+            <div class="city-panel-split">
+              <div class="city-photo-wrap">
+                <img src="assets/images/image-5.webp" alt="Dubai office" loading="lazy" />
+              </div>
+              <div class="city-info-wrap">
+                <div class="city-info-top">
+                  <div class="city-heading">
+                    <h3 class="city-name">Dubai</h3>
+                    <span class="city-badge">Middle East Hub</span>
+                  </div>
+                  <p class="city-summary">Our Gulf & Indian Ocean team based along Dubai Marina.</p>
+                </div>
+
+                <div class="city-contact-list">
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="city-meta-text">
+                      <small>Address</small>
+                      <strong>Marina Walk, Level 38, Tower 12, Dubai Marina</strong>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div class="city-meta-text">
+                      <small>Phone</small>
+                      <a href="404.html" class="city-link">+971 4 555 0132</a>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="city-meta-text">
+                      <small>Email</small>
+                      <a href="404.html" class="city-link">dubai@Stackly.com</a>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-regular fa-clock"></i></div>
+                    <div class="city-meta-text">
+                      <small>Hours</small>
+                      <span>Sunday – Thursday: 9:00 AM – 7:00 PM GST</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="city-actions">
+                  <a href="https://maps.google.com/?q=Dubai+Marina" target="_blank" rel="noopener noreferrer" class="btn-gold btn-city-action">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                  </a>
+                  <a href="404.html" class="btn-outline-city">
+                    <i class="fa-solid fa-phone"></i> Call Office
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Singapore -->
+          <div class="office-city-panel" id="city-singapore" role="tabpanel" aria-labelledby="tab-city-singapore">
+            <div class="city-panel-split">
+              <div class="city-photo-wrap">
+                <img src="assets/images/image.webp" alt="Singapore office" loading="lazy" />
+              </div>
+              <div class="city-info-wrap">
+                <div class="city-info-top">
+                  <div class="city-heading">
+                    <h3 class="city-name">Singapore</h3>
+                    <span class="city-badge">Asia Pacific Hub</span>
+                  </div>
+                  <p class="city-summary">Our Asia-Pacific bureau in the central Marina View district.</p>
+                </div>
+
+                <div class="city-contact-list">
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="city-meta-text">
+                      <small>Address</small>
+                      <strong>8 Marina View, #24-01 Asia Square, Singapore 018960</strong>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div class="city-meta-text">
+                      <small>Phone</small>
+                      <a href="404.html" class="city-link">+65 6555 0187</a>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="city-meta-text">
+                      <small>Email</small>
+                      <a href="404.html" class="city-link">singapore@Stackly.com</a>
+                    </div>
+                  </div>
+                  <div class="city-contact-row">
+                    <div class="city-icon-box"><i class="fa-regular fa-clock"></i></div>
+                    <div class="city-meta-text">
+                      <small>Hours</small>
+                      <span>Monday – Friday: 9:00 AM – 6:00 PM SGT</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="city-actions">
+                  <a href="https://maps.google.com/?q=Asia+Square+Singapore" target="_blank" rel="noopener noreferrer" class="btn-gold btn-city-action">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                  </a>
+                  <a href="404.html" class="btn-outline-city">
+                    <i class="fa-solid fa-phone"></i> Call Office
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — FAQ ACCORDION
+    ============================================================ -->
+    <section class="contact-faq" id="faq" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">Got Questions?</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Answers to what travellers ask us most before reaching out.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+            <button class="faq-question" aria-expanded="false">
+              <span>How quickly will I hear back after submitting the form?</span>
+              <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Our travel specialists reply to every enquiry within two hours during business hours, and within 24 hours if you write over a weekend or holiday.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="80">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do I need to know my exact travel dates before contacting you?</span>
+              <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Not at all. Many travellers reach out with just a rough idea — a season, a budget, or a bucket-list destination — and we help narrow it down from there.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="160">
+            <button class="faq-question" aria-expanded="false">
+              <span>Is there a fee for getting a custom itinerary quote?</span>
+              <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>No. Consultations and quotes are completely free with zero obligation to book. You only pay once you're ready to confirm your trip.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="240">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I speak to someone in a local office instead of the call centre?</span>
+              <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes — use the office numbers listed above to reach our New York, London, Dubai, or Singapore teams directly during their local business hours.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="320">
+            <button class="faq-question" aria-expanded="false">
+              <span>What if I need help while I'm already travelling?</span>
+              <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Our support line is staffed 24/7 for travellers currently on a Stackly package, so help is always a phone call away, wherever you are.</p>
+            </div>
+          </div>
+
+          <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do you offer group or corporate travel enquiries?</span>
+              <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. Select "General Enquiry" in the form above and mention your group size — a dedicated group-travel advisor will follow up with tailored options.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — CTA BANNER
+    ============================================================ -->
+    <section class="contact-cta" id="contact-cta" aria-label="Talk to a travel expert">
+      <div class="contact-cta-bg">
+        <img src="assets/images/image-6.webp" alt="Traveller looking out over a scenic coastal cliff" loading="lazy" />
+        <div class="contact-cta-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="contact-cta-content" data-aos="zoom-in">
+          <div class="newsletter-icon"><i class="fa-solid fa-headset"></i></div>
+          <h2>Still Have <span class="text-accent">Questions?</span></h2>
+          <p>Speak directly with a travel specialist who can help design your perfect itinerary — no obligation, no pressure.</p>
+          <div class="cta-btn-group">
+            <a href="404.html" class="btn-gold cta-magnetic"><i class="fa-solid fa-phone"></i><span>Call Now</span></a>
+            <a href="404.html" class="btn-outline-nav cta-outline cta-magnetic" id="startChatBtn"><i class="fa-solid fa-comment"></i><span>Start Live Chat</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================
+       FOOTER 
+  ====================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo" aria-label="Stackly Home">
+              <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+            </a>
+            <p>Crafting extraordinary holiday experiences since 2010. Your journey to the world's most breathtaking destinations starts here.</p>
+            <div class="footer-socials">
+              <a href="404.html" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="404.html" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="404.html" aria-label="Follow us on Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="Watch us on YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="404.html" aria-label="Follow us on Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Destinations -->
+          <div class="footer-col">
+            <h4>Popular Destinations</h4>
+            <ul role="list">
+              <li><a href="404.html">Maldives</a></li>
+              <li><a href="404.html">Santorini, Greece</a></li>
+              <li><a href="404.html">Bali, Indonesia</a></li>
+              <li><a href="404.html">Swiss Alps</a></li>
+              <li><a href="404.html">Kenya Safari</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul role="list">
+              <li><a href="404.html">Packages</a></li>
+              <li><a href="404.html">Booking</a></li>
+              <li><a href="404.html">FAQs</a></li>
+              <li><a href="404.html">Cancellation Policy</a></li>
+              <li><a href="404.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col footer-contact">
+            <h4>Contact Us</h4>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span>+91 9876543210</span>
+                <small>Mon–Fri 9am–6pm</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>info@thestackly.com </span>
+                <small>We reply within 24 hours</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span>Salem, Tamil Nadu</span>
+                <small>India</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Cookie Settings</a>
+        </div>
+        <div class="footer-payments" aria-label="Accepted payment methods">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
+</body>
+</html>

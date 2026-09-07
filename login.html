@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to your Stackly account to manage bookings, wishlists, and holiday packages." />
+  <title>Sign In — Stackly</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Base stylesheet (shared tokens, buttons, reset) -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Auth-only stylesheet (additive) -->
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body class="auth-body">
+
+  <div class="auth-wrapper">
+
+    <!-- ============================================================
+         VISUAL PANEL
+    ============================================================ -->
+    <aside class="auth-visual" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop"
+        alt=""
+        loading="eager"
+      />
+      <div class="auth-visual-overlay"></div>
+      <div class="auth-visual-content">
+        <a href="index.html" class="auth-visual-logo">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly" />
+        </a>
+
+        <div class="auth-visual-quote">
+          <span class="quote-mark">&ldquo;</span>
+          <p>Travel isn't always pretty. It isn't always comfortable. But that's okay — the journey changes you.</p>
+          <cite>— Anthony Bourdain</cite>
+        </div>
+
+        <div class="auth-visual-badges">
+          <span class="badge-item"><i class="ri-shield-check-fill"></i> Best Price Guarantee</span>
+          <span class="badge-item"><i class="ri-customer-service-2-fill"></i> 24/7 Support</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============================================================
+         FORM PANEL
+    ============================================================ -->
+    <div class="auth-form-panel">
+      <div class="auth-panel-top">
+        <a href="index.html" class="auth-mobile-logo" aria-label="Stackly Home">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly" />
+        </a>
+        <a href="index.html" class="auth-back-home">
+          <i class="ri-arrow-left-line"></i> Back to Home
+        </a>
+      </div>
+
+      <div class="auth-form-center">
+        <div class="auth-card">
+          <p class="auth-eyebrow">Stackly Account</p>
+          <h1 class="auth-title" id="loginTitle">Welcome Back</h1>
+          <p class="auth-subtitle" id="loginSubtitle">Sign in to manage your trips and bookings.</p>
+
+          <!-- Traveller / Admin toggle -->
+          <div class="role-toggle" role="radiogroup" aria-label="Sign in as">
+            <input type="radio" id="roleTraveller" name="loginRole" value="traveller" checked />
+            <label for="roleTraveller"><i class="ri-user-smile-line"></i> Traveller</label>
+
+            <input type="radio" id="roleAdmin" name="loginRole" value="admin" />
+            <label for="roleAdmin"><i class="ri-shield-user-line"></i> Admin</label>
+          </div>
+
+          <div class="form-alert" id="loginAlert" role="alert">
+            <i class="ri-error-warning-fill"></i>
+            <span>Please fix the highlighted fields before continuing.</span>
+          </div>
+
+          <!-- Login form — validation only. No credentials are stored or verified. -->
+          <form class="auth-form" id="loginForm" novalidate autocomplete="off">
+
+            <div class="field-group">
+              <label class="field-label" for="loginEmail">Email address</label>
+              <div class="field-input-wrap">
+                <i class="ri-mail-line"></i>
+                <input type="email" id="loginEmail" name="loginEmail" placeholder="you@example.com" autocomplete="off" />
+              </div>
+              <p class="field-error-msg"><i class="ri-error-warning-line"></i> <span></span></p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="loginPassword">Password</label>
+              <div class="field-input-wrap">
+                <i class="ri-lock-line"></i>
+                <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your password" autocomplete="off" />
+                <button type="button" class="field-toggle-visibility" aria-label="Show password">
+                  <i class="ri-eye-line"></i>
+                </button>
+              </div>
+              <p class="field-error-msg"><i class="ri-error-warning-line"></i> <span></span></p>
+            </div>
+
+            <div class="field-checkbox-row">
+              <label class="checkbox-label">
+                <input type="checkbox" id="rememberMe" name="rememberMe" />
+                Remember me
+              </label>
+              <a href="404.html" class="forgot-link" onclick="event.preventDefault();">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn-gold btn-auth-submit">
+              <span class="btn-label">Sign In</span>
+              <i class="ri-arrow-right-line"></i>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <div class="auth-divider">or continue with</div>
+
+          <div class="social-row">
+            <a href="404.html" type="button" class="btn-social google" data-provider="Google">
+              <i class="ri-google-fill"></i> Google
+            </a>
+            <a href="404.html" type="button" class="btn-social facebook" data-provider="Facebook">
+              <i class="ri-facebook-fill"></i> Facebook
+            </a>
+          </div>
+
+          <p class="auth-switch">Don't have an account? <a href="signup.html">Create one</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="auth-toast" id="authToast" role="status" aria-live="polite">
+    <i class="ri-checkbox-circle-fill"></i>
+    <div>
+      <p class="auth-toast-title">Title</p>
+      <p class="auth-toast-msg">Message</p>
+    </div>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

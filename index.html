@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover premium holiday packages to the world's most breathtaking destinations. Book your dream vacation today." />
+  <title>Stackly — Premium Holiday Packages</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Index Page Styles -->
+  <link rel="stylesheet" href="assets/css/index.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       PRELOADER
+  ============================================================ -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="preloader-logo" />
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+  <script src="assets/js/preloader.js"></script>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Stackly Home">
+        <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link">Packages</a></li>
+        <li><a href="blog.html"     class="nav-link">Blog</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html"  class="btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn-gold">Sign Up</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <!-- <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="ri-close-line"></i></button>
+    <div class="mobile-logo">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+    </div>
+    <div class="mobile-divider"></div> -->
+    <ul role="list">
+      <li><a href="index.html"    class="mobile-link">Home</a></li>
+      <li><a href="about.html"    class="mobile-link">About</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="packages.html" class="mobile-link">Packages</a></li>
+      <li><a href="blog.html"     class="mobile-link">Blog</a></li>
+      <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a href="login.html" class="btn-outline-nav">Login</a>
+      <a href="signup.html" class="btn-gold">Sign Up</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — HERO (Split layout)
+    ============================================================ -->
+    <section class="hero-v2" id="hero" aria-label="Hero section">
+
+      <!-- Left: content -->
+      <div class="hero-v2-left">
+        <div class="hero-v2-tag">
+          <i class="ri-award-fill"></i>
+          <span>#1 Travel Brand 2026</span>
+        </div>
+
+        <h1 class="hero-v2-title" data-hero-reveal>
+          Discover the World's
+          <em>Most Breathtaking</em>
+          Destinations
+        </h1>
+
+        <p class="hero-v2-sub" data-hero-reveal>
+          Curated luxury holiday packages crafted for unforgettable experiences —
+          from sun-kissed beaches to snow-capped peaks.
+        </p>
+
+        <!-- Search -->
+        <form class="hero-v2-search" id="heroSearchForm" role="search" aria-label="Search holiday packages" novalidate>
+          <div class="hero-v2-field">
+            <label for="heroDestination">Destination</label>
+            <input type="text" id="heroDestination" placeholder="Where to?" autocomplete="off" aria-describedby="heroSearchError" />
+          </div>
+          <div class="hero-v2-field">
+            <label for="heroDate">Travel Date</label>
+            <input type="date" id="heroDate" aria-describedby="heroSearchError" />
+          </div>
+          <div class="hero-v2-field">
+            <label for="heroGuests">Guests</label>
+            <select id="heroGuests">
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4+">4+ People</option>
+            </select>
+          </div>
+          <button class="hero-v2-search-btn" aria-label="Search packages">
+            <i class="ri-search-line"></i> Search
+          </button>
+        </form>
+        <p class="hero-v2-search-error" id="heroSearchError" role="alert" aria-live="polite"></p>
+
+        <!-- Trust -->
+        <div class="hero-v2-trust">
+          <div class="hero-v2-trust-item">
+            <i class="ri-shield-check-fill"></i>
+            <span>Best Price Guarantee</span>
+          </div>
+          <div class="hero-v2-trust-item">
+            <i class="ri-customer-service-2-fill"></i>
+            <span>24/7 Support</span>
+          </div>
+          <div class="hero-v2-trust-item">
+            <i class="ri-flight-takeoff-fill"></i>
+            <span>Free Cancellation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: stacked images -->
+      <div class="hero-v2-right" aria-hidden="true">
+        <div class="hero-v2-images">
+          <div class="hero-v2-img-top" data-aos="zoom-in">
+            <img
+              src="assets/images/image.webp"
+              alt="Maldives overwater bungalows"
+              loading="eager"
+              fetchpriority="high"
+            />
+            <div class="hero-img-label">
+              <i class="ri-map-pin-fill"></i> Maldives
+            </div>
+          </div>
+          <div class="hero-v2-img-bottom" data-aos="zoom-in" data-aos-delay="200">
+            <img
+              src="assets/images/bali.webp"
+              alt="Bali tropical jungle temple"
+              loading="eager"
+            />
+            <div class="hero-img-label">
+              <i class="ri-map-pin-fill"></i> Bali, Indonesia
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — STATS (Marquee ticker)
+    ============================================================ -->
+    <div class="stats-ticker" id="stats" aria-label="Company statistics" role="marquee">
+      <div class="stats-ticker-inner" aria-hidden="true">
+
+        <!-- First set -->
+        <div class="ticker-item">
+          <span class="ticker-num" data-target="120">0</span>
+          <span class="ticker-num">+</span>
+          <span class="ticker-label">Countries Covered</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num" data-target="98000">0</span>
+          <span class="ticker-num">+</span>
+          <span class="ticker-label">Happy Travellers</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num" data-target="850">0</span>
+          <span class="ticker-num">+</span>
+          <span class="ticker-label">Holiday Packages</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num" data-target="4.9" data-decimal="true">0</span>
+          <span class="ticker-num">/5</span>
+          <span class="ticker-label">Average Rating</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num">15</span>
+          <span class="ticker-num">+</span>
+          <span class="ticker-label">Years of Expertise</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num">500</span>
+          <span class="ticker-num">+</span>
+          <span class="ticker-label">Expert Advisors</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <!-- Duplicate for seamless loop -->
+        <div class="ticker-item">
+          <span class="ticker-num">120+</span>
+          <span class="ticker-label">Countries Covered</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num">98K+</span>
+          <span class="ticker-label">Happy Travellers</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num">850+</span>
+          <span class="ticker-label">Holiday Packages</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num">4.9/5</span>
+          <span class="ticker-label">Average Rating</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num">15+</span>
+          <span class="ticker-label">Years of Expertise</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+        <div class="ticker-item">
+          <span class="ticker-num">500+</span>
+          <span class="ticker-label">Expert Advisors</span>
+        </div>
+        <div class="ticker-sep"></div>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 3 — PACKAGES (Showcase rows)
+    ============================================================ -->
+    <section class="packages-v2" id="packages" aria-label="Featured holiday packages">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">Handpicked For You</span>
+          <h2 class="section-title">Featured Holiday <span class="text-accent">Packages</span></h2>
+          <p class="section-subtitle">Each package is carefully curated by our travel experts to deliver extraordinary experiences at exceptional value.</p>
+        </div>
+
+        <!-- Filter -->
+        <!-- <div class="pkg-filter" data-aos="fade-up" data-aos-delay="100" role="tablist" aria-label="Package category filter">
+          <button class="pkg-filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="pkg-filter-btn" data-filter="beach" role="tab" aria-selected="false">Beach</button>
+          <button class="pkg-filter-btn" data-filter="mountain" role="tab" aria-selected="false">Mountain</button>
+          <button class="pkg-filter-btn" data-filter="city" role="tab" aria-selected="false">City Break</button>
+          <button class="pkg-filter-btn" data-filter="safari" role="tab" aria-selected="false">Safari</button>
+        </div> -->
+
+        <!-- Showcase rows -->
+        <div class="pkg-showcase" id="pkgShowcase">
+
+          <!-- Row 1 — Maldives -->
+          <article class="pkg-row" data-category="beach" data-aos="fade-up" data-aos-delay="0">
+            <div class="pkg-row-img">
+              <img src="assets/images/maldives.webp" alt="Maldives crystal-clear waters and overwater bungalows" loading="lazy" />
+              <span class="pkg-row-badge">Best Seller</span>
+            </div>
+            <div class="pkg-row-info">
+              <div class="pkg-row-location"><i class="ri-map-pin-fill"></i> Maldives</div>
+              <h3 class="pkg-row-title">Maldives Overwater Paradise</h3>
+              <div class="pkg-row-meta">
+                <span><i class="ri-time-line"></i> 7 Nights</span>
+                <span><i class="ri-group-line"></i> 2 Persons</span>
+                <span><i class="ri-star-fill"></i> 4.9 (312 reviews)</span>
+              </div>
+              <div class="pkg-row-tags">
+                <span><i class="ri-flight-takeoff-line"></i> Flights Included</span>
+                <span><i class="ri-hotel-line"></i> Overwater Resort</span>
+                <span><i class="ri-restaurant-line"></i> All Meals</span>
+                <span><i class="ri-ship-line"></i> Speed Boat Transfer</span>
+              </div>
+              <div class="pkg-row-bottom">
+                <div class="pkg-row-price">
+                  <span class="from">From</span>
+                  <span class="amount">$3,299</span>
+                  <span class="per"> / person</span>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <button class="pkg-wishlist-btn" aria-label="Add Maldives to wishlist"><i class="ri-heart-line"></i></button>
+                  <a href="contact.html" class="pkg-row-book">Book Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Row 2 — Swiss Alps -->
+          <article class="pkg-row" data-category="mountain" data-aos="fade-up" data-aos-delay="0">
+            <div class="pkg-row-img">
+              <img src="assets/images/swiss-alps-winter.webp" alt="Swiss Alps mountain scenery with snow-covered peaks" loading="lazy" />
+              <span class="pkg-row-badge teal">Popular</span>
+            </div>
+            <div class="pkg-row-info">
+              <div class="pkg-row-location"><i class="ri-map-pin-fill"></i> Switzerland</div>
+              <h3 class="pkg-row-title">Swiss Alps Winter Escape</h3>
+              <div class="pkg-row-meta">
+                <span><i class="ri-time-line"></i> 10 Nights</span>
+                <span><i class="ri-group-line"></i> 2 Persons</span>
+                <span><i class="ri-star-fill"></i> 4.8 (198 reviews)</span>
+              </div>
+              <div class="pkg-row-tags">
+                <span><i class="ri-flight-takeoff-line"></i> Flights Included</span>
+                <span><i class="ri-hotel-line"></i> Alpine Chalet</span>
+                <span><i class="ri-restaurant-line"></i> Breakfast Daily</span>
+                <span><i class="ri-skiing-line"></i> Ski Pass</span>
+              </div>
+              <div class="pkg-row-bottom">
+                <div class="pkg-row-price">
+                  <span class="from">From</span>
+                  <span class="amount">$4,599</span>
+                  <span class="per"> / person</span>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <button class="pkg-wishlist-btn" aria-label="Add Swiss Alps to wishlist"><i class="ri-heart-line"></i></button>
+                  <a href="contact.html" class="pkg-row-book">Book Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Row 3 — Paris -->
+          <article class="pkg-row" data-category="city" data-aos="fade-up" data-aos-delay="0">
+            <div class="pkg-row-img">
+              <img src="assets/images/paris.webp" alt="Paris Eiffel Tower at sunset" loading="lazy" />
+              <span class="pkg-row-badge rose">New</span>
+            </div>
+            <div class="pkg-row-info">
+              <div class="pkg-row-location"><i class="ri-map-pin-fill"></i> Paris, France</div>
+              <h3 class="pkg-row-title">Parisian Romance Getaway</h3>
+              <div class="pkg-row-meta">
+                <span><i class="ri-time-line"></i> 5 Nights</span>
+                <span><i class="ri-group-line"></i> 2 Persons</span>
+                <span><i class="ri-star-fill"></i> 4.7 (241 reviews)</span>
+              </div>
+              <div class="pkg-row-tags">
+                <span><i class="ri-flight-takeoff-line"></i> Flights Included</span>
+                <span><i class="ri-hotel-line"></i> Boutique Hotel</span>
+                <span><i class="ri-restaurant-line"></i> Breakfast Daily</span>
+                <span><i class="ri-gallery-line"></i> Museum Passes</span>
+              </div>
+              <div class="pkg-row-bottom">
+                <div class="pkg-row-price">
+                  <span class="from">From</span>
+                  <span class="amount">$2,199</span>
+                  <span class="per"> / person</span>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <button class="pkg-wishlist-btn" aria-label="Add Paris to wishlist"><i class="ri-heart-line"></i></button>
+                  <a href="contact.html" class="pkg-row-book">Book Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Row 4 — Santorini -->
+          <article class="pkg-row" data-category="beach" data-aos="fade-up" data-aos-delay="0">
+            <div class="pkg-row-img">
+              <img src="assets/images/sunset.webp" alt="Santorini white buildings overlooking the sea" loading="lazy" />
+            </div>
+            <div class="pkg-row-info">
+              <div class="pkg-row-location"><i class="ri-map-pin-fill"></i> Santorini, Greece</div>
+              <h3 class="pkg-row-title">Santorini Sunset Luxury</h3>
+              <div class="pkg-row-meta">
+                <span><i class="ri-time-line"></i> 6 Nights</span>
+                <span><i class="ri-group-line"></i> 2 Persons</span>
+                <span><i class="ri-star-fill"></i> 4.9 (178 reviews)</span>
+              </div>
+              <div class="pkg-row-tags">
+                <span><i class="ri-flight-takeoff-line"></i> Flights Included</span>
+                <span><i class="ri-home-6-line"></i> Private Villa</span>
+                <span><i class="ri-restaurant-line"></i> Half Board</span>
+                <span><i class="ri-sailboat-line"></i> Catamaran Tour</span>
+              </div>
+              <div class="pkg-row-bottom">
+                <div class="pkg-row-price">
+                  <span class="from">From</span>
+                  <span class="amount">$2,899</span>
+                  <span class="per"> / person</span>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <button class="pkg-wishlist-btn" aria-label="Add Santorini to wishlist"><i class="ri-heart-line"></i></button>
+                  <a href="contact.html" class="pkg-row-book">Book Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Row 5 — Kenya Safari -->
+          <article class="pkg-row" data-category="safari" data-aos="fade-up" data-aos-delay="0">
+            <div class="pkg-row-img">
+              <img src="assets/images/safari.webp" alt="African safari with elephants on the savannah" loading="lazy" />
+              <span class="pkg-row-badge">Top Rated</span>
+            </div>
+            <div class="pkg-row-info">
+              <div class="pkg-row-location"><i class="ri-map-pin-fill"></i> Kenya, Africa</div>
+              <h3 class="pkg-row-title">Maasai Mara Safari Adventure</h3>
+              <div class="pkg-row-meta">
+                <span><i class="ri-time-line"></i> 8 Nights</span>
+                <span><i class="ri-group-line"></i> 4 Persons</span>
+                <span><i class="ri-star-fill"></i> 5.0 (97 reviews)</span>
+              </div>
+              <div class="pkg-row-tags">
+                <span><i class="ri-flight-takeoff-line"></i> Flights Included</span>
+                <span><i class="ri-home-6-line"></i> Safari Lodge</span>
+                <span><i class="ri-restaurant-line"></i> Full Board</span>
+                <span><i class="ri-camera-line"></i> Game Drives</span>
+              </div>
+              <div class="pkg-row-bottom">
+                <div class="pkg-row-price">
+                  <span class="from">From</span>
+                  <span class="amount">$5,499</span>
+                  <span class="per"> / person</span>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <button class="pkg-wishlist-btn" aria-label="Add Kenya Safari to wishlist"><i class="ri-heart-line"></i></button>
+                  <a href="contact.html" class="pkg-row-book">Book Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Row 6 — Japan -->
+          <article class="pkg-row" data-category="mountain" data-aos="fade-up" data-aos-delay="0">
+            <div class="pkg-row-img">
+              <img src="assets/images/japan-cherry-blossom.webp" alt="Japan cherry blossom with Mount Fuji" loading="lazy" />
+              <span class="pkg-row-badge teal">Limited</span>
+            </div>
+            <div class="pkg-row-info">
+              <div class="pkg-row-location"><i class="ri-map-pin-fill"></i> Japan</div>
+              <h3 class="pkg-row-title">Japan Cherry Blossom Tour</h3>
+              <div class="pkg-row-meta">
+                <span><i class="ri-time-line"></i> 12 Nights</span>
+                <span><i class="ri-group-line"></i> 2 Persons</span>
+                <span><i class="ri-star-fill"></i> 4.9 (203 reviews)</span>
+              </div>
+              <div class="pkg-row-tags">
+                <span><i class="ri-flight-takeoff-line"></i> Flights Included</span>
+                <span><i class="ri-hotel-line"></i> Ryokan Stay</span>
+                <span><i class="ri-restaurant-line"></i> Breakfast Daily</span>
+                <span><i class="ri-train-line"></i> Bullet Train Pass</span>
+              </div>
+              <div class="pkg-row-bottom">
+                <div class="pkg-row-price">
+                  <span class="from">From</span>
+                  <span class="amount">$3,799</span>
+                  <span class="per"> / person</span>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center;">
+                  <button class="pkg-wishlist-btn" aria-label="Add Japan tour to wishlist"><i class="ri-heart-line"></i></button>
+                  <a href="contact.html" class="pkg-row-book">Book Now <i class="ri-arrow-right-line"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /pkg-showcase -->
+
+        <div class="packages-v2-cta" data-aos="fade-up">
+          <a href="services.html" class="btn-outline-primary">View All Packages <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — HOW IT WORKS (2×2 stepped grid)
+    ============================================================ -->
+    <section class="hiw-v2" id="how-it-works" aria-label="How it works">
+      <div class="hiw-v2-watermark" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">Simple Process</span>
+          <h2 class="section-title">Plan Your Trip in <span class="text-accent">4 Easy Steps</span></h2>
+          <p class="section-subtitle">From dreaming to departure — we make holiday planning effortless and enjoyable.</p>
+        </div>
+
+        <div class="hiw-v2-steps">
+
+          <div class="hiw-v2-step" data-aos="fade-up" data-aos-delay="0">
+            <div class="hiw-v2-num">01</div>
+            <div class="hiw-v2-body">
+              <div class="hiw-v2-icon"><i class="ri-search-eye-line"></i></div>
+              <h3>Choose Your Destination</h3>
+              <p>Browse our curated collection of holiday packages or tell us your dream destination and we'll find the perfect match for your travel style.</p>
+            </div>
+          </div>
+
+          <div class="hiw-v2-step" data-aos="fade-up" data-aos-delay="100">
+            <div class="hiw-v2-num">02</div>
+            <div class="hiw-v2-body">
+              <div class="hiw-v2-icon"><i class="ri-calendar-check-line"></i></div>
+              <h3>Select Your Dates</h3>
+              <p>Pick your preferred travel dates and duration. We'll show live availability and the best prices for your chosen travel window.</p>
+            </div>
+          </div>
+
+          <div class="hiw-v2-step" data-aos="fade-up" data-aos-delay="200">
+            <div class="hiw-v2-num">03</div>
+            <div class="hiw-v2-body">
+              <div class="hiw-v2-icon"><i class="ri-settings-4-line"></i></div>
+              <h3>Customise Your Package</h3>
+              <p>Personalise your trip with add-ons — room upgrades, excursions, private transfers, and travel insurance tailored exactly to you.</p>
+            </div>
+          </div>
+
+          <div class="hiw-v2-step" data-aos="fade-up" data-aos-delay="300">
+            <div class="hiw-v2-num">04</div>
+            <div class="hiw-v2-body">
+              <div class="hiw-v2-icon"><i class="ri-flight-takeoff-line"></i></div>
+              <h3>Pack &amp; Depart</h3>
+              <p>Receive your personalised itinerary and digital travel documents. All that's left is to pack your bags and enjoy the adventure!</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — DESTINATIONS (List rows with hover reveal)
+    ============================================================ -->
+    <section class="dest-v2" id="destinations" aria-label="Top destinations">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">Explore The Globe</span>
+          <h2 class="section-title">Top <span class="text-accent">Destinations</span> This Season</h2>
+          <p class="section-subtitle">From tropical paradises to cultural capitals — destinations loved by thousands of travellers.</p>
+        </div>
+
+        <div class="dest-v2-list" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="dest-v2-row" tabindex="0" role="link" aria-label="Explore Bali, Indonesia">
+            <span class="dest-v2-num">01</span>
+            <div class="dest-v2-info">
+              <div class="dest-v2-name">Bali, Indonesia</div>
+              <div class="dest-v2-sub">42 packages &nbsp;·&nbsp; Tropical &amp; Cultural</div>
+            </div>
+            <div class="dest-v2-thumb">
+              <img src="assets/images/bali-image.webp" alt="Bali tropical temple" loading="lazy" />
+            </div>
+            <div class="dest-v2-action">
+              <div class="dest-v2-price">
+                <small>From</small>
+                $1,299
+              </div>
+              <div class="dest-v2-arrow"><i class="ri-arrow-right-up-line"></i></div>
+            </div>
+          </div>
+
+          <div class="dest-v2-row" tabindex="0" role="link" aria-label="Explore Rajasthan, India">
+            <span class="dest-v2-num">02</span>
+            <div class="dest-v2-info">
+              <div class="dest-v2-name">Rajasthan, India</div>
+              <div class="dest-v2-sub">28 packages &nbsp;·&nbsp; Heritage &amp; Culture</div>
+            </div>
+            <div class="dest-v2-thumb">
+              <img src="assets/images/rajasthan.webp" alt="India" loading="lazy" />
+            </div>
+            <div class="dest-v2-action">
+              <div class="dest-v2-price">
+                <small>From</small>
+                $899
+              </div>
+              <div class="dest-v2-arrow"><i class="ri-arrow-right-up-line"></i></div>
+            </div>
+          </div>
+
+          <div class="dest-v2-row" tabindex="0" role="link" aria-label="Explore New York, USA">
+            <span class="dest-v2-num">03</span>
+            <div class="dest-v2-info">
+              <div class="dest-v2-name">New York, USA</div>
+              <div class="dest-v2-sub">35 packages &nbsp;·&nbsp; City &amp; Entertainment</div>
+            </div>
+            <div class="dest-v2-thumb">
+              <img src="assets/images/usa.webp" alt="New York City skyline" loading="lazy" />
+            </div>
+            <div class="dest-v2-action">
+              <div class="dest-v2-price">
+                <small>From</small>
+                $1,599
+              </div>
+              <div class="dest-v2-arrow"><i class="ri-arrow-right-up-line"></i></div>
+            </div>
+          </div>
+
+          <div class="dest-v2-row" tabindex="0" role="link" aria-label="Explore Venice, Italy">
+            <span class="dest-v2-num">04</span>
+            <div class="dest-v2-info">
+              <div class="dest-v2-name">Venice, Italy</div>
+              <div class="dest-v2-sub">19 packages &nbsp;·&nbsp; Romantic &amp; Historic</div>
+            </div>
+            <div class="dest-v2-thumb">
+              <img src="assets/images/venice.webp" alt="Venice canals with gondolas" loading="lazy" />
+            </div>
+            <div class="dest-v2-action">
+              <div class="dest-v2-price">
+                <small>From</small>
+                $1,099
+              </div>
+              <div class="dest-v2-arrow"><i class="ri-arrow-right-up-line"></i></div>
+            </div>
+          </div>
+
+          <div class="dest-v2-row" tabindex="0" role="link" aria-label="Explore Dubai, UAE">
+            <span class="dest-v2-num">05</span>
+            <div class="dest-v2-info">
+              <div class="dest-v2-name">Dubai, UAE</div>
+              <div class="dest-v2-sub">31 packages &nbsp;·&nbsp; Luxury &amp; Modern</div>
+            </div>
+            <div class="dest-v2-thumb">
+              <img src="assets/images/dubai.webp" alt="Dubai skyline at sunset" loading="lazy" />
+            </div>
+            <div class="dest-v2-action">
+              <div class="dest-v2-price">
+                <small>From</small>
+                $1,799
+              </div>
+              <div class="dest-v2-arrow"><i class="ri-arrow-right-up-line"></i></div>
+            </div>
+          </div>
+
+          <div class="dest-v2-row" tabindex="0" role="link" aria-label="Explore Santorini, Greece">
+            <span class="dest-v2-num">06</span>
+            <div class="dest-v2-info">
+              <div class="dest-v2-name">Santorini, Greece</div>
+              <div class="dest-v2-sub">24 packages &nbsp;·&nbsp; Beach &amp; Romantic</div>
+            </div>
+            <div class="dest-v2-thumb">
+              <img src="assets/images/greece.webp" alt="Santorini white buildings" loading="lazy" />
+            </div>
+            <div class="dest-v2-action">
+              <div class="dest-v2-price">
+                <small>From</small>
+                $1,399
+              </div>
+              <div class="dest-v2-arrow"><i class="ri-arrow-right-up-line"></i></div>
+            </div>
+          </div>
+
+        </div><!-- /dest-v2-list -->
+
+        <div class="packages-cta" data-aos="fade-up" style="margin-top:48px;">
+          <a href="services.html" class="btn-outline-primary">All Destinations <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — WHY CHOOSE US (Diagonal split)
+    ============================================================ -->
+    <section class="why-v2" id="why-us" aria-label="Why choose Stackly">
+      <div class="container">
+        <div class="why-v2-inner">
+
+          <!-- Left: text & feature list -->
+          <div class="why-v2-left" data-aos="fade-right">
+            <span class="why-v2-eyebrow">Why Stackly</span>
+            <h2 class="why-v2-title">
+              Travel With Confidence &amp;<br>
+              <span class="accent">Pure Luxury</span>
+            </h2>
+            <p class="why-v2-desc">
+              We don't just sell holidays — we craft extraordinary experiences. With over 15 years of expertise, our passionate team of travel specialists is dedicated to turning your travel dreams into reality.
+            </p>
+
+            <div class="why-v2-features">
+              <div class="why-v2-feat">
+                <span class="why-v2-feat-num">01</span>
+                <div class="why-v2-feat-body">
+                  <h4>Best Price Guarantee</h4>
+                  <p>Find it cheaper elsewhere? We'll match any price and give you an extra 5% off. No questions asked.</p>
+                </div>
+              </div>
+              <div class="why-v2-feat">
+                <span class="why-v2-feat-num">02</span>
+                <div class="why-v2-feat-body">
+                  <h4>100% Secure Booking</h4>
+                  <p>Your payments are fully protected with industry-leading encryption and ATOL financial protection.</p>
+                </div>
+              </div>
+              <div class="why-v2-feat">
+                <span class="why-v2-feat-num">03</span>
+                <div class="why-v2-feat-body">
+                  <h4>Expert Travel Advisors</h4>
+                  <p>Our team has personally visited every destination — real advice from real travellers who've been there.</p>
+                </div>
+              </div>
+              <div class="why-v2-feat">
+                <span class="why-v2-feat-num">04</span>
+                <div class="why-v2-feat-body">
+                  <h4>Tailored Experiences</h4>
+                  <p>Every itinerary is personalised to match your style, budget, and unique travel preferences.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="packages.html" class="btn-gold" style="margin-top:8px;">Start Planning <i class="ri-arrow-right-line"></i></a>
+          </div>
+
+          <!-- Right: image with floating stats -->
+          <div class="why-v2-right" data-aos="fade-left" data-aos-delay="100">
+            <div class="why-v2-img-wrap">
+              <img
+                src="assets/images/image-3.webp"
+                alt="Happy couple on a scenic mountain road trip"
+                loading="lazy"
+              />
+              <div class="why-v2-badge why-v2-badge-1">
+                <div class="why-v2-badge-icon"><i class="ri-trophy-fill"></i></div>
+                <div>
+                  <strong>Award-Winning</strong>
+                  <span>Best Agency 2026</span>
+                </div>
+              </div>
+              <div class="why-v2-badge why-v2-badge-2">
+                <div class="why-v2-badge-icon"><i class="ri-user-smile-fill"></i></div>
+                <div>
+                  <strong>98,000+</strong>
+                  <span>Happy Travellers</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — TESTIMONIALS (Nav + large quote)
+    ============================================================ -->
+    <section class="testi-v2" id="testimonials" aria-label="Customer reviews">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">Real Stories</span>
+          <h2 class="section-title">What Our <span class="text-accent">Travellers Say</span></h2>
+          <p class="section-subtitle">Don't just take our word for it — hear from thousands of happy adventurers.</p>
+        </div>
+
+        <div class="testi-v2-wrap" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Left: reviewer nav -->
+          <nav class="testi-v2-nav" aria-label="Testimonial navigation">
+            <button class="testi-v2-nav-item active" data-testi="0" aria-pressed="true">
+              <img class="testi-nav-avatar" src="assets/images/testimonial-1.webp" alt="Sarah Mitchell" loading="lazy" />
+              <div class="testi-nav-meta">
+                <strong>Sarah Mitchell</strong>
+                <span>Maldives, 2026</span>
+              </div>
+            </button>
+            <button class="testi-v2-nav-item" data-testi="1" aria-pressed="false">
+              <img class="testi-nav-avatar" src="assets/images/testimonial-2.webp" alt="James Okonkwo" loading="lazy" />
+              <div class="testi-nav-meta">
+                <strong>James Okonkwo</strong>
+                <span>Kenya, 2026</span>
+              </div>
+            </button>
+            <button class="testi-v2-nav-item" data-testi="2" aria-pressed="false">
+              <img class="testi-nav-avatar" src="assets/images/testimonial-3.webp" alt="Emma Clarke" loading="lazy" />
+              <div class="testi-nav-meta">
+                <strong>Emma Clarke</strong>
+                <span>Switzerland, 2025</span>
+              </div>
+            </button>
+            <button class="testi-v2-nav-item" data-testi="3" aria-pressed="false">
+              <img class="testi-nav-avatar" src="assets/images/testimonial-4.webp" alt="David Park" loading="lazy" />
+              <div class="testi-nav-meta">
+                <strong>David Park</strong>
+                <span>Japan, 2025</span>
+              </div>
+            </button>
+          </nav>
+
+          <!-- Right: quote display -->
+          <div class="testi-v2-display" role="region" aria-live="polite" aria-label="Testimonial quote">
+            <div class="testi-v2-quote-mark" aria-hidden="true">"</div>
+
+            <!-- Panel 0 -->
+            <div class="testi-v2-panel active" id="testi-panel-0">
+              <div class="testi-v2-stars" aria-label="5 out of 5 stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+              </div>
+              <blockquote class="testi-v2-text">
+                "The Maldives package was absolutely flawless. Every detail was taken care of — from airport transfers to the most breathtaking overwater villa. Stackly made our honeymoon truly unforgettable."
+              </blockquote>
+              <div class="testi-v2-author">
+                <img src="assets/images/testimonial-1.webp" alt="Sarah Mitchell" loading="lazy" />
+                <div class="testi-v2-author-info">
+                  <strong>Sarah Mitchell</strong>
+                  <span>Maldives Honeymoon Package</span>
+                </div>
+                <div class="testi-v2-dest"><i class="ri-map-pin-fill"></i> Maldives</div>
+              </div>
+            </div>
+
+            <!-- Panel 1 -->
+            <div class="testi-v2-panel" id="testi-panel-1">
+              <div class="testi-v2-stars" aria-label="5 out of 5 stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+              </div>
+              <blockquote class="testi-v2-text">
+                "The Kenya safari was beyond anything I imagined. Watching the Great Migration with my family was a once-in-a-lifetime moment. The team was responsive, knowledgeable, and genuinely passionate about travel."
+              </blockquote>
+              <div class="testi-v2-author">
+                <img src="assets/images/testimonial-2.webp
+                " alt="James Okonkwo" loading="lazy" />
+                <div class="testi-v2-author-info">
+                  <strong>James Okonkwo</strong>
+                  <span>Kenya Safari Adventure</span>
+                </div>
+                <div class="testi-v2-dest"><i class="ri-map-pin-fill"></i> Kenya</div>
+              </div>
+            </div>
+
+            <!-- Panel 2 -->
+            <div class="testi-v2-panel" id="testi-panel-2">
+              <div class="testi-v2-stars" aria-label="5 out of 5 stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+              </div>
+              <blockquote class="testi-v2-text">
+                "Our Swiss Alps winter trip was pure magic. The chalet was stunning, the skiing was world-class, and the personal touches Stackly added made it feel completely bespoke. Already planning next year's trip!"
+              </blockquote>
+              <div class="testi-v2-author">
+                <img src="assets/images/testimonial-3.webp" alt="Emma Clarke" loading="lazy" />
+                <div class="testi-v2-author-info">
+                  <strong>Emma Clarke</strong>
+                  <span>Swiss Alps Winter Escape</span>
+                </div>
+                <div class="testi-v2-dest"><i class="ri-map-pin-fill"></i> Switzerland</div>
+              </div>
+            </div>
+
+            <!-- Panel 3 -->
+            <div class="testi-v2-panel" id="testi-panel-3">
+              <div class="testi-v2-stars" aria-label="5 out of 5 stars">
+                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+              </div>
+              <blockquote class="testi-v2-text">
+                "Japan during cherry blossom season is everything the photos promise and more. Stackly's local guides were exceptional and the ryokan experiences were deeply authentic. A trip I'll cherish forever."
+              </blockquote>
+              <div class="testi-v2-author">
+                <img src="assets/images/testimonial-4.webp" alt="David Park" loading="lazy" />
+                <div class="testi-v2-author-info">
+                  <strong>David Park</strong>
+                  <span>Japan Cherry Blossom Tour</span>
+                </div>
+                <div class="testi-v2-dest"><i class="ri-map-pin-fill"></i> Japan</div>
+              </div>
+            </div>
+
+          </div><!-- /testi-v2-display -->
+        </div><!-- /testi-v2-wrap -->
+
+        <!-- Trust strip — Enhanced Marquee -->
+        <div class="trust-strip">
+          <p class="trust-strip-label"><span>As Featured In</span></p>
+          <div class="trust-marquee-track">
+            <div class="trust-marquee-inner">
+
+              <!-- Set 1 -->
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-newspaper-fill"></i></span>
+                <span class="trust-brand-name">Forbes Travel</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-quill-pen-fill"></i></span>
+                <span class="trust-brand-name">Condé Nast</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-earth-fill"></i></span>
+                <span class="trust-brand-name">Lonely Planet</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-compass-3-fill"></i></span>
+                <span class="trust-brand-name">National Geographic</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-suitcase-fill"></i></span>
+                <span class="trust-brand-name">Travel + Leisure</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-flight-takeoff-fill"></i></span>
+                <span class="trust-brand-name">Condé Nast Traveller</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-award-fill"></i></span>
+                <span class="trust-brand-name">Wanderlust Magazine</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+
+              <!-- Set 2 — duplicate for seamless loop -->
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-newspaper-fill"></i></span>
+                <span class="trust-brand-name">Forbes Travel</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-quill-pen-fill"></i></span>
+                <span class="trust-brand-name">Condé Nast</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-earth-fill"></i></span>
+                <span class="trust-brand-name">Lonely Planet</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-compass-3-fill"></i></span>
+                <span class="trust-brand-name">National Geographic</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-suitcase-fill"></i></span>
+                <span class="trust-brand-name">Travel + Leisure</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-flight-takeoff-fill"></i></span>
+                <span class="trust-brand-name">Condé Nast Traveller</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+              <a class="trust-brand" href="404.html" tabindex="-1" aria-hidden="true">
+                <span class="trust-brand-icon"><i class="ri-award-fill"></i></span>
+                <span class="trust-brand-name">Wanderlust Magazine</span>
+              </a>
+              <span class="trust-sep" aria-hidden="true">◆</span>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8 — GALLERY (Magazine asymmetric grid)
+    ============================================================ -->
+    <section class="gallery-v2" id="gallery" aria-label="Travel photo gallery">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-eyebrow">Visual Stories</span>
+          <h2 class="section-title">Captured <span class="text-accent">Memories</span></h2>
+          <p class="section-subtitle">A glimpse into the extraordinary destinations and moments our travellers have experienced.</p>
+        </div>
+
+        <div class="gallery-v2-grid" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="gal-item gal-item-1" tabindex="0" role="button" aria-label="View tropical beach photo">
+            <img src="assets/images/image-2.webp" alt="Tropical beach with crystal-clear turquoise water" loading="lazy" />
+            <div class="gal-overlay">
+              <div class="gal-zoom"><i class="ri-zoom-in-line"></i></div>
+            </div>
+          </div>
+
+          <div class="gal-item gal-item-2" tabindex="0" role="button" aria-label="View mountain photo">
+            <img src="assets/images/image-5.webp" alt="Aerial view of green mountains with misty morning fog" loading="lazy" />
+            <div class="gal-overlay">
+              <div class="gal-zoom"><i class="ri-zoom-in-line"></i></div>
+            </div>
+          </div>
+
+          <div class="gal-item gal-item-3" tabindex="0" role="button" aria-label="View Dubai photo">
+            <img src="assets/images/greece.webp" alt="Dubai modern architecture at dusk" loading="lazy" />
+            <div class="gal-overlay">
+              <div class="gal-zoom"><i class="ri-zoom-in-line"></i></div>
+            </div>
+          </div>
+
+          <div class="gal-item gal-item-4" tabindex="0" role="button" aria-label="View aurora borealis photo">
+            <img src="assets/images/image-9.webp" alt="Northern lights aurora borealis over Iceland" loading="lazy" />
+            <div class="gal-overlay">
+              <div class="gal-zoom"><i class="ri-zoom-in-line"></i></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox"><i class="ri-close-line"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i class="ri-arrow-left-s-line"></i></button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next image"><i class="ri-arrow-right-s-line"></i></button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 9 — NEWSLETTER (Typographic CTA)
+    ============================================================ -->
+    <section class="newsletter-v2" id="newsletter" aria-label="Newsletter sign up">
+
+      <!-- Decorative background elements -->
+      <div class="nl-bg-orb nl-orb-1" aria-hidden="true"></div>
+      <div class="nl-bg-orb nl-orb-2" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="newsletter-v2-inner" data-aos="fade-up">
+
+          <!-- Left: large heading -->
+          <div class="newsletter-v2-left">
+            <span class="newsletter-v2-eyebrow">
+              <i class="ri-mail-send-fill"></i> Stay in the Loop
+            </span>
+            <h2 class="newsletter-v2-title">
+              Get Exclusive<br>
+              Travel <span class="line-accent">Deals</span><br>
+              First.
+            </h2>
+            <div class="nl-social-proof">
+              <div class="nl-avatars" aria-hidden="true">
+                <img src="assets/images/testimonial-2.webp" alt="" />
+                <img src="assets/images/testimonial-3.webp" alt="" />
+                <img src="assets/images/testimonial-1.webp" alt="" />
+              </div>
+              <p class="nl-social-text"><strong>50,000+</strong> travellers already subscribed</p>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="newsletter-v2-right">
+            <p class="newsletter-v2-sub">
+              Receive early-bird discounts, curated destination guides, and limited-time offers straight to your inbox. No spam — ever.
+            </p>
+
+            <form class="newsletter-v2-form" id="newsletterForm" novalidate autocomplete="off">
+
+              <!-- Name field -->
+              <div class="nl-field-group" id="nlNameGroup">
+                <label for="newsletterName" class="nl-label">
+                  <i class="ri-user-3-line"></i> Full Name
+                </label>
+                <input
+                  type="text"
+                  id="newsletterName"
+                  name="name"
+                  placeholder="e.g. Priya Sharma"
+                  aria-required="true"
+                  aria-describedby="nlNameError"
+                  autocomplete="name"
+                />
+                <span class="nl-field-error" id="nlNameError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Email field -->
+              <div class="nl-field-group" id="nlEmailGroup">
+                <label for="newsletterEmail" class="nl-label">
+                  <i class="ri-mail-line"></i> Email Address
+                </label>
+                <input
+                  type="email"
+                  id="newsletterEmail"
+                  name="email"
+                  placeholder="e.g. priya@email.com"
+                  aria-required="true"
+                  aria-describedby="nlEmailError"
+                  autocomplete="email"
+                />
+                <span class="nl-field-error" id="nlEmailError" role="alert" aria-live="polite"></span>
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="nl-submit-btn" id="newsletterSubmit">
+                <span class="nl-btn-text">Subscribe Now</span>
+                <i class="ri-arrow-right-line nl-btn-icon"></i>
+              </button>
+
+              <p class="newsletter-v2-note">
+                <i class="ri-shield-check-line"></i> No spam, ever. Unsubscribe any time.
+              </p>
+
+            </form>
+
+            <!-- Perks -->
+            <div class="newsletter-v2-perks">
+              <span><i class="ri-gift-fill"></i> Exclusive deals</span>
+              <span><i class="ri-map-2-fill"></i> Destination guides</span>
+              <span><i class="ri-percent-fill"></i> Up to 40% off</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+   <!-- ===============
+       FOOTER 
+  =======================-->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo" aria-label="Stackly Home">
+              <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+            </a>
+            <p>Crafting extraordinary holiday experiences since 2010. Your journey to the world's most breathtaking destinations starts here.</p>
+            <div class="footer-socials">
+              <a href="404.html" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="404.html" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="404.html" aria-label="Follow us on Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="Watch us on YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="404.html" aria-label="Follow us on Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Destinations -->
+          <div class="footer-col">
+            <h4>Popular Destinations</h4>
+            <ul role="list">
+              <li><a href="404.html">Maldives</a></li>
+              <li><a href="404.html">Santorini, Greece</a></li>
+              <li><a href="404.html">Bali, Indonesia</a></li>
+              <li><a href="404.html">Swiss Alps</a></li>
+              <li><a href="404.html">Kenya Safari</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul role="list">
+              <li><a href="404.html">Packages</a></li>
+              <li><a href="404.html">Booking</a></li>
+              <li><a href="404.html">FAQs</a></li>
+              <li><a href="404.html">Cancellation Policy</a></li>
+              <li><a href="404.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col footer-contact">
+            <h4>Contact Us</h4>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span>+91 9876543210</span>
+                <small>Mon–Fri 9am–6pm</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>info@thestackly.com </span>
+                <small>We reply within 24 hours</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span>Salem, Tamil Nadu</span>
+                <small>India</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Cookie Settings</a>
+        </div>
+        <div class="footer-payments" aria-label="Accepted payment methods">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your Stackly account to start planning premium holiday packages." />
+  <title>Create Account — Stackly</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Base stylesheet (shared tokens, buttons, reset) -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Auth-only stylesheet (additive) -->
+  <link rel="stylesheet" href="assets/css/auth.css" />
+</head>
+<body class="auth-body">
+
+  <div class="auth-wrapper">
+
+    <!-- ============================================================
+         VISUAL PANEL
+    ============================================================ -->
+    <aside class="auth-visual" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=80&auto=format&fit=crop"
+        alt=""
+        loading="eager"
+      />
+      <div class="auth-visual-overlay"></div>
+      <div class="auth-visual-content">
+        <a href="index.html" class="auth-visual-logo">
+          <img src="assets/images/stackly-logo.webp" alt="Stackly" />
+        </a>
+
+        <div class="auth-visual-quote">
+          <span class="quote-mark">&ldquo;</span>
+          <p>The world is a book, and those who do not travel read only one page.</p>
+          <cite>— Saint Augustine</cite>
+        </div>
+
+        <div class="auth-visual-badges">
+          <span class="badge-item"><i class="ri-map-pin-fill"></i> 120+ Countries</span>
+          <span class="badge-item"><i class="ri-user-heart-fill"></i> 50,000+ Travellers</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============================================================
+         FORM PANEL
+    ============================================================ -->
+    <div class="auth-form-panel">
+      <div class="auth-panel-top">
+        <a href="index.html" class="auth-mobile-logo" aria-label="stackly Home">
+          <img src="assets/images/stackly-logo.webp" alt="stackly" />
+        </a>
+        <a href="index.html" class="auth-back-home">
+          <i class="ri-arrow-left-line"></i> Back to Home
+        </a>
+      </div>
+
+      <div class="auth-form-center">
+        <div class="auth-card">
+          <p class="auth-eyebrow">Stackly Account</p>
+          <h1 class="auth-title">Create Your Account</h1>
+          <p class="auth-subtitle">Join 50,000+ travellers planning their next adventure.</p>
+
+          <div class="form-alert" id="signupAlert" role="alert">
+            <i class="ri-error-warning-fill"></i>
+            <span>Please fix the highlighted fields before continuing.</span>
+          </div>
+
+          <!-- Signup form — validation only. No email/password is ever stored. -->
+          <form class="auth-form" id="signupForm" novalidate autocomplete="off">
+
+            <div class="field-group">
+              <label class="field-label" for="signupName">Full name</label>
+              <div class="field-input-wrap">
+                <i class="ri-user-line"></i>
+                <input type="text" id="signupName" name="signupName" placeholder="Your full name" autocomplete="off" />
+              </div>
+              <p class="field-error-msg"><i class="ri-error-warning-line"></i> <span></span></p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="signupEmail">Email address</label>
+              <div class="field-input-wrap">
+                <i class="ri-mail-line"></i>
+                <input type="email" id="signupEmail" name="signupEmail" placeholder="you@example.com" autocomplete="off" />
+              </div>
+              <p class="field-error-msg"><i class="ri-error-warning-line"></i> <span></span></p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="signupPassword">Password</label>
+              <div class="field-input-wrap">
+                <i class="ri-lock-line"></i>
+                <input type="password" id="signupPassword" name="signupPassword" placeholder="Create a password" autocomplete="off" />
+                <button type="button" class="field-toggle-visibility" aria-label="Show password" aria-pressed="false">
+                  <i class="ri-eye-line"></i>
+                </button>
+              </div>
+              <!-- <div class="pw-strength" id="pwStrengthMeter"><span></span><span></span><span></span><span></span></div> -->
+              <span class="pw-strength-label" id="pwStrengthLabel">Use 8+ characters with letters & numbers</span>
+              <p class="field-error-msg"><i class="ri-error-warning-line"></i> <span></span></p>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="signupConfirm">Confirm password</label>
+              <div class="field-input-wrap">
+                <i class="ri-lock-line"></i>
+                <input type="password" id="signupConfirm" name="signupConfirm" placeholder="Re-enter your password" autocomplete="off" />
+                <button type="button" class="field-toggle-visibility" aria-label="Show password" aria-pressed="false">
+                  <i class="ri-eye-line"></i>
+                </button>
+              </div>
+              <p class="field-error-msg"><i class="ri-error-warning-line"></i> <span></span></p>
+            </div>
+
+            <div class="field-group">
+              <div class="field-checkbox-row" style="margin-bottom:0;">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="signupTerms" name="signupTerms" />
+                  I agree to the <a href="404.html" onclick="event.preventDefault();">Terms of Service</a> and <a href="404.html" onclick="event.preventDefault();">Privacy Policy</a>
+                </label>
+              </div>
+              <p class="field-error-msg"><i class="ri-error-warning-line"></i> <span></span></p>
+            </div>
+
+            <button type="submit" class="btn-gold btn-auth-submit">
+              <span class="btn-label">Create Account</span>
+              <i class="ri-arrow-right-line"></i>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <div class="auth-divider">or continue with</div>
+
+          <div class="social-row">
+            <a href="404.html" type="button" class="btn-social google" data-provider="Google">
+              <i class="fab fa-google"></i> Google
+            </a>
+            <a href="404.html" type="button" class="btn-social facebook" data-provider="Facebook">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+          </div>
+
+          <p class="auth-switch">Already have an account? <a href="login.html">Sign in</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="auth-toast" id="authToast" role="status" aria-live="polite">
+    <i class="ri-checkbox-circle-fill"></i>
+    <div>
+      <p class="auth-toast-title">Title</p>
+      <p class="auth-toast-msg">Message</p>
+    </div>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Browse 200+ handpicked holiday packages — beaches, mountains, honeymoons, safaris and more. Filter by budget, style and duration and book with Stackly." />
+  <title>Holiday Packages — Stackly | Premium Holiday Packages</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/packages.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       PRELOADER
+  ============================================================ -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="preloader-logo" />
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+  <script src="assets/js/preloader.js"></script>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Stackly Home">
+        <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="packages.html" class="nav-link">Packages</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn-gold">Sign Up</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <ul role="list">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="packages.html" class="mobile-link">Packages</a></li>
+      <li><a href="blog.html" class="mobile-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a href="login.html" class="btn-outline-nav">Login</a>
+      <a href="signup.html" class="btn-gold">Sign Up</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — PACKAGES HERO
+    ============================================================ -->
+    <section class="pkg-hero" id="pkg-hero" aria-label="Holiday packages introduction">
+      <div class="pkg-hero-bg">
+        <img src="assets/images/maldives.webp" alt="Tropical overwater villas at sunset" class="pkg-hero-img"
+          id="pkgHeroImg" loading="eager" fetchpriority="high" />
+        <div class="pkg-hero-overlay"></div>
+      </div>
+
+      <div class="pkg-hero-content">
+        <p class="about-breadcrumb" data-aos="fade-down" data-aos-delay="0">
+          <a href="index.html">Home</a>
+          <i class="ri-arrow-right-s-line"></i>
+          <span>Packages</span>
+        </p>
+
+        <p class="hero-eyebrow" data-aos="fade-up" data-aos-delay="80">Handpicked Journeys</p>
+
+        <h1 class="pkg-hero-title">
+          Find Your Next <em>Escape</em><br />
+          Among 200+ Packages
+        </h1>
+
+        <p class="about-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+          Beaches, mountains, safaris and honeymoons — every itinerary vetted by our travel
+          specialists and priced with zero hidden fees.
+        </p>
+
+        <div class="pkg-hero-cta" data-aos="fade-up" data-aos-delay="280">
+          <a href="404.html" class="btn-gold">
+            <span>Browse Packages</span>
+            <i class="ri-arrow-down-line"></i>
+          </a>
+          <a href="404.html" class="btn-outline-primary btn-outline-light">
+            <span>Filter By Style</span>
+            <i class="ri-filter-3-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating stat badges -->
+      <div class="about-float-badge pkg-badge-1" id="pkgFloatBadge1">
+        <i class="ri-map-pin-2-fill"></i>
+        <div><strong>50+</strong><span>Destinations</span></div>
+      </div>
+      <div class="about-float-badge pkg-badge-2" id="pkgFloatBadge2">
+        <i class="ri-shield-check-fill"></i>
+        <div><strong>Zero</strong><span>Hidden Fees</span></div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="scroll-dot"></span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — SMART FILTER PANEL
+    ============================================================ -->
+    <section class="pkg-filter-section" id="packages-filter" aria-label="Filter and search packages">
+      <div class="container">
+        <div class="pkg-filter-panel" data-aos="fade-up">
+
+          <div class="pkg-filter-top">
+            <div class="pkg-filter-search">
+              <i class="ri-search-line"></i>
+              <input type="text" id="pkgSearchInput" placeholder="Search a destination — Bali, Alps, Maldives…" />
+            </div>
+
+            <div class="pkg-filter-sort">
+              <label for="pkgSortSelect"><i class="ri-sort-desc"></i></label>
+              <select id="pkgSortSelect">
+                <option value="popular">Sort: Most Popular</option>
+                <option value="price-low">Sort: Price — Low to High</option>
+                <option value="price-high">Sort: Price — High to Low</option>
+                <option value="rating">Sort: Highest Rated</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pkg-filter-chips" id="pkgFilterChips" role="group" aria-label="Trip style">
+            <button class="pkg-chip active" data-style="all">
+              <i class="ri-apps-2-line"></i><span>All Styles</span>
+            </button>
+            <button class="pkg-chip" data-style="beach">
+              <i class="ri-sun-line"></i><span>Beach</span>
+            </button>
+            <button class="pkg-chip" data-style="mountain">
+              <i class="ri-landscape-line"></i><span>Mountain</span>
+            </button>
+            <button class="pkg-chip" data-style="honeymoon">
+              <i class="ri-heart-2-line"></i><span>Honeymoon</span>
+            </button>
+            <button class="pkg-chip" data-style="adventure">
+              <i class="ri-compass-3-line"></i><span>Adventure</span>
+            </button>
+            <button class="pkg-chip" data-style="family">
+              <i class="ri-parent-line"></i><span>Family</span>
+            </button>
+          </div>
+
+          <div class="pkg-filter-bottom">
+            <div class="pkg-budget">
+              <div class="pkg-budget-label">
+                <span>Budget per person</span>
+                <strong id="pkgBudgetValue">₹1,50,000</strong>
+              </div>
+              <input type="range" id="pkgBudgetRange" min="20000" max="300000" step="5000" value="150000"
+                aria-label="Maximum budget per person" />
+            </div>
+
+            <button class="btn-gold pkg-apply-btn" id="pkgApplyFilters">
+              <span>Apply Filters</span>
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — TRENDING PACKAGES (horizontal scroll showcase)
+    ============================================================ -->
+    <section class="trending-section" id="trending" aria-label="Trending holiday packages">
+      <div class="container trending-container">
+        <div class="section-header trending-header">
+          <div class="section-eyebrow" data-aos="fade-up">Trending Now</div>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">This Month's Most Loved Escapes</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="140">
+            Real bookings, real reviews — these are the trips travellers can't stop talking about.
+          </p>
+        </div>
+
+        <div class="trending-controls" data-aos="fade-up" data-aos-delay="180">
+          <button class="team-arrow trending-arrow" id="trendPrev" aria-label="Previous trending package">
+            <i class="ri-arrow-left-line"></i>
+          </button>
+          <button class="team-arrow trending-arrow" id="trendNext" aria-label="Next trending package">
+            <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="trending-track-wrap" id="trendingTrackWrap">
+        <div class="trending-track" id="trendingTrack">
+
+          <article class="trend-card">
+            <img src="assets/images/bali.webp"
+              alt="Ancient gates of a Balinese temple" loading="lazy" />
+            <div class="trend-overlay"></div>
+            <div class="trend-info">
+              <span class="trend-tag">Beach · Honeymoon</span>
+              <h3>Bali Escape</h3>
+              <p><i class="ri-star-fill"></i> 4.9 · 6 Days / 5 Nights</p>
+            </div>
+          </article>
+
+          <article class="trend-card">
+            <img src="assets/images/sunset.webp"
+              alt="White and blue buildings of Santorini overlooking the sea" loading="lazy" />
+            <div class="trend-overlay"></div>
+            <div class="trend-info">
+              <span class="trend-tag">Beach · International</span>
+              <h3>Santorini Sunset</h3>
+              <p><i class="ri-star-fill"></i> 5.0 · 7 Days / 6 Nights</p>
+            </div>
+          </article>
+
+          <article class="trend-card">
+            <img src="assets/images/swiss-alps-winter.webp"
+              alt="Snow-capped peaks of the Swiss Alps" loading="lazy" />
+            <div class="trend-overlay"></div>
+            <div class="trend-info">
+              <span class="trend-tag">Mountain · Adventure</span>
+              <h3>Swiss Alps Trail</h3>
+              <p><i class="ri-star-fill"></i> 4.8 · 8 Days / 7 Nights</p>
+            </div>
+          </article>
+
+          <article class="trend-card">
+            <img src="assets/images/image-3.webp"
+              alt="Overwater bungalows in the Maldives" loading="lazy" />
+            <div class="trend-overlay"></div>
+            <div class="trend-info">
+              <span class="trend-tag">Beach · Honeymoon</span>
+              <h3>Maldives Bliss</h3>
+              <p><i class="ri-star-fill"></i> 5.0 · 5 Days / 4 Nights</p>
+            </div>
+          </article>
+
+          <article class="trend-card">
+            <img src="assets/images/safari.webp"
+              alt="Herd of giraffes on the Kenyan savanna" loading="lazy" />
+            <div class="trend-overlay"></div>
+            <div class="trend-info">
+              <span class="trend-tag">Adventure · Safari</span>
+              <h3>Kenya Safari</h3>
+              <p><i class="ri-star-fill"></i> 4.9 · 6 Days / 5 Nights</p>
+            </div>
+          </article>
+
+          <article class="trend-card">
+            <img src="assets/images/image-7.webp"
+              alt="Traditional pagoda in Kyoto surrounded by autumn leaves" loading="lazy" />
+            <div class="trend-overlay"></div>
+            <div class="trend-info">
+              <span class="trend-tag">Family · International</span>
+              <h3>Kyoto Discovery</h3>
+              <p><i class="ri-star-fill"></i> 4.7 · 7 Days / 6 Nights</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — ALL PACKAGES (filterable grid)
+    ============================================================ -->
+    <section class="packages" id="all-packages" aria-label="All holiday packages">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow" data-aos="fade-up">The Full Catalogue</div>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">All Holiday Packages</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="140">
+            Every package includes flights, stay, transfers and a dedicated trip expert.
+          </p>
+        </div>
+
+        <!-- <div class="filter-tabs" data-aos="fade-up" data-aos-delay="180" role="tablist" aria-label="Filter packages">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="beach" role="tab" aria-selected="false">Beach</button>
+          <button class="filter-btn" data-filter="mountain" role="tab" aria-selected="false">Mountain</button>
+          <button class="filter-btn" data-filter="honeymoon" role="tab" aria-selected="false">Honeymoon</button>
+          <button class="filter-btn" data-filter="adventure" role="tab" aria-selected="false">Adventure</button>
+          <button class="filter-btn" data-filter="family" role="tab" aria-selected="false">Family</button>
+        </div> -->
+
+        <div class="packages-grid" id="packagesGrid">
+
+          <div class="package-card" data-category="beach" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-image">
+              <img src="assets/images/bali-image.webp"
+                alt="Balinese temple gate at dusk" loading="lazy" />
+              <span class="card-badge">Bestseller</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Bali Escape to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Bali, Indonesia</p>
+              <h3 class="card-title">Bali Escape — Temples &amp; Beaches</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 6D / 5N</span>
+                <span><i class="ri-star-fill"></i> 4.9 (312)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-flight-takeoff-line"></i> Flights</span>
+                <span><i class="ri-hotel-line"></i> 4★ Stay</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹58,999</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card" data-category="mountain" data-aos="fade-up" data-aos-delay="80">
+            <div class="card-image">
+              <img src="assets/images/image-7.webp"
+                alt="Snow-capped peaks of the Swiss Alps" loading="lazy" />
+              <span class="card-badge badge-teal">Adventure</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Swiss Alps Trail to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Interlaken, Switzerland</p>
+              <h3 class="card-title">Swiss Alps Trail &amp; Glacier Express</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 8D / 7N</span>
+                <span><i class="ri-star-fill"></i> 4.8 (204)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-flight-takeoff-line"></i> Flights</span>
+                <span><i class="ri-train-line"></i> Rail Pass</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹1,42,500</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card" data-category="honeymoon" data-aos="fade-up" data-aos-delay="160">
+            <div class="card-image">
+              <img src="assets/images/maldives.webp"
+                alt="Overwater bungalows in the Maldives" loading="lazy" />
+              <span class="card-badge badge-rose">Romantic</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Maldives Bliss to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Maldives</p>
+              <h3 class="card-title">Maldives Bliss — Overwater Villa</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 5D / 4N</span>
+                <span><i class="ri-star-fill"></i> 5.0 (189)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-flight-takeoff-line"></i> Flights</span>
+                <span><i class="ri-restaurant-line"></i> All Meals</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹1,89,000</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card" data-category="adventure" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-image">
+              <img src="assets/images/safari.webp"
+                alt="Giraffes walking across the Kenyan savanna" loading="lazy" />
+              <span class="card-badge badge-teal">Wildlife</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Kenya Safari to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Maasai Mara, Kenya</p>
+              <h3 class="card-title">Kenya Safari — Big Five Expedition</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 6D / 5N</span>
+                <span><i class="ri-star-fill"></i> 4.9 (156)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-flight-takeoff-line"></i> Flights</span>
+                <span><i class="ri-car-line"></i> Jeep Safaris</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹1,65,000</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card" data-category="family" data-aos="fade-up" data-aos-delay="80">
+            <div class="card-image">
+              <img src="assets/images/japan-cherry-blossom.webp"
+                alt="Traditional pagoda in Kyoto surrounded by autumn leaves" loading="lazy" />
+              <span class="card-badge">Family Fun</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Kyoto Discovery to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Kyoto, Japan</p>
+              <h3 class="card-title">Kyoto Discovery — Culture &amp; Cuisine</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 7D / 6N</span>
+                <span><i class="ri-star-fill"></i> 4.7 (98)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-flight-takeoff-line"></i> Flights</span>
+                <span><i class="ri-guide-line"></i> Local Guide</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹1,32,000</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card" data-category="beach" data-aos="fade-up" data-aos-delay="160">
+            <div class="card-image">
+              <img src="assets/images/sunset.webp"
+                alt="White and blue buildings of Santorini overlooking the sea" loading="lazy" />
+              <span class="card-badge">Popular</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Santorini Sunset to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Santorini, Greece</p>
+              <h3 class="card-title">Santorini Sunset Getaway</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 7D / 6N</span>
+                <span><i class="ri-star-fill"></i> 5.0 (267)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-flight-takeoff-line"></i> Flights</span>
+                <span><i class="ri-ship-line"></i> Caldera Cruise</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹1,78,400</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card hidden" data-category="mountain" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-image">
+              <img src="assets/images/greece.webp"
+                alt="Snow-covered valley in Kashmir" loading="lazy" />
+              <span class="card-badge badge-teal">Domestic</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Kashmir Retreat to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Srinagar, India</p>
+              <h3 class="card-title">Kashmir Retreat — Valley &amp; Houseboat</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 5D / 4N</span>
+                <span><i class="ri-star-fill"></i> 4.6 (142)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-hotel-line"></i> Houseboat</span>
+                <span><i class="ri-snowy-line"></i> Gulmarg</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹42,999</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card hidden" data-category="adventure" data-aos="fade-up" data-aos-delay="80">
+            <div class="card-image">
+              <img src="assets/images/image-4.webp"
+                alt="Waterfall cascading over Icelandic cliffs" loading="lazy" />
+              <span class="card-badge badge-teal">Nature</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Iceland Ring Road to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Reykjavik, Iceland</p>
+              <h3 class="card-title">Iceland Ring Road Expedition</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 9D / 8N</span>
+                <span><i class="ri-star-fill"></i> 4.9 (87)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-car-line"></i> Self-Drive</span>
+                <span><i class="ri-northern-lights-line"></i> Aurora Hunt</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹2,45,000</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="package-card hidden" data-category="family" data-aos="fade-up" data-aos-delay="160">
+            <div class="card-image">
+              <img src="assets/images/image-8.webp"
+                alt="Dubai skyline at dusk with skyscrapers" loading="lazy" />
+              <span class="card-badge">Luxury</span>
+              <div class="card-overlay">
+                <span class="card-wishlist" role="button" aria-label="Add Dubai Family Fun to wishlist"><i
+                    class="ri-heart-line"></i></span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-location"><i class="ri-map-pin-2-fill"></i> Dubai, UAE</p>
+              <h3 class="card-title">Dubai Family Fun &amp; Desert Safari</h3>
+              <div class="card-meta">
+                <span><i class="ri-calendar-line"></i> 6D / 5N</span>
+                <span><i class="ri-star-fill"></i> 4.8 (231)</span>
+              </div>
+              <div class="card-features">
+                <span><i class="ri-flight-takeoff-line"></i> Flights</span>
+                <span><i class="ri-parent-line"></i> Kid Friendly</span>
+              </div>
+              <div class="card-footer">
+                <div class="card-price">
+                  <span class="price-from">Starting from</span>
+                  <span class="price-amount">₹98,500</span>
+                  <span class="price-per">/person</span>
+                </div>
+                <a href="contact.html" class="btn-card">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="packages-cta">
+          <button class="btn-outline-primary" id="pkgLoadMore">
+            <span>Load More Packages</span>
+            <i class="ri-add-line"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — CHOOSE YOUR TRAVEL STYLE (tier cards + toggle)
+    ============================================================ -->
+    <section class="tiers-section" id="travel-tiers" aria-label="Choose your travel style">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow eyebrow-light" data-aos="fade-up">Pick Your Pace</div>
+          <h2 class="section-title title-light" data-aos="fade-up" data-aos-delay="80">Choose Your Travel Style</h2>
+          <p class="section-subtitle tiers-subtitle" data-aos="fade-up" data-aos-delay="140">
+            Every tier includes flights and stay — the difference is in the comfort and the extras.
+          </p>
+        </div>
+
+        <div class="tiers-toggle" data-aos="zoom-in" data-aos-delay="180">
+          <span class="tiers-toggle-label active" id="soloLabel">Solo Traveller</span>
+          <button class="tiers-switch" id="tiersSwitch" role="switch" aria-checked="false"
+            aria-label="Toggle between solo and group pricing">
+            <span class="tiers-switch-knob"></span>
+          </button>
+          <span class="tiers-toggle-label" id="groupLabel">Group of 4</span>
+        </div>
+
+        <div class="tiers-grid">
+
+          <div class="tier-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="tier-icon"><i class="ri-compass-3-line"></i></div>
+            <h3 class="tier-name">Wanderer</h3>
+            <p class="tier-desc">Budget-smart trips for explorers who travel light.</p>
+            <div class="tier-price">
+              <span class="tier-currency">₹</span><span class="tier-amount" data-solo="42999"
+                data-group="34999">42,999</span>
+              <span class="tier-per">/person</span>
+            </div>
+            <ul class="tier-features">
+              <li><i class="ri-check-line"></i> 3★ hand-picked stays</li>
+              <li><i class="ri-check-line"></i> Return flights included</li>
+              <li><i class="ri-check-line"></i> Shared airport transfers</li>
+              <li><i class="ri-close-line"></i> <span class="tier-muted">Dedicated trip manager</span></li>
+              <li><i class="ri-close-line"></i> <span class="tier-muted">Daily curated activities</span></li>
+            </ul>
+            <a href="contact.html" class="btn-outline-primary tier-btn">Choose Wanderer</a>
+          </div>
+
+          <div class="tier-card tier-featured" data-aos="fade-up" data-aos-delay="120">
+            <span class="tier-ribbon">Most Popular</span>
+            <div class="tier-icon"><i class="ri-suitcase-3-line"></i></div>
+            <h3 class="tier-name">Comfort Plus</h3>
+            <p class="tier-desc">The sweet spot of comfort, service and value.</p>
+            <div class="tier-price">
+              <span class="tier-currency">₹</span><span class="tier-amount" data-solo="89999"
+                data-group="74999">89,999</span>
+              <span class="tier-per">/person</span>
+            </div>
+            <ul class="tier-features">
+              <li><i class="ri-check-line"></i> 4★ boutique stays</li>
+              <li><i class="ri-check-line"></i> Return flights included</li>
+              <li><i class="ri-check-line"></i> Private airport transfers</li>
+              <li><i class="ri-check-line"></i> Dedicated trip manager</li>
+              <li><i class="ri-close-line"></i> <span class="tier-muted">Daily curated activities</span></li>
+            </ul>
+            <a href="contact.html" class="btn-gold tier-btn">Choose Comfort Plus</a>
+          </div>
+
+          <div class="tier-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="tier-icon"><i class="ri-vip-crown-2-line"></i></div>
+            <h3 class="tier-name">Luxury Elite</h3>
+            <p class="tier-desc">Five-star everything, curated down to the last detail.</p>
+            <div class="tier-price">
+              <span class="tier-currency">₹</span><span class="tier-amount" data-solo="189999"
+                data-group="164999">1,89,999</span>
+              <span class="tier-per">/person</span>
+            </div>
+            <ul class="tier-features">
+              <li><i class="ri-check-line"></i> 5★ luxury resorts</li>
+              <li><i class="ri-check-line"></i> Business-class upgrade option</li>
+              <li><i class="ri-check-line"></i> Private airport transfers</li>
+              <li><i class="ri-check-line"></i> Dedicated trip manager</li>
+              <li><i class="ri-check-line"></i> Daily curated activities</li>
+            </ul>
+            <a href="contact.html" class="btn-outline-primary tier-btn">Choose Luxury Elite</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — HOW BOOKING WORKS
+    ============================================================ -->
+    <section class="booking-section" id="booking-process" aria-label="How booking works">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow" data-aos="fade-up">Simple &amp; Transparent</div>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">How Booking Works</h2>
+        </div>
+
+        <div class="booking-track">
+          <svg class="booking-line" viewBox="0 0 1000 4" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="0" y1="2" x2="1000" y2="2" class="booking-line-bg" />
+            <line x1="0" y1="2" x2="1000" y2="2" class="booking-line-fill" id="bookingLineFill" />
+          </svg>
+
+          <div class="booking-step" data-aos="fade-up" data-aos-delay="0">
+            <span class="booking-step-num">01</span>
+            <div class="booking-step-icon"><i class="ri-compass-3-line"></i></div>
+            <h3>Choose Your Package</h3>
+            <p>Browse and filter by style, budget or destination until one feels right.</p>
+          </div>
+
+          <div class="booking-step" data-aos="fade-up" data-aos-delay="120">
+            <span class="booking-step-num">02</span>
+            <div class="booking-step-icon"><i class="ri-edit-2-line"></i></div>
+            <h3>Customize Your Trip</h3>
+            <p>Swap hotels, add excursions, or extend your stay with a trip expert.</p>
+          </div>
+
+          <div class="booking-step" data-aos="fade-up" data-aos-delay="240">
+            <span class="booking-step-num">03</span>
+            <div class="booking-step-icon"><i class="ri-secure-payment-line"></i></div>
+            <h3>Secure Your Booking</h3>
+            <p>Pay safely in full or in easy installments — no surprise charges.</p>
+          </div>
+
+          <div class="booking-step" data-aos="fade-up" data-aos-delay="360">
+            <span class="booking-step-num">04</span>
+            <div class="booking-step-icon"><i class="ri-plane-line"></i></div>
+            <h3>Pack &amp; Fly</h3>
+            <p>We handle the details — you just show up and enjoy the journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — CTA BANNER
+    ============================================================ -->
+    <section class="about-cta pkg-cta" id="packages-cta" aria-label="Plan a custom holiday">
+      <div class="about-cta-bg">
+        <img src="assets/images/image-4.webp"
+          alt="Traveller standing before an open road through mountains" loading="lazy" />
+        <div class="about-cta-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="about-cta-content" data-aos="zoom-in">
+          <div class="about-cta-icon"><i class="ri-suitcase-line"></i></div>
+          <h2>Can't Find The <span class="text-accent">Perfect Fit?</span></h2>
+          <p>Tell us your dates, budget and vibe — our experts will build a custom package just for you.</p>
+          <div class="about-cta-buttons">
+            <a href="contact.html" class="btn-gold">
+              <span>Request A Custom Trip</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+            <a href="404.html" class="btn-outline-primary btn-outline-light">
+              <span>Browse All Packages</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================
+       FOOTER 
+  ====================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo" aria-label="Stackly Home">
+              <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+            </a>
+            <p>Crafting extraordinary holiday experiences since 2010. Your journey to the world's most breathtaking destinations starts here.</p>
+            <div class="footer-socials">
+              <a href="404.html" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="404.html" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="404.html" aria-label="Follow us on Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="Watch us on YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="404.html" aria-label="Follow us on Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="packages.html">Packages</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Destinations -->
+          <div class="footer-col">
+            <h4>Popular Destinations</h4>
+            <ul role="list">
+              <li><a href="404.html">Maldives</a></li>
+              <li><a href="404.html">Santorini, Greece</a></li>
+              <li><a href="404.html">Bali, Indonesia</a></li>
+              <li><a href="404.html">Swiss Alps</a></li>
+              <li><a href="404.html">Kenya Safari</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul role="list">
+              <li><a href="packages.html">Packages</a></li>
+              <li><a href="404.html">Booking</a></li>
+              <li><a href="404.html">FAQs</a></li>
+              <li><a href="404.html">Cancellation Policy</a></li>
+              <li><a href="404.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col footer-contact">
+            <h4>Contact Us</h4>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span>+91 9876543210</span>
+                <small>Mon–Fri 9am–6pm</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>info@thestackly.com </span>
+                <small>We reply within 24 hours</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span>Salem, Tamil Nadu</span>
+                <small>India</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Cookie Settings</a>
+        </div>
+        <div class="footer-payments" aria-label="Accepted payment methods">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/packages.js"></script>
+</body>
+
+</html>

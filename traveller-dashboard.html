@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manage your Stackly trips, bookings, wishlist, and payments." />
+  <title>Traveller Dashboard — Stackly</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <!-- Base + Dashboard stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+
+<body class="dash-body">
+
+  <div class="dash-shell">
+
+    <!-- ============================================================
+         SIDEBAR
+    ============================================================ -->
+    <aside class="dash-sidebar" id="dashSidebar">
+      <div class="dash-sidebar-top">
+        <a href="traveller-dashboard.html" aria-label="Stackly Home">
+          <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+        </a>
+        <button class="dash-sidebar-close" id="dashSidebarClose" aria-label="Close menu"><i
+            class="ri-close-line"></i></button>
+      </div>
+
+      <div class="dash-user-card">
+        <div class="dash-user-avatar">U</div>
+        <div class="dash-user-info">
+          <p class="dash-user-name">User</p>
+          <p class="dash-user-role">Traveller</p>
+          <p class="dash-user-email">aisha.sharma@example.com</p>
+        </div>
+      </div>
+
+      <nav class="dash-nav" aria-label="Dashboard navigation">
+        <p class="dash-nav-label">Menu</p>
+
+        <button class="dash-nav-item active" data-target="overviewPage" data-title="Overview"
+          data-subtitle="A snapshot of your trips and activity">
+          <i class="ri-dashboard-3-line"></i> Overview
+        </button>
+        <button class="dash-nav-item" data-target="bookingsPage" data-title="My Bookings"
+          data-subtitle="Track and manage all your trip bookings">
+          <i class="ri-suitcase-3-line"></i> My Bookings
+        </button>
+        <button class="dash-nav-item" data-target="wishlistPage" data-title="Wishlist"
+          data-subtitle="Packages you've saved for later">
+          <i class="ri-heart-3-line"></i> Wishlist
+        </button>
+        <button class="dash-nav-item" data-target="paymentsPage" data-title="Payments"
+          data-subtitle="Your payment history and saved methods">
+          <i class="ri-bank-card-line"></i> Payments
+        </button>
+      </nav>
+
+      <div class="dash-sidebar-bottom">
+        <a href="index.html" class="dash-nav-item">
+          <i class="ri-home-5-line"></i> Back to Home
+        </a>
+        <a href="login.html" class="dash-nav-item logout">
+          <i class="ri-logout-box-r-line"></i> Logout
+        </a>
+      </div>
+    </aside>
+
+    <div class="dash-overlay"></div>
+
+    <!-- ============================================================
+         MAIN
+    ============================================================ -->
+    <div class="dash-main">
+
+      <header class="dash-topbar">
+        <div class="dash-topbar-left">
+          <button class="dash-hamburger" id="dashHamburger" aria-label="Open menu"><i class="ri-menu-line"></i></button>
+          <div>
+            <h1 class="dash-page-title" id="dashPageTitle">Overview</h1>
+            <p class="dash-page-subtitle" id="dashPageSubtitle">A snapshot of your trips and activity</p>
+          </div>
+        </div>
+        <div class="dash-topbar-right">
+          <a href="404.html" class="dash-icon-btn" aria-label="Notifications"><i
+              class="ri-notification-3-line"></i><span class="dot"></span></a>
+          <a href="404.html" class="dash-icon-btn" aria-label="Settings"><i class="ri-settings-3-line"></i></a>
+          <span class="dash-topbar-email">aisha.sharma@example.com</span>
+          <a href="404.html" class="dash-topbar-avatar" aria-label="My profile">U</a>
+        </div>
+      </header>
+
+      <main class="dash-content">
+
+        <!-- ============================================================
+             PAGE: OVERVIEW
+        ============================================================ -->
+        <section class="dash-page active" id="overviewPage">
+
+          <!-- Sub-tabs -->
+          <div class="dash-subtab-bar" role="tablist" aria-label="Overview sections">
+            <button class="dash-subtab active" data-subtab="overviewSummary" role="tab" aria-selected="true">
+              <i class="ri-layout-grid-line"></i> Summary
+            </button>
+            <button class="dash-subtab" data-subtab="overviewStats" role="tab" aria-selected="false">
+              <i class="ri-bar-chart-2-line"></i> Travel Stats
+            </button>
+            <button class="dash-subtab" data-subtab="overviewNotifications" role="tab" aria-selected="false">
+              <i class="ri-notification-3-line"></i> Notifications
+              <span class="dash-subtab-badge">3</span>
+            </button>
+          </div>
+
+          <!-- ── Sub-tab: Summary ── -->
+          <div class="dash-subpanel active" id="overviewSummary" role="tabpanel">
+            <div class="dash-stats-grid">
+              <div class="dash-stat-card">
+                <div class="dash-stat-top">
+                  <div class="dash-stat-icon gold"><i class="ri-flight-takeoff-line"></i></div>
+                  <span class="dash-stat-trend up"><i class="ri-arrow-up-line"></i> 2</span>
+                </div>
+                <p class="dash-stat-value">3</p>
+                <p class="dash-stat-label">Upcoming Trips</p>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-top">
+                  <div class="dash-stat-icon teal"><i class="ri-checkbox-circle-line"></i></div>
+                </div>
+                <p class="dash-stat-value">7</p>
+                <p class="dash-stat-label">Completed Trips</p>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-top">
+                  <div class="dash-stat-icon rose"><i class="ri-heart-3-line"></i></div>
+                </div>
+                <p class="dash-stat-value">6</p>
+                <p class="dash-stat-label">Wishlist Items</p>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-top">
+                  <div class="dash-stat-icon navy"><i class="ri-vip-crown-2-line"></i></div>
+                  <span class="dash-stat-trend up"><i class="ri-arrow-up-line"></i> 120</span>
+                </div>
+                <p class="dash-stat-value">2,480</p>
+                <p class="dash-stat-label">Loyalty Points</p>
+              </div>
+            </div>
+
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Quick Actions</p>
+              </div>
+              <div class="dash-panel-body">
+                <div class="quick-actions">
+                  <a href="404.html" class="quick-action-tile">
+                    <i class="ri-add-circle-line"></i>
+                    <span>Book a Trip</span>
+                  </a>
+                  <a href="404.html" class="quick-action-tile">
+                    <i class="ri-file-list-3-line"></i>
+                    <span>Download Itinerary</span>
+                  </a>
+                  <a href="404.html" class="quick-action-tile">
+                    <i class="ri-user-settings-line"></i>
+                    <span>Edit Profile</span>
+                  </a>
+                  <a href="404.html" class="quick-action-tile">
+                    <i class="ri-customer-service-2-line"></i>
+                    <span>Contact Support</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-two-col">
+              <div class="dash-panel" style="margin-bottom:0;">
+                <div class="dash-panel-header">
+                  <p class="dash-panel-title">Upcoming Trips<span>Your next scheduled departures</span></p>
+                  <a href="404.html" class="btn-dash btn-dash-outline">View All</a>
+                </div>
+                <div class="dash-panel-body" style="padding-top:6px; padding-bottom:6px;">
+                  <div class="trip-item">
+                    <div class="trip-date-box"><span class="day">14</span><span class="mon">Oct</span></div>
+                    <div class="trip-info">
+                      <h4>Maldives Overwater Escape</h4>
+                      <p>5 nights &bull; 2 guests &bull; Malé, Maldives</p>
+                    </div>
+                    <span class="status-badge status-confirmed">Confirmed</span>
+                  </div>
+                  <div class="trip-item">
+                    <div class="trip-date-box"><span class="day">02</span><span class="mon">Nov</span></div>
+                    <div class="trip-info">
+                      <h4>Santorini Sunset Retreat</h4>
+                      <p>4 nights &bull; 2 guests &bull; Santorini, Greece</p>
+                    </div>
+                    <span class="status-badge status-confirmed">Confirmed</span>
+                  </div>
+                  <div class="trip-item">
+                    <div class="trip-date-box"><span class="day">21</span><span class="mon">Dec</span></div>
+                    <div class="trip-info">
+                      <h4>Swiss Alps Winter Lodge</h4>
+                      <p>6 nights &bull; 4 guests &bull; Zermatt, Switzerland</p>
+                    </div>
+                    <span class="status-badge status-pending">Pending</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dash-panel" style="margin-bottom:0;">
+                <div class="dash-panel-header">
+                  <p class="dash-panel-title">Recent Activity</p>
+                </div>
+                <div class="dash-panel-body" style="padding-top:6px; padding-bottom:6px;">
+                  <div class="trip-item">
+                    <div class="dash-stat-icon teal" style="width:38px;height:38px;font-size:1rem;"><i
+                        class="ri-checkbox-circle-line"></i></div>
+                    <div class="trip-info">
+                      <h4>Booking confirmed</h4>
+                      <p>Maldives Overwater Escape &bull; 2 days ago</p>
+                    </div>
+                  </div>
+                  <div class="trip-item">
+                    <div class="dash-stat-icon gold" style="width:38px;height:38px;font-size:1rem;"><i
+                        class="ri-bank-card-line"></i></div>
+                    <div class="trip-info">
+                      <h4>Payment received</h4>
+                      <p>&#36;1,240.00 &bull; 4 days ago</p>
+                    </div>
+                  </div>
+                  <div class="trip-item">
+                    <div class="dash-stat-icon rose" style="width:38px;height:38px;font-size:1rem;"><i
+                        class="ri-heart-3-line"></i></div>
+                    <div class="trip-info">
+                      <h4>Added to wishlist</h4>
+                      <p>Kenya Safari Adventure &bull; 6 days ago</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /overviewSummary -->
+
+          <!-- ── Sub-tab: Travel Stats ── -->
+          <div class="dash-subpanel" id="overviewStats" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Your Travel Stats<span>Lifetime numbers at a glance</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <div class="dash-stats-grid" style="margin-bottom:24px;">
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-top">
+                      <div class="dash-stat-icon gold"><i class="ri-earth-line"></i></div>
+                    </div>
+                    <p class="dash-stat-value">12</p>
+                    <p class="dash-stat-label">Countries Visited</p>
+                  </div>
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-top">
+                      <div class="dash-stat-icon teal"><i class="ri-plane-line"></i></div>
+                    </div>
+                    <p class="dash-stat-value">34</p>
+                    <p class="dash-stat-label">Flights Taken</p>
+                  </div>
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-top">
+                      <div class="dash-stat-icon navy"><i class="ri-hotel-bed-line"></i></div>
+                    </div>
+                    <p class="dash-stat-value">68</p>
+                    <p class="dash-stat-label">Nights Stayed</p>
+                  </div>
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-top">
+                      <div class="dash-stat-icon rose"><i class="ri-money-dollar-circle-line"></i></div>
+                    </div>
+                    <p class="dash-stat-value">&#36;18.4k</p>
+                    <p class="dash-stat-label">Total Spent</p>
+                  </div>
+                </div>
+
+                <div class="dash-stat-bars">
+                  <p class="dash-stat-bars-title">Top Destinations</p>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Europe</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill" style="width:72%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">72%</span>
+                  </div>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Asia</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill teal" style="width:48%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">48%</span>
+                  </div>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Africa</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill rose" style="width:22%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">22%</span>
+                  </div>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Americas</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill navy" style="width:15%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">15%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Loyalty Programme<span>Wanderlux Rewards</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <div class="dash-loyalty-row">
+                  <div class="dash-loyalty-badge gold"><i class="ri-vip-crown-2-fill"></i></div>
+                  <div class="dash-loyalty-info">
+                    <h4>Gold Member</h4>
+                    <p>520 pts until Platinum</p>
+                    <div class="dash-loyalty-track">
+                      <div class="dash-loyalty-fill" style="width:60%;"></div>
+                    </div>
+                  </div>
+                  <div class="dash-loyalty-pts">
+                    <span>2,480</span>
+                    <small>points</small>
+                  </div>
+                </div>
+                <div class="dash-loyalty-perks">
+                  <div class="dash-loyalty-perk"><i class="ri-checkbox-circle-fill"></i> Free airport lounge access
+                  </div>
+                  <div class="dash-loyalty-perk"><i class="ri-checkbox-circle-fill"></i> 10% discount on next booking
+                  </div>
+                  <div class="dash-loyalty-perk"><i class="ri-checkbox-circle-fill"></i> Priority customer support</div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /overviewStats -->
+
+          <!-- ── Sub-tab: Notifications ── -->
+          <div class="dash-subpanel" id="overviewNotifications" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Notifications<span>Updates about your trips and account</span></p>
+                <button class="btn-dash btn-dash-ghost">Mark all read</button>
+              </div>
+              <div class="dash-panel-body" style="padding-top:6px; padding-bottom:6px;">
+                <div class="dash-notif-item unread">
+                  <div class="dash-notif-dot"></div>
+                  <div class="dash-stat-icon gold" style="width:38px;height:38px;font-size:1rem; flex-shrink:0;"><i
+                      class="ri-flight-takeoff-line"></i></div>
+                  <div class="trip-info">
+                    <h4>Check-in opens in 48 hours</h4>
+                    <p>Maldives Overwater Escape &bull; 12 Oct 2026</p>
+                  </div>
+                  <span class="dash-notif-time">2h ago</span>
+                </div>
+                <div class="dash-notif-item unread">
+                  <div class="dash-notif-dot"></div>
+                  <div class="dash-stat-icon teal" style="width:38px;height:38px;font-size:1rem; flex-shrink:0;"><i
+                      class="ri-bank-card-line"></i></div>
+                  <div class="trip-info">
+                    <h4>Payment due in 3 days</h4>
+                    <p>Swiss Alps Winter Lodge &bull; Balance &#36;4,120.00</p>
+                  </div>
+                  <span class="dash-notif-time">1d ago</span>
+                </div>
+                <div class="dash-notif-item unread">
+                  <div class="dash-notif-dot"></div>
+                  <div class="dash-stat-icon rose" style="width:38px;height:38px;font-size:1rem; flex-shrink:0;"><i
+                      class="ri-price-tag-3-line"></i></div>
+                  <div class="trip-info">
+                    <h4>Price drop on Kenya Safari</h4>
+                    <p>Now &#36;1,750 &mdash; save &#36;200 vs. last week</p>
+                  </div>
+                  <span class="dash-notif-time">2d ago</span>
+                </div>
+                <div class="dash-notif-item">
+                  <div class="dash-notif-dot"></div>
+                  <div class="dash-stat-icon navy" style="width:38px;height:38px;font-size:1rem; flex-shrink:0;"><i
+                      class="ri-star-fill"></i></div>
+                  <div class="trip-info">
+                    <h4>Leave a review for your last trip</h4>
+                    <p>Santorini Sunset Retreat &bull; Sep 2026</p>
+                  </div>
+                  <span class="dash-notif-time">5d ago</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Notification Preferences<span>Choose what you want to hear about</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <div class="dash-pref-list">
+                  <div class="dash-pref-row">
+                    <div>
+                      <h4>Booking updates</h4>
+                      <p>Confirmations, changes &amp; cancellations</p>
+                    </div>
+                    <label class="dash-toggle"><input type="checkbox" checked /><span></span></label>
+                  </div>
+                  <div class="dash-pref-row">
+                    <div>
+                      <h4>Payment reminders</h4>
+                      <p>Balance due and receipt alerts</p>
+                    </div>
+                    <label class="dash-toggle"><input type="checkbox" checked /><span></span></label>
+                  </div>
+                  <div class="dash-pref-row">
+                    <div>
+                      <h4>Price drop alerts</h4>
+                      <p>When wishlist packages drop in price</p>
+                    </div>
+                    <label class="dash-toggle"><input type="checkbox" checked /><span></span></label>
+                  </div>
+                  <div class="dash-pref-row">
+                    <div>
+                      <h4>Promotional offers</h4>
+                      <p>Deals and new package announcements</p>
+                    </div>
+                    <label class="dash-toggle"><input type="checkbox" /><span></span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /overviewNotifications -->
+
+        </section>
+
+        <!-- ============================================================
+             PAGE: MY BOOKINGS
+        ============================================================ -->
+        <section class="dash-page" id="bookingsPage">
+
+          <!-- Sub-tabs -->
+          <div class="dash-subtab-bar" role="tablist" aria-label="Bookings sections">
+            <button class="dash-subtab active" data-subtab="bookingsAll" role="tab" aria-selected="true">
+              <i class="ri-list-check-2"></i> All Bookings
+            </button>
+            <button class="dash-subtab" data-subtab="bookingsUpcoming" role="tab" aria-selected="false">
+              <i class="ri-calendar-event-line"></i> Upcoming
+            </button>
+            <button class="dash-subtab" data-subtab="bookingsPast" role="tab" aria-selected="false">
+              <i class="ri-history-line"></i> Past Trips
+            </button>
+          </div>
+
+          <!-- ── Sub-tab: All Bookings ── -->
+          <div class="dash-subpanel active" id="bookingsAll" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">My Bookings<span>All trips you've reserved with Stackly</span></p>
+                <a href="404.html" class="btn-dash btn-dash-primary"><i class="ri-add-line"></i> New Booking</a>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Package</th>
+                      <th>Travel Date</th>
+                      <th>Guests</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="dash-table-cell-main">
+                          <img class="dash-table-thumb"
+                            src="assets/images/maldives.webp"
+                            alt="" />
+                          <div>
+                            <p class="dash-table-title">Maldives Overwater Escape</p>
+                            <p class="dash-table-sub">Booking #WL-10234</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>14 Oct 2026</td>
+                      <td>2 Adults</td>
+                      <td>&#36;2,480.00</td>
+                      <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                      <td>
+                        <div class="dash-actions-cell"><a href="404.html" class="btn-dash-icon" aria-label="View"><i
+                              class="ri-eye-line"></i></a><a href="404.html" class="btn-dash-icon"
+                            aria-label="Download"><i class="ri-download-2-line"></i></a></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="dash-table-cell-main">
+                          <img class="dash-table-thumb"
+                            src="assets/images/sunset.webp"
+                            alt="" />
+                          <div>
+                            <p class="dash-table-title">Santorini Sunset Retreat</p>
+                            <p class="dash-table-sub">Booking #WL-10198</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>02 Nov 2026</td>
+                      <td>2 Adults</td>
+                      <td>&#36;1,860.00</td>
+                      <td><span class="status-badge status-confirmed">Confirmed</span></td>
+                      <td>
+                        <div class="dash-actions-cell"><a href="404.html" class="btn-dash-icon" aria-label="View"><i
+                              class="ri-eye-line"></i></a><a href="404.html" class="btn-dash-icon"
+                            aria-label="Download"><i class="ri-download-2-line"></i></a></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="dash-table-cell-main">
+                          <img class="dash-table-thumb"
+                            src="assets/images/swiss-alps-winter.webp"
+                            alt="" />
+                          <div>
+                            <p class="dash-table-title">Swiss Alps Winter Lodge</p>
+                            <p class="dash-table-sub">Booking #WL-10301</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>21 Dec 2026</td>
+                      <td>4 Adults</td>
+                      <td>&#36;5,120.00</td>
+                      <td><span class="status-badge status-pending">Pending</span></td>
+                      <td>
+                        <div class="dash-actions-cell"><a href="404.html" class="btn-dash-icon" aria-label="View"><i
+                              class="ri-eye-line"></i></a><a href="404.html" class="btn-dash-icon"
+                            aria-label="Cancel"><i class="ri-close-circle-line"></i></a></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="dash-table-cell-main">
+                          <img class="dash-table-thumb"
+                            src="assets/images/bali.webp"
+                            alt="" />
+                          <div>
+                            <p class="dash-table-title">Bali Rainforest Villa</p>
+                            <p class="dash-table-sub">Booking #WL-09876</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>18 Jun 2026</td>
+                      <td>2 Adults, 1 Child</td>
+                      <td>&#36;1,340.00</td>
+                      <td><span class="status-badge status-cancelled">Cancelled</span></td>
+                      <td>
+                        <div class="dash-actions-cell"><a href="404.html" class="btn-dash-icon" aria-label="View"><i
+                              class="ri-eye-line"></i></a><a href="404.html" class="btn-dash-icon"
+                            aria-label="Rebook"><i class="ri-refresh-line"></i></a></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div><!-- /bookingsAll -->
+
+          <!-- ── Sub-tab: Upcoming ── -->
+          <div class="dash-subpanel" id="bookingsUpcoming" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Upcoming Trips<span>Your next confirmed departures</span></p>
+              </div>
+              <div class="dash-panel-body" style="padding-top:6px; padding-bottom:6px;">
+                <div class="trip-item">
+                  <div class="trip-date-box"><span class="day">14</span><span class="mon">Oct</span></div>
+                  <div class="trip-info">
+                    <h4>Maldives Overwater Escape</h4>
+                    <p>5 nights &bull; 2 guests &bull; Malé, Maldives &bull; Booking #WL-10234</p>
+                  </div>
+                  <div class="dash-actions-cell">
+                    <a href="404.html" class="btn-dash-icon" aria-label="View itinerary"><i
+                        class="ri-file-list-3-line"></i></a>
+                    <a href="404.html" class="btn-dash-icon" aria-label="Download"><i
+                        class="ri-download-2-line"></i></a>
+                  </div>
+                </div>
+                <div class="trip-item">
+                  <div class="trip-date-box"><span class="day">02</span><span class="mon">Nov</span></div>
+                  <div class="trip-info">
+                    <h4>Santorini Sunset Retreat</h4>
+                    <p>4 nights &bull; 2 guests &bull; Santorini, Greece &bull; Booking #WL-10198</p>
+                  </div>
+                  <div class="dash-actions-cell">
+                    <a href="404.html" class="btn-dash-icon" aria-label="View itinerary"><i
+                        class="ri-file-list-3-line"></i></a>
+                    <a href="404.html" class="btn-dash-icon" aria-label="Download"><i
+                        class="ri-download-2-line"></i></a>
+                  </div>
+                </div>
+                <div class="trip-item">
+                  <div class="trip-date-box"><span class="day">21</span><span class="mon">Dec</span></div>
+                  <div class="trip-info">
+                    <h4>Swiss Alps Winter Lodge</h4>
+                    <p>6 nights &bull; 4 guests &bull; Zermatt, Switzerland &bull; Booking #WL-10301</p>
+                  </div>
+                  <div class="dash-actions-cell">
+                    <span class="status-badge status-pending">Pending</span>
+                    <a href="404.html" class="btn-dash-icon" aria-label="View"><i class="ri-eye-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Pre-Trip Checklist<span>Things to sort before you go</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <div class="dash-checklist">
+                  <label class="dash-check-item"><input type="checkbox" checked /><span>Passport valid &amp; photo pages
+                      clear</span></label>
+                  <label class="dash-check-item"><input type="checkbox" checked /><span>Travel insurance
+                      purchased</span></label>
+                  <label class="dash-check-item"><input type="checkbox" /><span>Visa application
+                      submitted</span></label>
+                  <label class="dash-check-item"><input type="checkbox" /><span>Flight check-in completed</span></label>
+                  <label class="dash-check-item"><input type="checkbox" /><span>Hotel confirmation printed /
+                      saved</span></label>
+                  <label class="dash-check-item"><input type="checkbox" /><span>Local currency arranged</span></label>
+                </div>
+              </div>
+            </div>
+          </div><!-- /bookingsUpcoming -->
+
+          <!-- ── Sub-tab: Past Trips ── -->
+          <div class="dash-subpanel" id="bookingsPast" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Past Trips<span>Journeys you've already completed</span></p>
+              </div>
+              <div class="dash-panel-body" style="padding-top:6px; padding-bottom:6px;">
+                <div class="trip-item">
+                  <div class="trip-date-box"><span class="day">18</span><span class="mon">Jun</span></div>
+                  <div class="trip-info">
+                    <h4>Bali Rainforest Villa</h4>
+                    <p>7 nights &bull; 2 Adults, 1 Child &bull; Ubud, Bali</p>
+                  </div>
+                  <a href="404.html" class="btn-dash btn-dash-outline" style="white-space:nowrap;">Write Review</a>
+                </div>
+                <div class="trip-item">
+                  <div class="trip-date-box"><span class="day">04</span><span class="mon">Mar</span></div>
+                  <div class="trip-info">
+                    <h4>Kyoto Cherry Blossom Tour</h4>
+                    <p>5 nights &bull; 2 Adults &bull; Kyoto, Japan</p>
+                  </div>
+                  <a href="404.html" class="btn-dash btn-dash-outline" style="white-space:nowrap;">View Photos</a>
+                </div>
+                <div class="trip-item">
+                  <div class="trip-date-box"><span class="day">11</span><span class="mon">Dec</span></div>
+                  <div class="trip-info">
+                    <h4>New York City Break</h4>
+                    <p>4 nights &bull; 2 Adults &bull; New York, USA</p>
+                  </div>
+                  <a href="404.html" class="btn-dash btn-dash-outline" style="white-space:nowrap;">Rebook</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Your Reviews<span>Feedback you've left for past trips</span></p>
+                <a href="404.html" class="btn-dash btn-dash-outline">All Reviews</a>
+              </div>
+              <div class="dash-panel-body" style="padding-top:6px; padding-bottom:6px;">
+                <div class="trip-item">
+                  <div class="dash-stat-icon gold" style="width:38px;height:38px;font-size:1rem; flex-shrink:0;"><i
+                      class="ri-star-fill"></i></div>
+                  <div class="trip-info">
+                    <h4>Kyoto Cherry Blossom Tour &#9733;&#9733;&#9733;&#9733;&#9733;</h4>
+                    <p>"An absolutely magical experience. Would book again instantly."</p>
+                  </div>
+                </div>
+                <div class="trip-item">
+                  <div class="dash-stat-icon teal" style="width:38px;height:38px;font-size:1rem; flex-shrink:0;"><i
+                      class="ri-star-half-fill"></i></div>
+                  <div class="trip-info">
+                    <h4>New York City Break &#9733;&#9733;&#9733;&#9733;</h4>
+                    <p>"Great hotel pick, the itinerary felt slightly rushed."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /bookingsPast -->
+
+        </section>
+
+        <!-- ============================================================
+             PAGE: WISHLIST
+        ============================================================ -->
+        <section class="dash-page" id="wishlistPage">
+
+          <!-- Sub-tabs -->
+          <div class="dash-subtab-bar" role="tablist" aria-label="Wishlist sections">
+            <button class="dash-subtab active" data-subtab="wishlistSaved" role="tab" aria-selected="true">
+              <i class="ri-heart-3-line"></i> Saved Packages
+            </button>
+            <button class="dash-subtab" data-subtab="wishlistAlerts" role="tab" aria-selected="false">
+              <i class="ri-price-tag-3-line"></i> Price Alerts
+              <span class="dash-subtab-badge">2</span>
+            </button>
+            <button class="dash-subtab" data-subtab="wishlistCollections" role="tab" aria-selected="false">
+              <i class="ri-folder-5-line"></i> Collections
+            </button>
+          </div>
+
+          <!-- ── Sub-tab: Saved Packages ── -->
+          <div class="dash-subpanel active" id="wishlistSaved" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Wishlist<span>Packages you've saved for later</span></p>
+                <a href="404.html" class="btn-dash btn-dash-outline">Browse Packages</a>
+              </div>
+              <div class="dash-panel-body">
+                <div class="dash-package-grid">
+                  <div class="dash-pkg-card">
+                    <div class="dash-pkg-img"><img
+                        src="assets/images/safari.webp"
+                        alt="Kenya safari" /><a href="404.html" class="dash-pkg-remove"
+                        aria-label="Remove from wishlist"><i class="ri-heart-3-fill"></i></a></div>
+                    <div class="dash-pkg-body">
+                      <p class="dash-pkg-loc"><i class="ri-map-pin-line"></i> Maasai Mara, Kenya</p>
+                      <p class="dash-pkg-title">Kenya Safari Adventure</p>
+                      <div class="dash-pkg-footer">
+                        <p class="dash-pkg-price">&#36;1,950 <small>/ person</small></p><a href="404.html"
+                          class="btn-dash btn-dash-primary">Book</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dash-pkg-card">
+                    <div class="dash-pkg-img"><img
+                        src="assets/images/swiss-alps-winter.webp"
+                        alt="Swiss Alps" /><a href="404.html" class="dash-pkg-remove"
+                        aria-label="Remove from wishlist"><i class="ri-heart-3-fill"></i></a></div>
+                    <div class="dash-pkg-body">
+                      <p class="dash-pkg-loc"><i class="ri-map-pin-line"></i> Interlaken, Switzerland</p>
+                      <p class="dash-pkg-title">Alpine Peaks Explorer</p>
+                      <div class="dash-pkg-footer">
+                        <p class="dash-pkg-price">&#36;2,340 <small>/ person</small></p><a href="404.html"
+                          class="btn-dash btn-dash-primary">Book</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dash-pkg-card">
+                    <div class="dash-pkg-img"><img
+                        src="assets/images/bali.webp"
+                        alt="Bali" /><a href="404.html" class="dash-pkg-remove" aria-label="Remove from wishlist"><i
+                          class="ri-heart-3-fill"></i></a></div>
+                    <div class="dash-pkg-body">
+                      <p class="dash-pkg-loc"><i class="ri-map-pin-line"></i> Ubud, Bali</p>
+                      <p class="dash-pkg-title">Bali Rainforest Villa</p>
+                      <div class="dash-pkg-footer">
+                        <p class="dash-pkg-price">&#36;1,120 <small>/ person</small></p><a href="404.html"
+                          class="btn-dash btn-dash-primary">Book</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dash-pkg-card">
+                    <div class="dash-pkg-img"><img
+                        src="assets/images/greece.webp"
+                        alt="Santorini" /><a href="404.html" class="dash-pkg-remove"
+                        aria-label="Remove from wishlist"><i class="ri-heart-3-fill"></i></a></div>
+                    <div class="dash-pkg-body">
+                      <p class="dash-pkg-loc"><i class="ri-map-pin-line"></i> Oia, Santorini</p>
+                      <p class="dash-pkg-title">Aegean Blue Getaway</p>
+                      <div class="dash-pkg-footer">
+                        <p class="dash-pkg-price">&#36;1,780 <small>/ person</small></p><a href="404.html"
+                          class="btn-dash btn-dash-primary">Book</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dash-pkg-card">
+                    <div class="dash-pkg-img"><img
+                        src="assets/images/image-6.webp"
+                        alt="Cappadocia" /><a href="404.html" class="dash-pkg-remove"
+                        aria-label="Remove from wishlist"><i class="ri-heart-3-fill"></i></a></div>
+                    <div class="dash-pkg-body">
+                      <p class="dash-pkg-loc"><i class="ri-map-pin-line"></i> Cappadocia, Turkey</p>
+                      <p class="dash-pkg-title">Balloons over Cappadocia</p>
+                      <div class="dash-pkg-footer">
+                        <p class="dash-pkg-price">&#36;990 <small>/ person</small></p><a href="404.html"
+                          class="btn-dash btn-dash-primary">Book</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dash-pkg-card">
+                    <div class="dash-pkg-img"><img
+                        src="assets/images/image-4.webp"
+                        alt="Mountain lake" /><a href="404.html" class="dash-pkg-remove"
+                        aria-label="Remove from wishlist"><i class="ri-heart-3-fill"></i></a></div>
+                    <div class="dash-pkg-body">
+                      <p class="dash-pkg-loc"><i class="ri-map-pin-line"></i> Banff, Canada</p>
+                      <p class="dash-pkg-title">Rockies Lakeside Escape</p>
+                      <div class="dash-pkg-footer">
+                        <p class="dash-pkg-price">&#36;1,650 <small>/ person</small></p><a href="404.html"
+                          class="btn-dash btn-dash-primary">Book</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /wishlistSaved -->
+
+          <!-- ── Sub-tab: Price Alerts ── -->
+          <div class="dash-subpanel" id="wishlistAlerts" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Price Alerts<span>We'll notify you when prices change</span></p>
+                <a href="404.html" class="btn-dash btn-dash-primary"><i class="ri-add-line"></i> New Alert</a>
+              </div>
+              <div class="dash-panel-body" style="padding-top:6px; padding-bottom:6px;">
+                <div class="trip-item">
+                  <div class="dash-stat-icon rose" style="width:44px;height:44px; flex-shrink:0;"><i
+                      class="ri-arrow-down-line"></i></div>
+                  <div class="trip-info">
+                    <h4>Kenya Safari Adventure <span class="dash-price-drop">&#8209;&#36;200</span></h4>
+                    <p>Current: &#36;1,750 &bull; Was: &#36;1,950 &bull; Alert set at &#36;1,800</p>
+                  </div>
+                  <span class="status-badge status-confirmed">Active</span>
+                </div>
+                <div class="trip-item">
+                  <div class="dash-stat-icon gold" style="width:44px;height:44px; flex-shrink:0;"><i
+                      class="ri-alarm-line"></i></div>
+                  <div class="trip-info">
+                    <h4>Alpine Peaks Explorer</h4>
+                    <p>Current: &#36;2,340 &bull; Alert set at &#36;2,100</p>
+                  </div>
+                  <span class="status-badge status-pending">Watching</span>
+                </div>
+                <div class="trip-item">
+                  <div class="dash-stat-icon teal" style="width:44px;height:44px; flex-shrink:0;"><i
+                      class="ri-alarm-line"></i></div>
+                  <div class="trip-info">
+                    <h4>Rockies Lakeside Escape</h4>
+                    <p>Current: &#36;1,650 &bull; Alert set at &#36;1,400</p>
+                  </div>
+                  <span class="status-badge status-pending">Watching</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Recent Price History<span>Last 30 days movement</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <div class="dash-stat-bars">
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Kenya Safari</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill rose" style="width:88%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct rose">&#8209;10%</span>
+                  </div>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Alpine Peaks</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill" style="width:45%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">+2%</span>
+                  </div>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Rockies Escape</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill teal" style="width:60%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">&#8209;4%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /wishlistAlerts -->
+
+          <!-- ── Sub-tab: Collections ── -->
+          <div class="dash-subpanel" id="wishlistCollections" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">My Collections<span>Organise your saved packages into lists</span></p>
+                <button class="btn-dash btn-dash-primary"><i class="ri-add-line"></i> New Collection</button>
+              </div>
+              <div class="dash-panel-body">
+                <div class="dash-collection-grid">
+                  <div class="dash-collection-card">
+                    <div class="dash-collection-imgs">
+                      <img
+                        src="assets/images/dubai.webp"
+                        alt="" />
+                      <img
+                        src="assets/images/image-1.webp"
+                        alt="" />
+                    </div>
+                    <div class="dash-collection-info">
+                      <h4>Dream Destinations</h4>
+                      <p>4 packages</p>
+                    </div>
+                    <a href="404.html" class="btn-dash-icon" aria-label="View collection"><i
+                        class="ri-arrow-right-line"></i></a>
+                  </div>
+                  <div class="dash-collection-card">
+                    <div class="dash-collection-imgs">
+                      <img
+                        src="assets/images/image-9.webp"
+                        alt="" />
+                      <img
+                        src="assets/images/image-4.webp"
+                        alt="" />
+                    </div>
+                    <div class="dash-collection-info">
+                      <h4>Honeymoon Ideas</h4>
+                      <p>2 packages</p>
+                    </div>
+                    <a href="404.html" class="btn-dash-icon" aria-label="View collection"><i
+                        class="ri-arrow-right-line"></i></a>
+                  </div>
+                  <div class="dash-collection-card dash-collection-new">
+                    <i class="ri-add-circle-line"></i>
+                    <span>Create new collection</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /wishlistCollections -->
+
+        </section>
+
+        <!-- ============================================================
+             PAGE: PAYMENTS
+        ============================================================ -->
+        <section class="dash-page" id="paymentsPage">
+
+          <!-- Sub-tabs -->
+          <div class="dash-subtab-bar" role="tablist" aria-label="Payments sections">
+            <button class="dash-subtab active" data-subtab="paymentsHistory" role="tab" aria-selected="true">
+              <i class="ri-receipt-line"></i> History
+            </button>
+            <button class="dash-subtab" data-subtab="paymentsMethods" role="tab" aria-selected="false">
+              <i class="ri-bank-card-line"></i> Saved Methods
+            </button>
+            <button class="dash-subtab" data-subtab="paymentsSpending" role="tab" aria-selected="false">
+              <i class="ri-pie-chart-2-line"></i> Spending
+            </button>
+          </div>
+
+          <!-- ── Sub-tab: History ── -->
+          <div class="dash-subpanel active" id="paymentsHistory" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Payment History<span>Invoices and receipts for your bookings</span></p>
+              </div>
+              <div class="dash-table-wrap">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th>Invoice</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p class="dash-table-title">INV-88231</p>
+                        <p class="dash-table-sub">Maldives Overwater Escape</p>
+                      </td>
+                      <td>02 Sep 2026</td>
+                      <td>&#36;2,480.00</td>
+                      <td><span class="status-badge status-paid">Paid</span></td>
+                      <td><a href="404.html" class="btn-dash-icon" aria-label="Download receipt"><i
+                            class="ri-download-2-line"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="dash-table-title">INV-88104</p>
+                        <p class="dash-table-sub">Santorini Sunset Retreat</p>
+                      </td>
+                      <td>19 Aug 2026</td>
+                      <td>&#36;1,860.00</td>
+                      <td><span class="status-badge status-paid">Paid</span></td>
+                      <td><a href="404.html" class="btn-dash-icon" aria-label="Download receipt"><i
+                            class="ri-download-2-line"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="dash-table-title">INV-87950</p>
+                        <p class="dash-table-sub">Swiss Alps Winter Lodge — Deposit</p>
+                      </td>
+                      <td>05 Aug 2026</td>
+                      <td>&#36;1,000.00</td>
+                      <td><span class="status-badge status-pending">Pending</span></td>
+                      <td><a href="404.html" class="btn-dash-icon" aria-label="View invoice"><i
+                            class="ri-eye-line"></i></a></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p class="dash-table-title">INV-86622</p>
+                        <p class="dash-table-sub">Bali Rainforest Villa — Refund</p>
+                      </td>
+                      <td>02 Jun 2026</td>
+                      <td>&#36;1,340.00</td>
+                      <td><span class="status-badge status-cancelled">Failed</span></td>
+                      <td><a href="404.html" class="btn-dash-icon" aria-label="Retry payment"><i
+                            class="ri-refresh-line"></i></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div><!-- /paymentsHistory -->
+
+          <!-- ── Sub-tab: Saved Methods ── -->
+          <div class="dash-subpanel" id="paymentsMethods" role="tabpanel">
+            <div class="dash-two-col">
+              <div class="dash-panel" style="margin-bottom:0;">
+                <div class="dash-panel-header">
+                  <p class="dash-panel-title">Saved Payment Methods</p>
+                </div>
+                <div class="dash-panel-body" style="padding-top:6px;">
+                  <div class="trip-item">
+                    <div class="dash-stat-icon navy" style="width:44px;height:44px;"><i class="ri-visa-line"></i></div>
+                    <div class="trip-info">
+                      <h4>Visa &bull;&bull;&bull;&bull; 4821</h4>
+                      <p>Expires 08/28</p>
+                    </div>
+                    <a href="404.html" class="btn-dash-icon" aria-label="Remove card"><i
+                        class="ri-delete-bin-6-line"></i></a>
+                  </div>
+                  <div class="trip-item">
+                    <div class="dash-stat-icon teal" style="width:44px;height:44px;"><i class="ri-mastercard-line"></i>
+                    </div>
+                    <div class="trip-info">
+                      <h4>Mastercard &bull;&bull;&bull;&bull; 1190</h4>
+                      <p>Expires 03/27</p>
+                    </div>
+                    <a href="404.html" class="btn-dash-icon" aria-label="Remove card"><i
+                        class="ri-delete-bin-6-line"></i></a>
+                  </div>
+                  <a href="404.html" class="btn-dash btn-dash-outline"
+                    style="width:100%; justify-content:center; margin-top:8px;">
+                    <i class="ri-add-line"></i> Add Payment Method
+                  </a>
+                </div>
+              </div>
+
+              <div class="dash-panel" style="margin-bottom:0;">
+                <div class="dash-panel-header">
+                  <p class="dash-panel-title">Billing Address</p>
+                </div>
+                <div class="dash-panel-body">
+                  <div class="dash-address-block">
+                    <p><strong>Aisha Sharma</strong></p>
+                    <p>42 Wanderlux Lane</p>
+                    <p>London, W1A 1AA</p>
+                    <p>United Kingdom</p>
+                  </div>
+                  <a href="404.html" class="btn-dash btn-dash-outline" style="margin-top:16px;"><i
+                      class="ri-edit-line"></i> Edit Address</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- /paymentsMethods -->
+
+          <!-- ── Sub-tab: Spending ── -->
+          <div class="dash-subpanel" id="paymentsSpending" role="tabpanel">
+            <div class="dash-panel">
+              <div class="dash-panel-header">
+                <p class="dash-panel-title">Spending Summary<span>Your travel spend at a glance</span></p>
+              </div>
+              <div class="dash-panel-body">
+                <div class="dash-stats-grid" style="margin-bottom:24px;">
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-top">
+                      <div class="dash-stat-icon gold"><i class="ri-money-dollar-circle-line"></i></div>
+                    </div>
+                    <p class="dash-stat-value">&#36;7,680</p>
+                    <p class="dash-stat-label">Spent This Year</p>
+                  </div>
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-top">
+                      <div class="dash-stat-icon teal"><i class="ri-refund-2-line"></i></div>
+                    </div>
+                    <p class="dash-stat-value">&#36;1,340</p>
+                    <p class="dash-stat-label">Pending Refund</p>
+                  </div>
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-top">
+                      <div class="dash-stat-icon navy"><i class="ri-calendar-check-line"></i></div>
+                    </div>
+                    <p class="dash-stat-value">&#36;4,120</p>
+                    <p class="dash-stat-label">Due This Month</p>
+                  </div>
+                  <div class="dash-stat-card">
+                    <div class="dash-stat-top">
+                      <div class="dash-stat-icon rose"><i class="ri-vip-crown-2-line"></i></div>
+                    </div>
+                    <p class="dash-stat-value">&#36;184</p>
+                    <p class="dash-stat-label">Rewards Saved</p>
+                  </div>
+                </div>
+
+                <div class="dash-stat-bars">
+                  <p class="dash-stat-bars-title">Spend by Category</p>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Accommodation</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill" style="width:62%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">62%</span>
+                  </div>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Flights</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill teal" style="width:24%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">24%</span>
+                  </div>
+                  <div class="dash-stat-bar-row">
+                    <span class="dash-stat-bar-label">Activities</span>
+                    <div class="dash-stat-bar-track">
+                      <div class="dash-stat-bar-fill rose" style="width:14%;"></div>
+                    </div>
+                    <span class="dash-stat-bar-pct">14%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- /paymentsSpending -->
+
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

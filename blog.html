@@ -1,0 +1,751 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Travel stories, destination guides, and insider tips from the Stackly editorial team." />
+  <title>Blog — Stackly | Premium Holiday Packages</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/blog.css" />
+</head>
+<body>
+  <!-- ============================================================
+       PRELOADER
+  ============================================================ -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="preloader-logo" />
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+  <script src="assets/js/preloader.js"></script>
+
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Stackly Home">
+        <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html"    class="nav-link">Home</a></li>
+        <li><a href="about.html"    class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+         <li><a href="packages.html" class="nav-link">Packages</a></li>
+        <li><a href="blog.html"     class="nav-link">Blog</a></li>
+        <li><a href="contact.html"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn-gold">Sign Up</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <!-- <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="ri-close-line"></i></button> -->
+    <!-- <div class="mobile-logo">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+    </div>
+    <div class="mobile-divider"></div> -->
+    <ul role="list">
+      <li><a href="index.html"    class="mobile-link">Home</a></li>
+      <li><a href="about.html"    class="mobile-link">About</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="packages.html" class="mobile-link">Packages</a></li>
+      <li><a href="blog.html"     class="mobile-link">Blog</a></li>
+      <li><a href="contact.html"  class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a href="login.html" class="btn-outline-nav">Login</a>
+      <a href="signup.html" class="btn-gold">Sign Up</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — BLOG HERO + SEARCH
+    ============================================================ -->
+    <section class="blog-hero" id="blog-hero" aria-label="Blog introduction">
+      <div class="blog-hero-bg">
+        <img
+          src="assets/images/blog/blog-hero.webp"
+          alt="Vast green mountain range at golden hour"
+          class="blog-hero-img"
+          id="blogHeroImg"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="blog-hero-overlay"></div>
+      </div>
+
+      <div class="blog-hero-content">
+        <p class="blog-breadcrumb" data-aos="fade-down">
+          <a href="index.html">Home</a>
+          <i class="ri-arrow-right-s-line"></i>
+          <span>Blog</span>
+        </p>
+
+        <p class="hero-eyebrow" data-aos="fade-up" data-aos-delay="80">The Stackly Journal</p>
+
+        <h1 class="blog-hero-title" id="blogHeroTitle">
+          Stories, Guides &amp;<br />
+          <em>Inspiration</em> For Your Next Trip
+        </h1>
+
+        <p class="blog-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+          Real advice from real travellers — destination guides, packing lists, and the stories
+          behind the world's most beautiful places.
+        </p>
+
+        <div class="blog-search-wrap" data-aos="fade-up" data-aos-delay="280">
+          <form class="blog-search" id="blogSearchForm" novalidate>
+            <i class="ri-search-line"></i>
+            <input type="text" id="blogSearchInput" placeholder="Search articles, destinations, tips…" aria-label="Search articles" autocomplete="off" />
+            <button type="submit">Search</button>
+          </form>
+          <p class="search-error-msg" id="blogSearchError" aria-live="polite">Please enter a search keyword</p>
+        </div>
+
+        <div class="blog-hero-tags" data-aos="fade-up" data-aos-delay="340">
+          <span>Popular:</span>
+          <a href="404.html" data-filter="destinations">Destinations</a>
+          <a href="404.html" data-filter="tips">Travel Tips</a>
+          <a href="404.html" data-filter="adventure">Adventure</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — FEATURED ARTICLE
+    ============================================================ -->
+    <section class="featured-post-section" id="featured" aria-label="Featured article">
+      <div class="container">
+        <div class="section-eyebrow" data-aos="fade-up">Editor's Pick</div>
+
+        <a href="404.html" class="featured-post-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="featured-post-image">
+            <img src="assets/images/japan-cherry-blossom.webp" alt="Whitewashed buildings and blue domes overlooking the sea in Santorini" loading="eager" />
+            <span class="featured-post-badge">Destinations</span>
+          </div>
+          <div class="featured-post-content">
+            <div class="featured-post-meta">
+              <span><i class="ri-calendar-line"></i> Aug 18, 2026</span>
+              <span><i class="ri-time-line"></i> 9 min read</span>
+            </div>
+            <h2>36 Hours in Santorini: The Perfect Cliffside Escape</h2>
+            <p>From sunset cocktails in Oia to hidden black-sand beaches, here's exactly how to spend a whirlwind weekend on Greece's most photogenic island — without the tourist crowds.</p>
+            <div class="featured-post-author">
+              <img src="assets/images/blog/blog-author-elena-sm.webp" alt="Portrait of author Elena Marsh" loading="lazy" />
+              <div>
+                <strong>Elena Marsh</strong>
+                <span>Senior Travel Editor</span>
+              </div>
+              <span class="featured-post-cta">Read Story <i class="ri-arrow-right-line"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — CATEGORY FILTER + ARTICLES GRID
+    ============================================================ -->
+    <section class="blog-grid-section" id="articles" aria-label="All articles">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow" data-aos="fade-up">Latest Articles</div>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Fresh From The Journal</h2>
+        </div>
+
+        <!-- <div class="filter-tabs" id="blogFilterTabs" data-aos="fade-up" data-aos-delay="120">
+          <button class="filter-btn active" data-filter="all">All Posts</button>
+          <button class="filter-btn" data-filter="destinations">Destinations</button>
+          <button class="filter-btn" data-filter="tips">Travel Tips</button>
+          <button class="filter-btn" data-filter="adventure">Adventure</button>
+          <button class="filter-btn" data-filter="food">Food &amp; Culture</button>
+          <button class="filter-btn" data-filter="budget">Budget Travel</button>
+        </div> -->
+
+        <div class="blog-post-grid" id="blogPostGrid">
+
+          <article class="blog-post-card" data-category="tips" data-aos="fade-up" data-aos-delay="0">
+            <a href="404.html" class="blog-post-image">
+              <img src="assets/images/blog/blog-card-packing.webp" alt="Backpacker looking out over a mountain valley" loading="lazy" />
+              <span class="blog-post-tag">Travel Tips</span>
+            </a>
+            <div class="blog-post-body">
+              <h3><a href="404.html">The Ultimate Carry-On Packing List for Any Trip</a></h3>
+              <p>Fit two weeks of clothing into one bag with these space-saving folding tricks and packing cube hacks.</p>
+              <div class="blog-post-meta">
+                <span><i class="ri-user-3-line"></i> Priya Nair</span>
+                <span><i class="ri-time-line"></i> 6 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post-card" data-category="destinations" data-aos="fade-up" data-aos-delay="80">
+            <a href="404.html" class="blog-post-image">
+              <img src="assets/images/blog/blog-card-kyoto.webp" alt="Traditional pagoda temple in Kyoto surrounded by autumn trees" loading="lazy" />
+              <span class="blog-post-tag">Destinations</span>
+            </a>
+            <div class="blog-post-body">
+              <h3><a href="404.html">Kyoto in Autumn: A Neighbourhood-by-Neighbourhood Guide</a></h3>
+              <p>Chase the best foliage across five historic districts, from Arashiyama's bamboo grove to Higashiyama's lantern-lit streets.</p>
+              <div class="blog-post-meta">
+                <span><i class="ri-user-3-line"></i> Daniel Reyes</span>
+                <span><i class="ri-time-line"></i> 11 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post-card" data-category="food" data-aos="fade-up" data-aos-delay="160">
+            <a href="404.html" class="blog-post-image">
+              <img src="assets/images/blog/blog-card-bangkok.webp" alt="Colourful street food stalls at a night market in Bangkok" loading="lazy" />
+              <span class="blog-post-tag">Food &amp; Culture</span>
+            </a>
+            <div class="blog-post-body">
+              <h3><a href="404.html">A Street Food Crawl Through Bangkok's Night Markets</a></h3>
+              <p>Eight dishes you can't leave Bangkok without trying, plus the exact stalls our editors keep going back to.</p>
+              <div class="blog-post-meta">
+                <span><i class="ri-user-3-line"></i> Maria Chen</span>
+                <span><i class="ri-time-line"></i> 7 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post-card" data-category="adventure" data-aos="fade-up" data-aos-delay="0">
+            <a href="404.html" class="blog-post-image">
+              <img src="assets/images/blog/blog-card-swiss-alps.webp" alt="Hiker standing on a rocky mountain ridge above the clouds" loading="lazy" />
+              <span class="blog-post-tag">Adventure</span>
+            </a>
+            <div class="blog-post-body">
+              <h3><a href="404.html">Trekking the Swiss Alps: A First-Timer's Survival Guide</a></h3>
+              <p>Everything we wish we'd known before our first multi-day alpine trek — gear, altitude, and route planning.</p>
+              <div class="blog-post-meta">
+                <span><i class="ri-user-3-line"></i> James Okafor</span>
+                <span><i class="ri-time-line"></i> 10 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post-card" data-category="budget" data-aos="fade-up" data-aos-delay="80">
+            <a href="404.html" class="blog-post-image">
+              <img src="assets/images/blog/blog-card-bali.webp" alt="Lush green rice terraces in Bali at sunrise" loading="lazy" />
+              <span class="blog-post-tag">Budget Travel</span>
+            </a>
+            <div class="blog-post-body">
+              <h3><a href="404.html">Bali on a Budget: 10 Days for Under $700</a></h3>
+              <p>A full breakdown of flights, guesthouses, and scooter rentals that made this trip surprisingly affordable.</p>
+              <div class="blog-post-meta">
+                <span><i class="ri-user-3-line"></i> Aisha Patel</span>
+                <span><i class="ri-time-line"></i> 8 min</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-post-card" data-category="destinations" data-aos="fade-up" data-aos-delay="160">
+            <a href="404.html" class="blog-post-image">
+              <img src="assets/images/blog/blog-card-venice.webp" alt="Gondola gliding down a canal in Venice at dusk" loading="lazy" />
+              <span class="blog-post-tag">Destinations</span>
+            </a>
+            <div class="blog-post-body">
+              <h3><a href="404.html">Venice Without the Crowds: A Local's Off-Season Guide</a></h3>
+              <p>Visit in the shoulder season and discover a quieter, more romantic version of the floating city.</p>
+              <div class="blog-post-meta">
+                <span><i class="ri-user-3-line"></i> Elena Marsh</span>
+                <span><i class="ri-time-line"></i> 9 min</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="blog-grid-empty" id="blogGridEmpty">
+          <i class="ri-file-search-line"></i>
+          <p>No articles found in this category yet — check back soon.</p>
+        </div>
+
+        <div class="blog-load-more" data-aos="fade-up">
+          <a href="404.html" class="btn-outline-primary">
+            <span>Load More Stories</span>
+            <i class="ri-arrow-down-line"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — TRENDING NOW
+    ============================================================ -->
+    <section class="trending-section" id="trending" aria-label="Trending articles">
+      <div class="trending-bg-deco" aria-hidden="true"></div>
+      <div class="container">
+
+        <!-- Header -->
+        <div class="trending-header" data-aos="fade-up">
+          <div class="trending-header-left">
+            <span class="trending-eyebrow"><i class="ri-fire-fill"></i> Most Read This Month</span>
+            <h2 class="trending-title">Trending <em>Now</em></h2>
+          </div>
+          <a href="404.html" class="trending-view-all">
+            View all stories <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+        <!-- Mosaic layout -->
+        <div class="trending-mosaic">
+
+          <!-- LEFT — large feature card -->
+          <a href="404.html" class="trending-feature" data-aos="fade-right" data-aos-delay="60">
+            <div class="trending-feature-img">
+              <img src="assets/images/blog/blog-trending-iceland.webp"
+                   alt="Northern lights glowing green over a snowy landscape" loading="lazy" />
+              <div class="trending-feature-overlay"></div>
+            </div>
+            <div class="trending-feature-body">
+              <span class="tr-cat-pill tr-cat-adventure">Adventure</span>
+              <h3>Chasing the Northern Lights in Iceland</h3>
+              <p>A first-timer's guide to the best vantage points, the right season, and what to pack for the dark Arctic nights.</p>
+              <div class="tr-feature-meta">
+                <img src="assets/images/blog/blog-author-emma-sm.webp"
+                     alt="Emma Clarke" loading="lazy" class="tr-author-avatar" />
+                <span>Emma Clarke</span>
+                <span class="tr-dot"></span>
+                <span>9 min read</span>
+              </div>
+            </div>
+            <div class="trending-feature-rank">01</div>
+          </a>
+
+          <!-- RIGHT — numbered list -->
+          <div class="trending-list" data-aos="fade-left" data-aos-delay="100">
+
+            <a href="404.html" class="tr-list-item">
+              <div class="tr-list-num">02</div>
+              <div class="tr-list-img">
+                <img src="assets/images/blog/blog-trending-safari.webp"
+                     alt="Giraffes walking across the African savanna at sunset" loading="lazy" />
+              </div>
+              <div class="tr-list-body">
+                <span class="tr-cat-pill tr-cat-destinations">Destinations</span>
+                <h4>Your First Safari: What to Really Expect</h4>
+                <span class="tr-list-meta"><i class="ri-time-line"></i> 7 min read</span>
+              </div>
+            </a>
+
+            <a href="404.html" class="tr-list-item">
+              <div class="tr-list-num">03</div>
+              <div class="tr-list-img">
+                <img src="assets/images/blog/blog-trending-marrakech.webp"
+                     alt="Vibrant food stalls at an outdoor market" loading="lazy" />
+              </div>
+              <div class="tr-list-body">
+                <span class="tr-cat-pill tr-cat-food">Food &amp; Culture</span>
+                <h4>Market Hopping: A Foodie's Guide to Marrakech</h4>
+                <span class="tr-list-meta"><i class="ri-time-line"></i> 8 min read</span>
+              </div>
+            </a>
+
+            <a href="404.html" class="tr-list-item">
+              <div class="tr-list-num">04</div>
+              <div class="tr-list-img">
+                <img src="assets/images/blog/blog-trending-roadtrip.webp"
+                     alt="Winding coastal road along dramatic cliffs" loading="lazy" />
+              </div>
+              <div class="tr-list-body">
+                <span class="tr-cat-pill tr-cat-adventure">Adventure</span>
+                <h4>The Best Road Trips for a Two-Week Vacation</h4>
+                <span class="tr-list-meta"><i class="ri-time-line"></i> 6 min read</span>
+              </div>
+            </a>
+
+            <a href="404.html" class="tr-list-item">
+              <div class="tr-list-num">05</div>
+              <div class="tr-list-img">
+                <img src="assets/images/blog/blog-trending-beach.webp"
+                     alt="Palm trees over a tropical beach at sunset" loading="lazy" />
+              </div>
+              <div class="tr-list-body">
+                <span class="tr-cat-pill tr-cat-budget">Budget Travel</span>
+                <h4>7 Tropical Islands That Won't Break the Bank</h4>
+                <span class="tr-list-meta"><i class="ri-time-line"></i> 5 min read</span>
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — MEET OUR WRITERS
+    ============================================================ -->
+    <section class="writers-section" id="writers" aria-label="Meet our contributors">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow" data-aos="fade-up">Behind The Byline</div>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Meet Our Writers</h2>
+          <p class="section-subtitle" data-aos="fade-up" data-aos-delay="140">
+            A small team of travel-obsessed editors who've reported from over 60 countries between them.
+          </p>
+        </div>
+
+        <div class="writers-list">
+
+          <div class="writer-row" data-aos="fade-up" data-aos-delay="0">
+            <div class="wr-photo">
+              <img src="assets/images/blog/blog-writer-elena.webp" alt="Portrait of Elena Marsh" loading="lazy" />
+            </div>
+            <div class="wr-bio">
+              <span class="wr-role">Senior Travel Editor</span>
+              <h3 class="wr-name">Elena Marsh</h3>
+              <p class="wr-desc">Elena has spent a decade chasing sunsets across six continents. She specialises in European city escapes and luxury slow travel.</p>
+              <div class="wr-tags">
+                <span class="wr-tag">Destinations</span>
+                <span class="wr-tag">Luxury</span>
+                <span class="wr-tag">Europe</span>
+              </div>
+            </div>
+            <div class="wr-aside">
+              <div class="wr-stat">
+                <span class="wr-stat-num">84</span>
+                <span class="wr-stat-label">Articles</span>
+              </div>
+              <div class="wr-socials">
+                <a href="404.html" aria-label="Elena on Instagram"><i class="ri-instagram-line"></i></a>
+                <a href="404.html" aria-label="Elena on Twitter/X"><i class="ri-twitter-x-line"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="writer-row" data-aos="fade-up" data-aos-delay="60">
+            <div class="wr-photo">
+              <img src="assets/images/blog/blog-writer-daniel.webp" alt="Portrait of Daniel Reyes" loading="lazy" />
+            </div>
+            <div class="wr-bio">
+              <span class="wr-role">Founder &amp; CEO</span>
+              <h3 class="wr-name">Daniel Reyes</h3>
+              <p class="wr-desc">Daniel founded Stackly with one rule: travel should be extraordinary. He writes about the business of travel and hidden island getaways.</p>
+              <div class="wr-tags">
+                <span class="wr-tag">Islands</span>
+                <span class="wr-tag">Business Travel</span>
+                <span class="wr-tag">Strategy</span>
+              </div>
+            </div>
+            <div class="wr-aside">
+              <div class="wr-stat">
+                <span class="wr-stat-num">46</span>
+                <span class="wr-stat-label">Articles</span>
+              </div>
+              <div class="wr-socials">
+                <a href="404.html" aria-label="Daniel on Instagram"><i class="ri-instagram-line"></i></a>
+                <a href="404.html" aria-label="Daniel on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="writer-row" data-aos="fade-up" data-aos-delay="120">
+            <div class="wr-photo">
+              <img src="assets/images/blog/blog-writer-priya.webp" alt="Portrait of Priya Nair" loading="lazy" />
+            </div>
+            <div class="wr-bio">
+              <span class="wr-role">Travel Tips Columnist</span>
+              <h3 class="wr-name">Priya Nair</h3>
+              <p class="wr-desc">Priya believes great travel starts with great packing. Her step-by-step guides have helped thousands of readers travel smarter.</p>
+              <div class="wr-tags">
+                <span class="wr-tag">Packing</span>
+                <span class="wr-tag">Budget</span>
+                <span class="wr-tag">Solo Travel</span>
+              </div>
+            </div>
+            <div class="wr-aside">
+              <div class="wr-stat">
+                <span class="wr-stat-num">61</span>
+                <span class="wr-stat-label">Articles</span>
+              </div>
+              <div class="wr-socials">
+                <a href="404.html" aria-label="Priya on Instagram"><i class="ri-instagram-line"></i></a>
+                <a href="404.html" aria-label="Priya on Twitter/X"><i class="ri-twitter-x-line"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="writer-row" data-aos="fade-up" data-aos-delay="180">
+            <div class="wr-photo">
+              <img src="assets/images/blog/blog-writer-james.webp" alt="Portrait of James Okafor" loading="lazy" />
+            </div>
+            <div class="wr-bio">
+              <span class="wr-role">Adventure &amp; Outdoors</span>
+              <h3 class="wr-name">James Okafor</h3>
+              <p class="wr-desc">From Himalayan treks to African safaris, James lives at altitude. His raw field reports read like adventure novels you can actually follow.</p>
+              <div class="wr-tags">
+                <span class="wr-tag">Adventure</span>
+                <span class="wr-tag">Trekking</span>
+                <span class="wr-tag">Safari</span>
+              </div>
+            </div>
+            <div class="wr-aside">
+              <div class="wr-stat">
+                <span class="wr-stat-num">39</span>
+                <span class="wr-stat-label">Articles</span>
+              </div>
+              <div class="wr-socials">
+                <a href="404.html" aria-label="James on Instagram"><i class="ri-instagram-line"></i></a>
+                <a href="404.html" aria-label="James on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 6 — EXPLORE BY TOPIC (Infinite Marquee)
+    ============================================================ -->
+    <section class="topics-section" id="topics" aria-label="Explore articles by topic">
+      <div class="topics-header container" data-aos="fade-up">
+        <div class="section-eyebrow">Browse By Interest</div>
+        <h2 class="section-title">Explore By Topic</h2>
+      </div>
+
+      <!-- ROW 1 — scrolls LEFT -->
+      <div class="marquee-row">
+        <div class="marquee-track marquee-left">
+          <!-- original set -->
+          <a href="404.html" class="topic-pill"><i class="ri-map-pin-line"></i> Destinations</a>
+          <a href="404.html" class="topic-pill"><i class="ri-suitcase-3-line"></i> Packing Tips</a>
+          <a href="404.html" class="topic-pill"><i class="ri-mountain-line"></i> Adventure</a>
+          <a href="404.html" class="topic-pill"><i class="ri-restaurant-2-line"></i> Food &amp; Culture</a>
+          <a href="404.html" class="topic-pill"><i class="ri-wallet-3-line"></i> Budget Travel</a>
+          <a href="404.html" class="topic-pill"><i class="ri-heart-3-line"></i> Honeymoon</a>
+          <a href="404.html" class="topic-pill"><i class="ri-group-line"></i> Family Trips</a>
+          <a href="404.html" class="topic-pill"><i class="ri-leaf-line"></i> Sustainable Travel</a>
+          <a href="404.html" class="topic-pill"><i class="ri-camera-3-line"></i> Photography</a>
+          <a href="404.html" class="topic-pill"><i class="ri-ship-2-line"></i> Cruises</a>
+          <!-- duplicate for seamless loop -->
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-map-pin-line"></i> Destinations</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-suitcase-3-line"></i> Packing Tips</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-mountain-line"></i> Adventure</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-restaurant-2-line"></i> Food &amp; Culture</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-wallet-3-line"></i> Budget Travel</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-heart-3-line"></i> Honeymoon</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-group-line"></i> Family Trips</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-leaf-line"></i> Sustainable Travel</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-camera-3-line"></i> Photography</a>
+          <a href="404.html" class="topic-pill" aria-hidden="true"><i class="ri-ship-2-line"></i> Cruises</a>
+        </div>
+      </div>
+
+      <!-- ROW 2 — scrolls RIGHT (reverse direction) -->
+      <div class="marquee-row">
+        <div class="marquee-track marquee-right">
+          <!-- original set (different order for visual variety) -->
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-plane-line"></i> Solo Travel</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-roadster-line"></i> Road Trips</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-building-line"></i> City Breaks</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-sun-line"></i> Beach &amp; Island</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-ancient-gate-line"></i> Culture &amp; History</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-compass-3-line"></i> Hidden Gems</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-snowflake-line"></i> Winter Escapes</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-star-smile-line"></i> Luxury Travel</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-trophy-line"></i> Bucket List</a>
+          <a href="404.html" class="topic-pill topic-pill--dark"><i class="ri-global-line"></i> World Wonders</a>
+          <!-- duplicate -->
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-plane-line"></i> Solo Travel</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-roadster-line"></i> Road Trips</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-building-line"></i> City Breaks</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-sun-line"></i> Beach &amp; Island</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-ancient-gate-line"></i> Culture &amp; History</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-compass-3-line"></i> Hidden Gems</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-snowflake-line"></i> Winter Escapes</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-star-smile-line"></i> Luxury Travel</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-trophy-line"></i> Bucket List</a>
+          <a href="404.html" class="topic-pill topic-pill--dark" aria-hidden="true"><i class="ri-global-line"></i> World Wonders</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 7 — NEWSLETTER CTA
+    ============================================================ -->
+    <section class="blog-newsletter" id="blog-newsletter" aria-label="Subscribe to the newsletter">
+      <div class="blog-newsletter-bg">
+        <img src="assets/images/blog/blog-newsletter-bg.webp" alt="Hot air balloons floating over a scenic valley at sunrise" loading="lazy" />
+        <div class="blog-newsletter-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="blog-newsletter-content" data-aos="zoom-in">
+          <div class="blog-newsletter-icon"><i class="ri-quill-pen-fill"></i></div>
+          <h2>Never Miss a <span class="text-accent">Story</span></h2>
+          <p>New guides, destination deep-dives, and travel tips delivered to your inbox every other week.</p>
+
+          <form class="newsletter-form" id="blogNewsletterForm" novalidate>
+            <div class="newsletter-input-group">
+              <input type="email" id="blogNewsletterEmail" placeholder="Enter your email address" aria-label="Email address" autocomplete="email" required />
+              <button type="submit" class="btn-gold">
+                <span>Subscribe</span>
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+            <p class="newsletter-error-msg" id="blogNewsletterError" aria-live="polite">Please enter a valid email address</p>
+            <p class="newsletter-note"><i class="ri-lock-line"></i> No spam, ever. Unsubscribe at any time.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================
+       FOOTER 
+  ====================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo" aria-label="Stackly Home">
+              <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+            </a>
+            <p>Crafting extraordinary holiday experiences since 2010. Your journey to the world's most breathtaking destinations starts here.</p>
+            <div class="footer-socials">
+              <a href="404.html" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="404.html" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="404.html" aria-label="Follow us on Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="Watch us on YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="404.html" aria-label="Follow us on Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Destinations -->
+          <div class="footer-col">
+            <h4>Popular Destinations</h4>
+            <ul role="list">
+              <li><a href="404.html">Maldives</a></li>
+              <li><a href="404.html">Santorini, Greece</a></li>
+              <li><a href="404.html">Bali, Indonesia</a></li>
+              <li><a href="404.html">Swiss Alps</a></li>
+              <li><a href="404.html">Kenya Safari</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul role="list">
+              <li><a href="404.html">Packages</a></li>
+              <li><a href="404.html">Booking</a></li>
+              <li><a href="404.html">FAQs</a></li>
+              <li><a href="404.html">Cancellation Policy</a></li>
+              <li><a href="404.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col footer-contact">
+            <h4>Contact Us</h4>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span>+91 9876543210</span>
+                <small>Mon–Fri 9am–6pm</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>info@thestackly.com </span>
+                <small>We reply within 24 hours</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span>Salem, Tamil Nadu</span>
+                <small>India</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Cookie Settings</a>
+        </div>
+        <div class="footer-payments" aria-label="Accepted payment methods">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/blog.js"></script>
+</body>
+</html>

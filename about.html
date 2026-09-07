@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+  <script>document.documentElement.classList.remove('no-js');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Learn the story behind Stackly — our mission, our team, and why 98,000+ travellers trust us to craft their dream holidays." />
+  <title>About Us — Stackly | Premium Holiday Packages</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/about.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       PRELOADER
+  ============================================================ -->
+  <div class="preloader" id="preloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+    <div class="preloader-inner">
+      <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="preloader-logo" />
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+  <script src="assets/js/preloader.js"></script>
+
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Stackly Home">
+        <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+         <li><a href="packages.html" class="nav-link">Packages</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn-outline-nav">Login</a>
+        <a href="signup.html" class="btn-gold">Sign Up</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <!-- <button class="mobile-close" id="mobileClose" aria-label="Close menu"><i class="ri-close-line"></i></button>
+    <div class="mobile-logo">
+      <span class="logo-icon"><i class="ri-compass-discover-line"></i></span>
+      <span class="logo-text">Wander<span class="logo-accent">lux</span></span>
+    </div>
+    <div class="mobile-divider"></div> -->
+    <ul role="list">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About</a></li>
+      <li><a href="services.html" class="mobile-link">Services</a></li>
+      <li><a href="packages.html" class="mobile-link">Packages</a></li>
+      <li><a href="blog.html" class="mobile-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-link">Contact</a></li>
+    </ul>
+    <div class="mobile-cta">
+      <a href="login.html" class="btn-outline-nav">Login</a>
+      <a href="signup.html" class="btn-gold">Sign Up</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — ABOUT HERO
+    ============================================================ -->
+    <section class="about-hero" id="about-hero" aria-label="About us introduction">
+      <div class="about-hero-bg">
+        <img src="assets/images/sunset.webp" alt="Winding mountain road through misty valleys"
+          class="about-hero-img" id="aboutHeroImg" loading="eager" fetchpriority="high" />
+        <div class="about-hero-overlay"></div>
+      </div>
+
+      <div class="about-hero-content">
+        <p class="about-breadcrumb" data-aos="fade-down" data-aos-delay="0">
+          <a href="index.html">Home</a>
+          <i class="ri-arrow-right-s-line"></i>
+          <span>About Us</span>
+        </p>
+
+        <p class="hero-eyebrow" data-aos="fade-up" data-aos-delay="80">Our Story, Our Passion</p>
+
+        <h1 class="about-hero-title" id="aboutHeroTitle">
+          Crafting Journeys,<br />
+          <em>Creating Memories</em>
+        </h1>
+
+        <p class="about-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+          Since 2010, Stackly has turned wanderlust into reality for thousands of travellers —
+          one thoughtfully designed itinerary at a time.
+        </p>
+      </div>
+
+      <!-- Floating stat badges -->
+      <div class="about-float-badge badge-1" id="floatBadge1">
+        <i class="ri-calendar-check-fill"></i>
+        <div><strong>15+</strong><span>Years of Trust</span></div>
+      </div>
+      <div class="about-float-badge badge-2" id="floatBadge2">
+        <i class="ri-earth-fill"></i>
+        <div><strong>120+</strong><span>Countries Covered</span></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — OUR STORY (with animated timeline)
+    ============================================================ -->
+    <section class="story-section" id="story" aria-label="Our story">
+      <div class="container">
+        <div class="story-grid">
+
+          <div class="story-content">
+            <div class="section-eyebrow" data-aos="fade-up">Who We Are</div>
+            <h2 class="section-title story-title" data-aos="fade-up" data-aos-delay="80">
+              A Decade and a Half of <span class="text-accent">Unforgettable</span> Travel
+            </h2>
+            <p class="story-text" data-aos="fade-up" data-aos-delay="160">
+              What began as a two-person desk in a small office is now a global travel studio
+              trusted by over 98,000 explorers. We believe a holiday isn't just about where you go —
+              it's about how it makes you feel. That belief still drives every itinerary we design.
+            </p>
+            <p class="story-text" data-aos="fade-up" data-aos-delay="220">
+              From the first sunrise trek we organised in the Alps to the private island retreats
+              we curate today, our promise has never changed: honest advice, thoughtful details,
+              and journeys that stay with you long after you're home.
+            </p>
+
+            <div class="story-image-wrap" data-aos="zoom-in" data-aos-delay="280">
+              <img src="assets/images/image-2.webp" alt="Two travellers reviewing a map while planning their route"
+                loading="lazy" />
+              <div class="story-image-badge">
+                <i class="ri-heart-3-fill"></i>
+                <span>Built by travellers, for travellers</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-timeline" id="storyTimeline">
+            <div class="timeline-track">
+              <div class="timeline-progress" id="timelineProgress"></div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="0">
+              <span class="timeline-dot"></span>
+              <span class="timeline-year">2010</span>
+              <h4>Stackly Is Born</h4>
+              <p>Two friends, one shared obsession with maps, launch a tiny agency from a rented desk.</p>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="80">
+              <span class="timeline-dot"></span>
+              <span class="timeline-year">2014</span>
+              <h4>First 10,000 Travellers</h4>
+              <p>Word-of-mouth referrals push us past our first major milestone across 20 countries.</p>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="160">
+              <span class="timeline-dot"></span>
+              <span class="timeline-year">2018</span>
+              <h4>Global Expansion</h4>
+              <p>New regional offices open across Asia and Europe, growing our reach to 80+ destinations.</p>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="240">
+              <span class="timeline-dot"></span>
+              <span class="timeline-year">2022</span>
+              <h4>Sustainable Travel Pledge</h4>
+              <p>We commit to carbon-conscious itineraries and partner only with responsible local operators.</p>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="320">
+              <span class="timeline-dot"></span>
+              <span class="timeline-year">2026</span>
+              <h4>#1 Travel Brand</h4>
+              <p>120+ countries, 98,000+ happy travellers, and a promise we keep chasing every day.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — MISSION, VISION & VALUES
+    ============================================================ -->
+    <section class="mission-section" id="mission" aria-label="Our mission, vision and values">
+      <div class="container">
+        <div class="mission-header-alt">
+          <div class="mission-header-content" data-aos="fade-right">
+            <div class="section-eyebrow">What Drives Us</div>
+            <h2 class="mission-display-title">Three principles.<br><em>One direction.</em></h2>
+          </div>
+          <div class="mission-header-lead" data-aos="fade-left" data-aos-delay="100">
+            <p class="mission-lead">
+              Every Stackly journey begins with the same compass: travel should feel meaningful,
+              personal, and deeply respectful of the world around us.
+            </p>
+          </div>
+        </div>
+
+        <div class="mission-unique-grid">
+          <div class="mission-block" data-aos="fade-up" data-aos-delay="0">
+            <div class="mission-block-num">01</div>
+            <div class="mission-block-text">
+              <h3 class="mission-block-kicker">Our Mission</h3>
+              <h4 class="mission-block-title">Travel made extraordinary — without the friction.</h4>
+              <p class="mission-block-desc">To make extraordinary travel accessible, transparent, and worry-free for
+                every kind of explorer.</p>
+            </div>
+          </div>
+
+          <div class="mission-block" data-aos="fade-up" data-aos-delay="150">
+            <div class="mission-block-num">02</div>
+            <div class="mission-block-text">
+              <h3 class="mission-block-kicker">Our Vision</h3>
+              <h4 class="mission-block-title">Journeys that create deeper connection.</h4>
+              <p class="mission-block-desc">A world where every journey deepens connection — to new places, new people,
+                and yourself.</p>
+            </div>
+          </div>
+
+          <div class="mission-block" data-aos="fade-up" data-aos-delay="300">
+            <div class="mission-block-num">03</div>
+            <div class="mission-block-text">
+              <h3 class="mission-block-kicker">Our Values</h3>
+              <h4 class="mission-block-title">Travel with honesty, care and respect.</h4>
+              <p class="mission-block-desc">Honesty in every recommendation, care in every detail, and respect for the
+                places we visit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — ACHIEVEMENTS (animated radial rings)
+    ============================================================ -->
+    <section class="achievements-section" id="achievements" aria-label="Our achievements">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow eyebrow-light" data-aos="fade-up">By The Numbers</div>
+          <h2 class="section-title title-light" data-aos="fade-up" data-aos-delay="80">Milestones Worth Celebrating</h2>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achieve-card" data-aos="zoom-in" data-aos-delay="0">
+            <div class="achieve-ring-wrap">
+              <svg class="achieve-ring" viewBox="0 0 140 140">
+                <circle class="ring-track" cx="70" cy="70" r="60"></circle>
+                <circle class="ring-fill" cx="70" cy="70" r="60" data-percent="88"></circle>
+              </svg>
+              <div class="achieve-value"><span class="achieve-number" data-target="98">0</span><small>K+</small></div>
+            </div>
+            <p class="achieve-label">Happy Travellers</p>
+          </div>
+
+          <div class="achieve-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="achieve-ring-wrap">
+              <svg class="achieve-ring" viewBox="0 0 140 140">
+                <circle class="ring-track" cx="70" cy="70" r="60"></circle>
+                <circle class="ring-fill" cx="70" cy="70" r="60" data-percent="90"></circle>
+              </svg>
+              <div class="achieve-value"><span class="achieve-number" data-target="120">0</span><small>+</small></div>
+            </div>
+            <p class="achieve-label">Countries Covered</p>
+          </div>
+
+          <div class="achieve-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="achieve-ring-wrap">
+              <svg class="achieve-ring" viewBox="0 0 140 140">
+                <circle class="ring-track" cx="70" cy="70" r="60"></circle>
+                <circle class="ring-fill" cx="70" cy="70" r="60" data-percent="95"></circle>
+              </svg>
+              <div class="achieve-value"><span class="achieve-number" data-target="97">0</span><small>%</small></div>
+            </div>
+            <p class="achieve-label">Would Book Again</p>
+          </div>
+
+          <div class="achieve-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="achieve-ring-wrap">
+              <svg class="achieve-ring" viewBox="0 0 140 140">
+                <circle class="ring-track" cx="70" cy="70" r="60"></circle>
+                <circle class="ring-fill" cx="70" cy="70" r="60" data-percent="80"></circle>
+              </svg>
+              <div class="achieve-value"><span class="achieve-number" data-target="15">0</span><small>Yr</small></div>
+            </div>
+            <p class="achieve-label">Industry Experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — MEET THE TEAM — CINEMATIC FILMSTRIP
+    ============================================================ -->
+    <section class="team-section" id="team" aria-label="Meet our team">
+
+      <!-- Section header -->
+      <div class="team-header">
+        <div class="team-header-inner">
+          <div class="team-header-left" data-aos="fade-right">
+            <div class="section-eyebrow eyebrow-gold">The People Behind Stackly</div>
+            <h2 class="team-display-title">Meet the people who<br><em>shape every journey.</em></h2>
+          </div>
+          <p class="team-header-desc" data-aos="fade-left" data-aos-delay="80">
+            A small, passionate crew of planners, guides, and dreamers dedicated to your next great trip.
+          </p>
+        </div>
+        <!-- Decorative running text -->
+        <div class="team-marquee" aria-hidden="true">
+          <div class="team-marquee-track">
+            <span>Stackly Team &nbsp;·&nbsp; People &nbsp;·&nbsp; Stackly Team &nbsp;·&nbsp; People &nbsp;·&nbsp; Stackly Team &nbsp;·&nbsp; People &nbsp;·&nbsp; Stackly Team &nbsp;·&nbsp; People &nbsp;·&nbsp;</span>
+            <span>Stackly Team &nbsp;·&nbsp; People &nbsp;·&nbsp; Stackly Team &nbsp;·&nbsp; People &nbsp;·&nbsp; Stackly Team &nbsp;·&nbsp; People &nbsp;·&nbsp; Stackly Team &nbsp;·&nbsp; People &nbsp;·&nbsp;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filmstrip -->
+      <div class="team-filmstrip" id="teamFilmstrip" role="tablist" aria-label="Stackly team members">
+
+        <!-- Member 01 — Daniel Reyes -->
+        <article class="team-slide active" data-index="0" role="tab" aria-selected="true" tabindex="0"
+          data-name="Daniel Reyes" data-role="Founder &amp; CEO"
+          data-bio="Started Stackly from a rented desk in 2010. Still personally plans the tricky itineraries.">
+          <div class="team-slide-img">
+            <img src="assets/images/Daniel.webp"
+              alt="Portrait of Daniel Reyes, Founder and CEO" loading="lazy" />
+            <div class="team-slide-overlay"></div>
+          </div>
+          <div class="team-slide-index" aria-hidden="true">01</div>
+          <div class="team-slide-info">
+            <p class="team-slide-role">Founder &amp; CEO</p>
+            <h3 class="team-slide-name">Daniel<br>Reyes</h3>
+            <p class="team-slide-bio">Started Stackly from a rented desk in 2010. Still personally plans the tricky itineraries.</p>
+            <div class="team-slide-socials">
+              <a href="404.html" aria-label="Daniel Reyes on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              <a href="404.html" aria-label="Daniel Reyes on Instagram"><i class="ri-instagram-line"></i></a>
+            </div>
+          </div>
+          <div class="team-slide-ticker" aria-hidden="true">Daniel Reyes &nbsp;·&nbsp; Founder &amp; CEO &nbsp;·&nbsp;</div>
+        </article>
+
+        <!-- Member 02 — Maria Chen -->
+        <article class="team-slide" data-index="1" role="tab" aria-selected="false" tabindex="-1"
+          data-name="Maria Chen" data-role="Head of Destinations"
+          data-bio="Has personally scouted over 60 countries to make sure every partner meets our standard.">
+          <div class="team-slide-img">
+            <img src="assets/images/maria.webp"
+              alt="Portrait of Maria Chen, Head of Destinations" loading="lazy" />
+            <div class="team-slide-overlay"></div>
+          </div>
+          <div class="team-slide-index" aria-hidden="true">02</div>
+          <div class="team-slide-info">
+            <p class="team-slide-role">Head of Destinations</p>
+            <h3 class="team-slide-name">Maria<br>Chen</h3>
+            <p class="team-slide-bio">Has personally scouted over 60 countries to make sure every partner meets our standard.</p>
+            <div class="team-slide-socials">
+              <a href="404.html" aria-label="Maria Chen on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              <a href="404.html" aria-label="Maria Chen on Instagram"><i class="ri-instagram-line"></i></a>
+            </div>
+          </div>
+          <div class="team-slide-ticker" aria-hidden="true">Maria Chen &nbsp;·&nbsp; Head of Destinations &nbsp;·&nbsp;</div>
+        </article>
+
+        <!-- Member 03 — Aisha Patel -->
+        <article class="team-slide" data-index="2" role="tab" aria-selected="false" tabindex="-1"
+          data-name="Aisha Patel" data-role="Client Experience Lead"
+          data-bio="Leads our 24/7 support team, making sure every question gets a real, human answer.">
+          <div class="team-slide-img">
+            <img src="assets/images/ashia.webp"
+              alt="Portrait of Aisha Patel, Client Experience Lead" loading="lazy" />
+            <div class="team-slide-overlay"></div>
+          </div>
+          <div class="team-slide-index" aria-hidden="true">03</div>
+          <div class="team-slide-info">
+            <p class="team-slide-role">Client Experience Lead</p>
+            <h3 class="team-slide-name">Aisha<br>Patel</h3>
+            <p class="team-slide-bio">Leads our 24/7 support team, making sure every question gets a real, human answer.</p>
+            <div class="team-slide-socials">
+              <a href="404.html" aria-label="Aisha Patel on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              <a href="404.html" aria-label="Aisha Patel on Instagram"><i class="ri-instagram-line"></i></a>
+            </div>
+          </div>
+          <div class="team-slide-ticker" aria-hidden="true">Aisha Patel &nbsp;·&nbsp; Client Experience Lead &nbsp;·&nbsp;</div>
+        </article>
+
+        <!-- Member 04 — James Okafor -->
+        <article class="team-slide" data-index="3" role="tab" aria-selected="false" tabindex="-1"
+          data-name="James Okafor" data-role="Sustainability Director"
+          data-bio="Vets every local partner against our responsible-travel checklist before we work with them.">
+          <div class="team-slide-img">
+            <img src="assets/images/james.webp"
+              alt="Portrait of James Okafor, Sustainability Director" loading="lazy" />
+            <div class="team-slide-overlay"></div>
+          </div>
+          <div class="team-slide-index" aria-hidden="true">04</div>
+          <div class="team-slide-info">
+            <p class="team-slide-role">Sustainability Director</p>
+            <h3 class="team-slide-name">James<br>Okafor</h3>
+            <p class="team-slide-bio">Vets every local partner against our responsible-travel checklist before we work with them.</p>
+            <div class="team-slide-socials">
+              <a href="404.html" aria-label="James Okafor on LinkedIn"><i class="ri-linkedin-fill"></i></a>
+              <a href="404.html" aria-label="James Okafor on Instagram"><i class="ri-instagram-line"></i></a>
+            </div>
+          </div>
+          <div class="team-slide-ticker" aria-hidden="true">James Okafor &nbsp;·&nbsp; Sustainability Director &nbsp;·&nbsp;</div>
+        </article>
+
+      </div><!-- /filmstrip -->
+
+      <!-- Bottom nav dots + counter -->
+      <div class="team-nav">
+        <div class="team-nav-inner">
+          <span class="team-nav-counter"><em id="teamNavCurrent">01</em> / <span id="teamNavTotal">04</span></span>
+          <div class="team-nav-dots" role="presentation">
+            <button class="team-dot active" data-target="0" aria-label="View Daniel Reyes"></button>
+            <button class="team-dot" data-target="1" aria-label="View Maria Chen"></button>
+            <button class="team-dot" data-target="2" aria-label="View Aisha Patel"></button>
+            <button class="team-dot" data-target="3" aria-label="View James Okafor"></button>
+          </div>
+          <div class="team-nav-arrows">
+            <button class="team-arrow" id="teamPrev" aria-label="Previous member">
+              <i class="ri-arrow-left-line"></i>
+            </button>
+            <button class="team-arrow" id="teamNext" aria-label="Next member">
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — WHY CHOOSE US (interactive tabs)
+    ============================================================ -->
+    <section class="why-choose-section" id="why-choose" aria-label="Why choose Stackly">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow" data-aos="fade-up">The Stackly Difference</div>
+          <h2 class="section-title" data-aos="fade-up" data-aos-delay="80">Why Travellers Choose Us</h2>
+        </div>
+
+        <div class="why-tabs-wrap" data-aos="fade-up" data-aos-delay="120">
+          <div class="why-tabs" id="whyTabs" role="tablist">
+            <button class="why-tab active" data-tab="0" role="tab" aria-selected="true">
+              <i class="ri-user-star-line"></i>
+              <span>Personal Travel Experts</span>
+            </button>
+            <button class="why-tab" data-tab="1" role="tab" aria-selected="false">
+              <i class="ri-price-tag-3-line"></i>
+              <span>Transparent Pricing</span>
+            </button>
+            <button class="why-tab" data-tab="2" role="tab" aria-selected="false">
+              <i class="ri-customer-service-2-line"></i>
+              <span>24/7 On-Trip Support</span>
+            </button>
+            <button class="why-tab" data-tab="3" role="tab" aria-selected="false">
+              <i class="ri-leaf-line"></i>
+              <span>Responsible Travel</span>
+            </button>
+          </div>
+
+          <div class="why-panels" id="whyPanels">
+            <div class="why-panel active" data-panel="0">
+              <div class="why-panel-text">
+                <h3>Personal Travel Experts</h3>
+                <p>Every itinerary is shaped by a real specialist who has often visited the destination themselves — not
+                  an algorithm. You get honest advice, not upsells.</p>
+              </div>
+              <div class="why-panel-image">
+                <img src="assets/images/travel.webp"
+                  alt="Travel expert reviewing an itinerary with a client" loading="lazy" />
+              </div>
+            </div>
+            <div class="why-panel" data-panel="1">
+              <div class="why-panel-text">
+                <h3>Transparent Pricing</h3>
+                <p>No hidden fees, no last-minute surcharges. What you see at checkout is what you pay — every single
+                  time.</p>
+              </div>
+              <div class="why-panel-image">
+                <img src="assets/images/digital-india.webp"
+                  alt="Traveller reviewing a clear price breakdown" loading="lazy" />
+              </div>
+            </div>
+            <div class="why-panel" data-panel="2">
+              <div class="why-panel-text">
+                <h3>24/7 On-Trip Support</h3>
+                <p>A missed connection or a change of plans shouldn't ruin your trip. Our support line is staffed around
+                  the clock, wherever you are.</p>
+              </div>
+              <div class="why-panel-image">
+                <img src="assets/images/index-image.webp"
+                  alt="Support agent assisting a traveller by phone" loading="lazy" />
+              </div>
+            </div>
+            <div class="why-panel" data-panel="3">
+              <div class="why-panel-text">
+                <h3>Responsible Travel</h3>
+                <p>We partner only with locally-owned operators and carbon-conscious properties, so your holiday
+                  supports the places you visit.</p>
+              </div>
+              <div class="why-panel-image">
+                <img src="assets/images/dubai.webp"
+                  alt="Lush green landscape representing sustainable travel" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — CTA BANNER
+    ============================================================ -->
+    <section class="about-cta" id="about-cta" aria-label="Start planning your trip">
+      <div class="about-cta-bg">
+        <img src="assets/images/image.webp"
+          alt="Traveller looking out over a scenic valley at sunrise" loading="lazy" />
+        <div class="about-cta-overlay"></div>
+      </div>
+      <div class="container">
+        <div class="about-cta-content" data-aos="zoom-in">
+          <div class="about-cta-icon"><i class="ri-plane-fill"></i></div>
+          <h2>Ready to Write Your Own <span class="text-accent">Chapter?</span></h2>
+          <p>Let's turn your next holiday idea into a fully planned, worry-free journey.</p>
+          <div class="about-cta-buttons">
+            <a href="packages.html" class="btn-gold">
+              <span>Explore Packages</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+            <a href="contact.html" class="btn-outline-primary btn-outline-light">
+              <span>Talk To An Expert</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================
+       FOOTER 
+  ====================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo" aria-label="Stackly Home">
+              <img src="assets/images/stacky-logo-inner.webp" alt="Stackly" class="logo-img" />
+            </a>
+            <p>Crafting extraordinary holiday experiences since 2010. Your journey to the world's most breathtaking destinations starts here.</p>
+            <div class="footer-socials">
+              <a href="404.html" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="404.html" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="404.html" aria-label="Follow us on Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" aria-label="Watch us on YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="404.html" aria-label="Follow us on Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul role="list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Destinations -->
+          <div class="footer-col">
+            <h4>Popular Destinations</h4>
+            <ul role="list">
+              <li><a href="404.html">Maldives</a></li>
+              <li><a href="404.html">Santorini, Greece</a></li>
+              <li><a href="404.html">Bali, Indonesia</a></li>
+              <li><a href="404.html">Swiss Alps</a></li>
+              <li><a href="404.html">Kenya Safari</a></li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul role="list">
+              <li><a href="404.html">Packages</a></li>
+              <li><a href="404.html">Booking</a></li>
+              <li><a href="404.html">FAQs</a></li>
+              <li><a href="404.html">Cancellation Policy</a></li>
+              <li><a href="404.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer-col footer-contact">
+            <h4>Contact Us</h4>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <span>+91 9876543210</span>
+                <small>Mon–Fri 9am–6pm</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <span>info@thestackly.com </span>
+                <small>We reply within 24 hours</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <span>Salem, Tamil Nadu</span>
+                <small>India</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Stackly. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="404.html">Terms of Service</a>
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Cookie Settings</a>
+        </div>
+        <div class="footer-payments" aria-label="Accepted payment methods">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/about.js"></script>
+</body>
+
+</html>

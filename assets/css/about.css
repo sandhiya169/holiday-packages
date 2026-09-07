@@ -1,0 +1,1369 @@
+/* ============================================================
+   Stackly — ABOUT PAGE STYLESHEET
+   Extends styles.css. Uses the same CSS custom properties
+   (colors, fonts, spacing, radii, shadows) defined in :root.
+============================================================ */
+
+/* ─────────────────────────────────────────
+   1. ABOUT HERO
+───────────────────────────────────────── */
+.about-hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(170deg,
+      rgba(26, 26, 46, .90) 0%,
+      rgba(26, 26, 46, .62) 50%,
+      rgba(42, 123, 111, .35) 100%);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 160px 24px 120px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.about-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .65);
+  margin-bottom: 22px;
+}
+
+.about-breadcrumb a {
+  color: rgba(255, 255, 255, .85);
+}
+
+.about-breadcrumb a:hover {
+  color: var(--gold);
+}
+
+.about-breadcrumb span {
+  color: var(--gold);
+}
+
+.about-breadcrumb i {
+  font-size: 1rem;
+}
+
+.about-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 5.2vw, 3.7rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 22px;
+}
+
+.about-hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.about-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: rgba(255, 255, 255, .82);
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.about-float-badge {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, .97);
+  padding: 14px 20px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-float-badge i {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--navy);
+  font-size: 1.2rem;
+}
+
+.about-float-badge div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.about-float-badge strong {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--navy);
+}
+
+.about-float-badge span {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.badge-1 {
+  top: 26%;
+  left: 5%;
+}
+
+.badge-2 {
+  bottom: 16%;
+  right: 5%;
+}
+
+/* ─────────────────────────────────────────
+   2. OUR STORY + TIMELINE
+───────────────────────────────────────── */
+.story-section {
+  padding: var(--section-py) 0;
+  background: var(--off-white);
+  overflow: hidden;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.story-title {
+  text-align: left;
+}
+
+.story-text {
+  color: var(--gray-500);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.story-image-wrap {
+  position: relative;
+  margin-top: 32px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.story-image-wrap img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.story-image-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, .96);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  width:fit-content;
+}
+
+.story-image-badge i {
+  color: var(--gold);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.story-image-badge span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* Timeline */
+.story-timeline {
+  position: relative;
+  padding-left: 36px;
+}
+
+.timeline-track {
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--gray-200);
+  border-radius: 2px;
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--gold) 0%, var(--teal) 100%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -36px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 0 4px rgba(232, 168, 124, .18);
+}
+
+.timeline-year {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.timeline-item h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.timeline-item p {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+/* ─────────────────────────────────────────
+   3. MISSION / VISION / VALUES — DARK THEME
+───────────────────────────────────────── */
+.mission-section {
+  padding: 140px 0;
+  background: var(--navy);
+  position: relative;
+}
+
+.mission-header-alt {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, .10);
+  padding-bottom: 60px;
+  margin-bottom: 80px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.mission-header-alt .section-eyebrow {
+  background: rgba(232, 168, 124, .12);
+  color: var(--gold-light);
+  border-color: rgba(232, 168, 124, .22);
+}
+
+.mission-header-alt .mission-display-title {
+  margin: 10px 0 0;
+  color: var(--white);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 1.1;
+  font-family: var(--font-serif);
+}
+
+.mission-header-alt .mission-display-title em {
+  color: var(--gold-light);
+}
+
+.mission-header-lead {
+  max-width: 400px;
+}
+
+.mission-header-lead .mission-lead {
+  color: rgba(255, 255, 255, .55);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: -20px 0 0;
+}
+
+.mission-unique-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.mission-block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 24px;
+  border-left: 1px solid rgba(255, 255, 255, .12);
+  transition: border-color 0.4s ease;
+}
+
+.mission-block:hover {
+  border-left-color: var(--gold);
+}
+
+.mission-block-num {
+  font-family: var(--font-serif);
+  font-size: 6.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .04);
+  line-height: 0.8;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.mission-block:hover .mission-block-num {
+  color: var(--gold);
+}
+
+.mission-block-kicker {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.mission-block-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  line-height: 1.35;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+.mission-block-desc {
+  color: rgba(255, 255, 255, .55);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+@media (max-width: 992px) {
+  .mission-header-alt {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mission-unique-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .mission-block-num {
+    font-size: 4.5rem;
+  }
+}
+
+/* ─────────────────────────────────────────
+   4. ACHIEVEMENTS — LIGHT THEME
+───────────────────────────────────────── */
+.achievements-section {
+  padding: var(--section-py) 0;
+  background: var(--off-white);
+}
+
+.eyebrow-light {
+  background: rgba(42, 123, 111, .08);
+  color: var(--teal);
+  border-color: rgba(42, 123, 111, .20);
+}
+
+.title-light {
+  color: var(--navy);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.achieve-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.achieve-ring-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+}
+
+.achieve-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-track {
+  fill: none;
+  stroke: var(--gray-200);
+  stroke-width: 8;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 377;
+  stroke-dashoffset: 377;
+}
+
+.achieve-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  line-height: 1;
+}
+
+.achieve-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.achieve-value small {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.achieve-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+/* ─────────────────────────────────────────
+   5. MEET THE TEAM — CINEMATIC FILMSTRIP
+───────────────────────────────────────── */
+
+/* --- Section wrapper --- */
+.team-section {
+  position: relative;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+/* --- Header block --- */
+.team-header {
+  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px) 0;
+}
+
+.eyebrow-gold {
+  background: rgba(232, 168, 124, .12);
+  color: var(--gold-light);
+  border-color: rgba(232, 168, 124, .22);
+}
+
+.team-header-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: end;
+  padding-bottom: clamp(40px, 5vw, 64px);
+  border-bottom: 1px solid rgba(255, 255, 255, .10);
+}
+
+.team-header-left .section-eyebrow {
+  margin-bottom: 14px;
+}
+
+.team-display-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.2vw, 4rem);
+  line-height: 1.06;
+  letter-spacing: -.035em;
+  color: var(--white);
+}
+
+.team-display-title em {
+  color: var(--gold-light);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.team-header-desc {
+  max-width: 400px;
+  justify-self: end;
+  color: rgba(255, 255, 255, .52);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* --- Marquee ticker --- */
+.team-marquee {
+  overflow: hidden;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.team-marquee-track {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: teamMarquee 22s linear infinite;
+}
+
+.team-marquee-track span {
+  font-family: var(--font-serif);
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  color: rgba(255, 255, 255, .22);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding-right: 2rem;
+}
+
+@keyframes teamMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Filmstrip container --- */
+.team-filmstrip {
+  display: flex;
+  flex-direction: row;
+  height: clamp(480px, 60vh, 680px);
+  width: 100%;
+  overflow: hidden;
+}
+
+/* --- Individual slide --- */
+.team-slide {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 0;                         /* collapsed: equal share */
+  min-width: 0;
+  cursor: pointer;
+  transition: flex 0.65s cubic-bezier(0.77, 0, 0.175, 1);
+  border-right: 1px solid rgba(255, 255, 255, .06);
+}
+
+.team-slide:last-child {
+  border-right: 0;
+}
+
+/* --- Portrait image --- */
+.team-slide-img {
+  position: absolute;
+  inset: 0;
+}
+
+.team-slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: saturate(0.75) brightness(0.55);
+  transition: filter 0.6s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(1.06);
+}
+
+/* Gradient overlay */
+.team-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(26, 26, 46, 0.10) 0%,
+      rgba(26, 26, 46, 0.30) 40%,
+      rgba(26, 26, 46, 0.82) 100%);
+  transition: background 0.5s ease;
+}
+
+/* Diagonal accent line on each slide */
+.team-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 0;
+  background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+  z-index: 3;
+  transition: height 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0.15s;
+}
+
+/* --- Large index number --- */
+.team-slide-index {
+  position: absolute;
+  top: clamp(20px, 3vw, 36px);
+  left: clamp(16px, 2.5vw, 28px);
+  z-index: 4;
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, .28);
+  transition: color 0.4s ease;
+  line-height: 1;
+}
+
+/* --- Info block (bottom of slide) --- */
+.team-slide-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  padding: clamp(20px, 3vw, 36px) clamp(16px, 2.5vw, 28px);
+}
+
+.team-slide-role {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin: 0 0 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+.team-slide-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 0 0 12px;
+  overflow: hidden;
+  transition: font-size 0.5s ease;
+}
+
+.team-slide-bio {
+  font-size: 0.87rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, .65);
+  margin: 0 0 20px;
+  max-width: 300px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease 0.18s, transform 0.4s ease 0.18s;
+}
+
+.team-slide-socials {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease 0.25s, transform 0.35s ease 0.25s;
+}
+
+.team-slide-socials a {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 0.95rem;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.team-slide-socials a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+/* --- Vertical ticker on each slide (collapsed state label) --- */
+.team-slide-ticker {
+  position: absolute;
+  bottom: clamp(16px, 2.5vw, 28px);
+  right: 14px;
+  z-index: 4;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .28);
+  white-space: nowrap;
+  transition: opacity 0.35s ease;
+}
+
+/* ─── ACTIVE SLIDE STATE ─── */
+.team-slide.active {
+  flex: 3.2 1 0;                       /* active takes ~3× the space of a collapsed slide */
+  cursor: default;
+}
+
+.team-slide.active .team-slide-img img {
+  filter: saturate(0.95) brightness(0.65);
+  transform: scale(1);
+}
+
+.team-slide.active .team-slide-overlay {
+  background: linear-gradient(180deg,
+      rgba(26, 26, 46, 0.05) 0%,
+      rgba(26, 26, 46, 0.18) 30%,
+      rgba(26, 26, 46, 0.88) 100%);
+}
+
+.team-slide.active::before {
+  height: 100%;
+}
+
+.team-slide.active .team-slide-index {
+  color: var(--gold);
+}
+
+.team-slide.active .team-slide-role,
+.team-slide.active .team-slide-bio,
+.team-slide.active .team-slide-socials {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-slide.active .team-slide-ticker {
+  opacity: 0;
+}
+
+/* ─── HOVER (non-active) STATE ─── */
+.team-slide:not(.active):hover .team-slide-img img {
+  filter: saturate(0.85) brightness(0.6);
+  transform: scale(1.02);
+}
+
+/* --- Bottom nav bar --- */
+.team-nav {
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 5vw, 80px);
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+.team-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.team-nav-counter {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, .38);
+  min-width: 60px;
+}
+
+.team-nav-counter em {
+  font-style: normal;
+  color: var(--gold);
+  font-size: 1.05rem;
+}
+
+.team-nav-dots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-dot {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .22);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.team-dot.active {
+  background: var(--gold);
+  width: 52px;
+}
+
+.team-nav-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.team-arrow {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--white);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.team-arrow:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  transform: scale(1.08);
+}
+
+/* ─────────────────────────────────────────
+   TEAM — RESPONSIVE TABLET (≤1024px)
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .team-header-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .team-header-desc {
+    justify-self: start;
+    max-width: 560px;
+  }
+
+  /* Stack slides vertically on tablet */
+  .team-filmstrip {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .team-slide {
+    flex: 0 0 88px;                    /* collapsed height */
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+    transition: flex 0.65s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .team-slide:last-child {
+    border-bottom: 0;
+  }
+
+  .team-slide.active {
+    flex: 0 0 420px;                   /* expanded height */
+    cursor: default;
+  }
+
+  .team-slide-name {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    max-height: none;
+  }
+
+  .team-slide.active .team-slide-name {
+    max-height: none;
+  }
+
+  .team-slide-ticker {
+    writing-mode: horizontal-tb;
+    bottom: auto;
+    top: clamp(16px, 3vw, 28px);
+    right: clamp(16px, 3vw, 28px);
+  }
+}
+
+/* ─────────────────────────────────────────
+   TEAM — RESPONSIVE MOBILE (≤768px)
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .team-header {
+    padding: 64px 20px 0;
+  }
+
+  .team-filmstrip {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .team-slide {
+    flex: 0 0 76px;
+  }
+
+  .team-slide.active {
+    flex: 0 0 400px;
+  }
+
+  .team-slide-name {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+
+  .team-nav {
+    padding: 20px;
+  }
+
+  .team-nav-inner {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .team-nav-counter {
+    flex: 1 0 auto;
+  }
+}
+
+/* ─────────────────────────────────────────
+   TEAM — RESPONSIVE SMALL MOBILE (≤480px)
+───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .team-slide {
+    flex: 0 0 64px;
+  }
+
+  .team-slide.active {
+    flex: 0 0 380px;
+  }
+
+  .team-dot {
+    width: 20px;
+  }
+
+  .team-dot.active {
+    width: 38px;
+  }
+
+  .team-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+/* ─────────────────────────────────────────
+   6. WHY CHOOSE US (interactive tabs)
+───────────────────────────────────────── */
+.why-choose-section {
+  padding: var(--section-py) 0;
+  background: var(--white);
+}
+
+.why-tabs-wrap {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 40px;
+  align-items: stretch;
+  background: var(--off-white);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  border: 1px solid var(--gray-200);
+}
+
+.why-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.why-tab {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  color: var(--gray-600);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.why-tab i {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--gray-100);
+  color: var(--teal);
+  font-size: 1.15rem;
+  transition: var(--transition-fast);
+}
+
+.why-tab:hover {
+  background: rgba(42, 123, 111, .06);
+}
+
+.why-tab.active {
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: var(--shadow-sm);
+}
+
+.why-tab.active i {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--navy);
+}
+
+.why-panels {
+  position: relative;
+  min-height: 340px;
+}
+
+.why-panel {
+  position: absolute;
+  inset: 0;
+  display: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.why-panel.active {
+  display: grid;
+}
+
+.why-panel-text h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.why-panel-text p {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  line-height: 1.75;
+}
+
+.why-panel-image {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  min-height: 160px;
+}
+
+.why-panel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 160px;
+}
+
+/* ─────────────────────────────────────────
+   7. CTA BANNER
+───────────────────────────────────────── */
+.about-cta {
+  position: relative;
+  padding: 140px 0;
+  overflow: hidden;
+}
+
+.about-cta-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.about-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(26, 26, 46, .92) 0%, rgba(42, 123, 111, .55) 100%);
+}
+
+.about-cta-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.about-cta-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .25);
+  color: var(--gold);
+  font-size: 1.6rem;
+}
+
+.about-cta-content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.about-cta-content p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, .78);
+  margin-bottom: 36px;
+}
+
+.about-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, .4);
+  color: var(--white);
+}
+
+.btn-outline-light:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+
+/* ─────────────────────────────────────────
+   8. RESPONSIVE — TABLET (≤1024px)
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about-hero-content {
+    padding: 150px 24px 110px;
+  }
+
+  .badge-1 {
+    left: 4%;
+    top: 20%;
+  }
+
+  .badge-2 {
+    right: 4%;
+    bottom: 12%;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .story-timeline {
+    padding-left: 36px;
+  }
+
+  .mission-editorial {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .mission-intro {
+    max-width: 720px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+
+  .why-tabs-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .why-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 4px;
+  }
+
+  .why-tab {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .why-panels {
+    min-height: 300px;
+  }
+}
+
+/* ─────────────────────────────────────────
+   9. RESPONSIVE — MOBILE (≤768px)
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: auto;
+  }
+
+  .about-hero-img {
+    transform: none;
+    object-fit: fill;
+  }
+
+  .about-hero-content {
+    padding: 130px 20px 90px;
+  }
+
+  .about-hero-title {
+    font-size: clamp(1.9rem, 7vw, 2.6rem);
+  }
+
+  .about-float-badge {
+    display: none;
+  }
+
+  .mission-section {
+    padding: 84px 0;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
+  }
+
+  .achieve-ring-wrap {
+    width: 110px;
+    height: 110px;
+  }
+
+  .achieve-number {
+    font-size: 1.6rem;
+  }
+
+  .why-panel {
+    padding: 20px;
+  }
+
+  .why-panel-text h3 {
+    font-size: 1.25rem;
+  }
+
+  .about-cta {
+    padding: 90px 0;
+  }
+
+  .about-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-cta-buttons a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ─────────────────────────────────────────
+   10. RESPONSIVE — SMALL MOBILE (≤480px)
+───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .about-hero-content {
+    padding: 120px 16px 70px;
+  }
+
+  .about-breadcrumb {
+    font-size: 0.78rem;
+  }
+
+  .story-image-wrap img {
+    height: 220px;
+  }
+
+  .timeline-item p {
+    max-width: 100%;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 12px;
+  }
+
+  .why-tab span {
+    font-size: 0.82rem;
+  }
+}
+
+/* ─────────────────────────────────────────
+   11. RESPONSIVE — EXTRA SMALL (≤340px)
+───────────────────────────────────────── */
+@media (max-width: 340px) {
+  .about-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .achieve-ring-wrap {
+    width: 96px;
+    height: 96px;
+  }
+
+  .achieve-number {
+    font-size: 1.4rem;
+  }
+}
