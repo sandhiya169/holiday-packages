@@ -35,7 +35,7 @@
   z-index: 2;
   background: var(--navy);
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-v2-left::after {
@@ -102,6 +102,8 @@
 
 /* Search form inline */
 .hero-v2-search {
+  position: relative;
+  z-index: 4;
   display: flex;
   align-items: stretch;
   background: rgba(255,255,255,.08);
@@ -118,7 +120,7 @@
   flex-direction: column;
   padding: 10px 14px;
   border-right: 1px solid rgba(255,255,255,.10);
-  min-width: 0;
+  min-width: 108px;
 }
 
 .hero-v2-field:last-of-type { border-right: none; }
@@ -141,6 +143,12 @@
   border: none;
   outline: none;
   width: 100%;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.hero-v2-field input[type="date"] {
+  color-scheme: dark;
 }
 
 .hero-v2-field input::placeholder { color: rgba(255,255,255,.4); }
@@ -151,7 +159,9 @@
   color: var(--navy);
   font-weight: 700;
   font-size: 0.85rem;
-  padding: 0 20px;
+  min-width: 100px;
+  padding: 0 14px;
+  justify-content: center;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -294,6 +304,38 @@
   0% { left: -100%; }
   50% { left: 0%; }
   100% { left: 100%; }
+}
+
+/* Keep both hero columns aligned in short desktop viewports. */
+@media (min-width: 901px) and (max-height: 700px) {
+  .hero-v2 {
+    height: 520px;
+    min-height: 520px;
+    overflow: hidden;
+  }
+
+  .hero-v2-left {
+    justify-content: center;
+    padding: 24px 40px;
+  }
+
+  .hero-v2-title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    margin-bottom: 12px;
+  }
+
+  .hero-v2-sub {
+    margin-bottom: 16px;
+  }
+
+  .hero-v2-search {
+    margin-bottom: 14px;
+  }
+
+  .hero-v2-field {
+    min-width: 0;
+    padding: 8px 10px;
+  }
 }
 
 /* ─────────────────────────────────────────

@@ -316,12 +316,7 @@ function initSocialButtons() {
   qsa('.btn-social').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const provider = btn.dataset.provider || 'this provider';
-      showToast({
-        title: 'Demo mode',
-        message: `Sign-in with ${provider} isn't connected in this preview.`,
-        icon: 'ri-information-fill',
-      });
+      window.location.href = btn.getAttribute('href') || '404.html';
     });
   });
 }
